@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php print($page_title); ?> | PROlific by Hannah A. Patellis</title>
-    <link href="../asset/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="../asset/css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="/asset/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/asset/css/custom.css" rel="stylesheet" crossorigin="anonymous">
   </head>
 
   <body>
@@ -29,8 +29,8 @@
       </symbol>
     </svg>
 
-    <main class="d-flex flex-row">
-      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;height:100vh;">
+    <div class="d-flex flex-row">
+      <nav class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
         <a href="dashboard.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi pe-none me-2" width="50" height="50" style="fill:white"><use xlink:href="#hannahap"></use></svg>
           <span class="fs-3 fw-bold">PROlific</span>
@@ -75,9 +75,9 @@
             <li><a class="dropdown-item" href="../action/logout.php">Sign out</a></li>
           </ul>
         </div>
-      </div>
+      </nav>
 
-      <div class="container-fluid px-5 py-5">
+      <main class="px-5 py-5">
 
 
 
