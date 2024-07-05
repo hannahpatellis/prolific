@@ -15,6 +15,13 @@ $active_page = "gallery";
 $page_title = $piece['title'];
 require_once("../partial/dash-header.php");
 
+require_once("../resource/env.php");
+if($env['environment'] == 'dev') {
+  $img_store_location = '/img_store/';
+} else if($env['environment'] == 'prod') {
+  $img_store_location = 'https://fs.hannahap.com/img_store/';
+}
+
 ?>
 
 <div class="row">
@@ -27,8 +34,8 @@ require_once("../partial/dash-header.php");
 
 <div class="row">
   <div class="col">
-    <a href="/img_store/<?php print($piece['thumbnail']); ?>.jpg">
-      <img class="piece" src="/img_store/<?php print $piece['thumbnail']; ?>.jpg" width="100%" height="auto" />
+    <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg">
+      <img class="piece" src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="100%" height="auto" />
     </a>
     <div class="mt-2"><pre><?php print $piece['thumbnail']; ?></pre></div>
   </div>

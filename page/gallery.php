@@ -14,6 +14,13 @@ $stmt_string = "SELECT * FROM pieces ORDER BY id DESC";
 $result = $mysqli -> query($stmt_string);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
+require_once("../resource/env.php");
+if($env['environment'] == 'dev') {
+  $img_store_location = '/img_store/';
+} else if($env['environment'] == 'prod') {
+  $img_store_location = 'https://fs.hannahap.com/img_store/';
+}
+
 ?>
 
 <div class="row">
@@ -36,7 +43,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
         <?php foreach($rows as $row) { ?>
           <tr>
             <td class="col-img">
-              <a href="/page/piece.php?id=<?php print $row['id']; ?>"><img src="/img_store/<?php print $row['thumbnail']; ?>.jpg" height="100px" width="auto" /></a>
+              <a href="/page/piece.php?id=<?php print $row['id']; ?>"><img src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" height="100px" width="auto" /></a>
             </td>
             <th scope="row"><?php print $row['title']; ?></th>
             <td><?php print $row['collection']; ?></td>
@@ -52,7 +59,7 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 <div class="row" id="view-grid">
   <div class="col" id="grid">
     <?php foreach($rows as $row) { ?>
-      <a href="/page/piece.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="/img_store/<?php print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
+      <a href="/page/piece.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
     <?php } ?>
   </div>
 </div>

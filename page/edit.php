@@ -33,12 +33,19 @@ function deconstruct_date($incoming_date) {
   return array($final_year, $final_month, $final_day);
 }
 
+require_once("../resource/env.php");
+if($env['environment'] == 'dev') {
+  $img_store_location = '/img_store/';
+} else if($env['environment'] == 'prod') {
+  $img_store_location = 'https://fs.hannahap.com/img_store/';
+}
+
 ?>
 
 <div class="row">
   <div class="col d-flex align-items-center">
-    <a href="/img_store/<?php print($piece['thumbnail']); ?>.jpg" target="_blank">
-      <img src="/img_store/<?php print $piece['thumbnail']; ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
+    <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg" target="_blank">
+      <img src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
     </a>
     <h1>Update: <?php print($piece['title']); ?></h1>
   </div>

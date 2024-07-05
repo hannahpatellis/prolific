@@ -21,6 +21,13 @@ $stmt_last_string = "SELECT * FROM pieces ORDER BY ID DESC LIMIT 1";
 $result_last = $mysqli -> query($stmt_last_string);
 $last = $result_last->fetch_all(MYSQLI_ASSOC);
 
+require_once("../resource/env.php");
+if($env['environment'] == 'dev') {
+  $img_store_location = '/img_store/';
+} else if($env['environment'] == 'prod') {
+  $img_store_location = 'https://fs.hannahap.com/img_store/';
+}
+
 ?>
 
 <div class="row">
@@ -35,13 +42,13 @@ $last = $result_last->fetch_all(MYSQLI_ASSOC);
   <div class="col">
     <h2 class="mb-4">Last added</h2>
     <a href="/page/piece.php?id=<?php print($last[0]['id']); ?>">
-      <img class="piece" src="/img_store/<?php print($last[0]['thumbnail']); ?>.jpg" width="100%" height="auto" />
+      <img class="piece" src="<?php print($img_store_location); print($last[0]['thumbnail']); ?>.jpg" width="100%" height="auto" />
     </a>
   </div>
   <div class="col">
     <h2 class="mb-4">Random</h2>
     <a href="/page/piece.php?id=<?php print($random['id']); ?>">
-      <img class="piece" src="/img_store/<?php print($random['thumbnail']); ?>.jpg" width="100%" height="auto" />
+      <img class="piece" src="<?php print($img_store_location); print($random['thumbnail']); ?>.jpg" width="100%" height="auto" />
     </a>
   </div>
 </div>
