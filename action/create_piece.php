@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once("../resource/db.php");
+require_once("../resource/env.php");
 
 $errors = array();
 
@@ -112,7 +113,7 @@ function prepare_query($stripped_sql_array) {
 }
 function process_image($file) {
   $new_img_name = uniqid();
-  $target_dir = "../img_store/";
+  $target_dir = $env['img_store_location'];
   $target_file = $target_dir . basename($new_img_name.".jpg");
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
