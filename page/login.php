@@ -1,4 +1,13 @@
-<?php require_once("../partial/gen-header.php"); ?>
+<?php
+
+session_start();
+if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
+  header('Location: dashboard.php');
+}
+
+require_once("../partial/gen-header.php"); 
+
+?>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="hannahap" viewBox="0 0 1024 1024">

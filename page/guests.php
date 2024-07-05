@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
+  header('Location: login.php?error=forbidden');
+}
+
 $active_page = "guests";
 $page_title = "Guests";
 require_once("../partial/dash-header.php"); ?>
