@@ -35,7 +35,7 @@ $map = array (
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $prepared_dates = prepare_dates($_POST);
-  $returnedFileUUID = process_image($_FILES);
+  $returnedFileUUID = process_image($_FILES, $env);
   $stmt_string = prepare_query(strip_sql_array($map));
   $stmt = $mysqli->prepare($stmt_string);
   $stmt->bind_param("ssssssssssssssss", $_POST["title"], $prepared_dates[0], $prepared_dates[1], $_POST["collection"], $_POST["subcollection"], $_POST["size-height"], $_POST["size-width"], $_POST["size-unit"], $_POST["location"], $_POST["temperature"], $_POST["background"], $_POST["colors"], $_POST["description"], $_POST["story"], $_POST["notes"], $returnedFileUUID);
@@ -111,7 +111,7 @@ function prepare_query($stripped_sql_array) {
   $stmt_string = $stmt_string . ")";
   return $stmt_string;
 }
-function process_image($file) {
+function process_image($file, $env) {
   $new_img_name = uniqid();
   $target_dir = $env['img_store_location'];
   $target_file = $target_dir . basename($new_img_name.".jpg");
