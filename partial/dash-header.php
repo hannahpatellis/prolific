@@ -30,13 +30,13 @@
     </svg>
 
     <div class="d-flex flex-row">
-      <nav class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
-        <a href="dashboard.php" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <nav class="p-3 text-bg-dark" id="navigation-bar">
+        <a href="dashboard.php" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
           <svg class="bi pe-none me-2" width="50" height="50" style="fill:white"><use xlink:href="#hannahap"></use></svg>
           <span class="fs-3 fw-bold">PROlific</span>
         </a>
-        <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
+        <hr class="navigation-hr">
+        <ul class="nav nav-pills mb-auto" id="navigation-menu">
           <li class="nav-item">
             <a href="dashboard.php" class="nav-link <?php if($active_page == "dashboard") {print('active" aria-current="page');} else {print(' text-white');} ?>">
               <svg class="bi pe-none me-2" width="16" height="16" style="fill:white"><use xlink:href="#home"></use></svg>
@@ -62,18 +62,24 @@
             </a>
           </li>
         </ul>
-        <hr>
-        <div class="dropdown">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../asset/img/hannah.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>Hannah</strong>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-            <li><a class="dropdown-item" href="add.php">Add a piece</a></li>
-            <li><a class="dropdown-item" href="new.php">Add a note</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="../action/logout.php">Sign out</a></li>
-          </ul>
+        <hr class="navigation-hr">
+        
+        <div id="navigation-mobile-group">
+          <div class="dropdown" id="navigation-profile">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="../asset/img/hannah.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>Hannah</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li><a class="dropdown-item" href="add.php">Add a piece</a></li>
+              <li><a class="dropdown-item" href="new.php">Add a note</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="../action/logout.php">Sign out</a></li>
+            </ul>
+          </div>
+          <div id="navigation-expand-icon" role="button">
+            <img src="/asset/img/bars-light.svg" alt="Expand navigation" height="24px" width="auto">
+          </div>
         </div>
       </nav>
 
