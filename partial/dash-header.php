@@ -6,6 +6,9 @@
     <title><?php print($page_title); ?> | PROlific by Hannah A. Patellis</title>
     <link href="/asset/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="/asset/css/custom.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="PROlific">
+    <meta name="apple-mobile-web-app-capable" content="yes">
   </head>
 
   <body>
