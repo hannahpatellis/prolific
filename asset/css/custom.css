@@ -69,7 +69,7 @@ div#view-list, div#view-grid {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 821px) {
   div.col-sm-12 {
     margin-top: 30px;
   }

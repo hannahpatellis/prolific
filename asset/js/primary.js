@@ -8,7 +8,7 @@ const DOM = {
     navUnit: document.querySelector('ul#navigation-menu'),
   },
   mediaQueries: {
-    mobi: window.matchMedia('(max-width: 768px)')
+    mobi: window.matchMedia('(max-width: 821px)')
   }
 }
 
