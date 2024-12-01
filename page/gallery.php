@@ -39,13 +39,12 @@ if($env['environment'] == 'dev') {
   <div class="col">
     <table class="table table-striped table-hover align-middle">
       <tbody class="table-group-divider">
-        <tr>
         <?php foreach($rows as $row) { ?>
           <tr>
             <td class="col-img">
               <a href="/page/piece.php?id=<?php print $row['id']; ?>"><img src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" height="100px" width="auto" /></a>
             </td>
-            <th scope="row"><?php print $row['title']; ?></th>
+            <td><strong><?php print $row['title']; ?></strong></td>
             <td><?php print $row['collection']; ?></td>
             <td><?php print $row['subcollection']; ?></td>
             <td><a href="/page/piece.php?id=<?php print $row['id']; ?>"><span class="badge text-bg-primary rounded-pill">#<?php print($row['id']); ?></span></a></td>
