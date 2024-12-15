@@ -134,6 +134,7 @@ require_once("../partial/dash-header.php");
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General">General</option>
+          <option value="Journey North">Journey North</option>
           <option value="The Era" selected>The Era</option>
           <option value="Untitled Trans Collection">Untitled Trans Collection</option>
           <option value="I am ICONIC">I am ICONIC</option>
