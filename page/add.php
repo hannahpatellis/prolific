@@ -49,7 +49,8 @@ require_once("../partial/dash-header.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="start-year" aria-label="Start year">
-          <option value="2024" select>2024</option>
+          <option value="2025" select>2025</option>
+          <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
@@ -91,7 +92,8 @@ require_once("../partial/dash-header.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="end-year" aria-label="End year" required>
-          <option value="2024" select>2024</option>
+          <option value="2025" select>2025</option>
+          <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
           <option value="2021">2021</option>
@@ -134,8 +136,8 @@ require_once("../partial/dash-header.php");
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General">General</option>
-          <option value="Journey North">Journey North</option>
-          <option value="The Era" selected>The Era</option>
+          <option value="Journey North" selected>Journey North</option>
+          <option value="The Era">The Era</option>
           <option value="Untitled Trans Collection">Untitled Trans Collection</option>
           <option value="I am ICONIC">I am ICONIC</option>
           <option value="My Dearest Eli">My Dearest Eli</option>
