@@ -1,0 +1,20 @@
+CREATE TABLE "pieces" (
+  "id" int NOT NULL AUTO_INCREMENT,
+  "title" varchar(300) NOT NULL,
+  "start_date" varchar(10) NOT NULL,
+  "end_date" varchar(10) NOT NULL,
+  "collection" varchar(300) NOT NULL,
+  "subcollection" varchar(300) NOT NULL,
+  "size_height" varchar(7) NOT NULL,
+  "size_width" varchar(7) NOT NULL,
+  "size_unit" varchar(2) NOT NULL,
+  "temperature" varchar(300) NOT NULL,
+  "background" varchar(300) NOT NULL,
+  "colors" varchar(300) NOT NULL,
+  "description" mediumtext NOT NULL,
+  "story" mediumtext NOT NULL,
+  "notes" mediumtext NOT NULL,
+  "location" varchar(300) NOT NULL,
+  "thumbnail" varchar(300) NOT NULL,
+  PRIMARY KEY ("id")
+);
