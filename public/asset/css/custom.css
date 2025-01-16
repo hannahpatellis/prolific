@@ -1,5 +1,6 @@
 body {
   padding-bottom: 100px;
+  font-family: 'Lato', 'Proxima Nova', 'Gotham', 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
 h1, h2, h3 {
   font-weight: 600;
