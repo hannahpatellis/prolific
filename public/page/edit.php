@@ -67,8 +67,6 @@ if($env['environment'] == 'dev') {
   </div>
 <?php } ?>
 
-<hr />
-
 <form action="/actions/update_piece.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">

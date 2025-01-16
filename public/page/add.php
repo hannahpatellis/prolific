@@ -5,8 +5,8 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: login.php?error=forbidden');
 }
 
-$active_page = "gallery";
-$page_title = "Add a piece";
+$active_page = "newpiece";
+$page_title = "New piece";
 require_once("../partial/dash-header.php");
 
 ?>
@@ -17,7 +17,7 @@ require_once("../partial/dash-header.php");
   </div>
 </div>
 
-<?php if(in_array('status', $_GET) && $_GET['status'] == '201') { ?>
+<?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
   <div class="row">
     <div class="col">
       <div class="alert alert-success" role="alert">New EMOH added successfully!</div>
@@ -25,15 +25,13 @@ require_once("../partial/dash-header.php");
   </div>
 <?php } ?>
 
-<?php if(in_array('status', $_GET) && $_GET['status'] == '500') { ?>
+<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
       <div class="alert alert-danger" role="alert">There was an error adding the new EMOH<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
     </div>
   </div>
 <?php } ?>
-
-<hr />
 
 <form action="/action/create_piece.php" method="POST" enctype="multipart/form-data">
   <div class="row">
@@ -145,7 +143,7 @@ require_once("../partial/dash-header.php");
           <option value="Waiting for You">Waiting for You</option>
           <option value="Can't Stop Thinking About You">Can't Stop Thinking About You</option>
         </select>
-        <label for="form-collection">Collection*</label>
+        <label class="form-label" for="form-collection">Collection*</label>
       </div>
     </div>
     <div class="col">

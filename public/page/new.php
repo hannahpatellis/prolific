@@ -5,7 +5,7 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: login.php?error=forbidden');
 }
 
-$active_page = "notes";
+$active_page = "newnote";
 $page_title = "New note";
 require_once("../partial/dash-header.php"); ?>
 

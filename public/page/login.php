@@ -17,11 +17,11 @@ require_once("../partial/gen-header.php");
   </symbol>
 </svg>
 
-<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+<div class="container col-xl-10 col-xxl-8 px-4 py-5" id="login-container">
   <div class="row align-items-center g-lg-5 py-5">
     <div class="col-lg-7 text-center text-lg-start">
-      <svg class="bi pe-none mb-4" width="70" height="70"><use xlink:href="#hannahap"></use></svg>
-      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Welcome to PROlific</h1>
+      <svg id="login-logo" class="bi pe-none mb-4" width="70" height="70"><use xlink:href="#hannahap"></use></svg>
+      <h1 class="mb-3">Welcome to PROlific</h1>
       <p class="col-lg-10 fs-4">The artwork database of Hannah A. Patellis</p>
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
@@ -35,8 +35,6 @@ require_once("../partial/gen-header.php");
           <label for="floatingPassword">Password</label>
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-        <hr class="my-4">
-        <small class="text-body-secondary">Authorized usage only</small>
       </form>
     </div>
   </div>

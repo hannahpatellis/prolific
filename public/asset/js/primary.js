@@ -4,8 +4,8 @@
 */
 const DOM = {
   nav: {
-    mobiMenuButton: document.querySelector('div#navigation-expand-icon'),
-    navUnit: document.querySelector('ul#navigation-menu'),
+    mobiMenuButton: document.querySelector('div#nav-expand-icon'),
+    navUnit: document.querySelector('div#nav-right'),
   },
   mediaQueries: {
     mobi: window.matchMedia('(max-width: 821px)')

@@ -16,7 +16,8 @@ $rows = $result->fetch_all(MYSQLI_ASSOC);
 
 require_once("../resource/env.php");
 if($env['environment'] == 'dev') {
-  $img_store_location = '/img_store/';
+  // $img_store_location = '/img_store/';
+  $img_store_location = 'https://fs.hannahap.com/img_store/';
 } else if($env['environment'] == 'prod') {
   $img_store_location = 'https://fs.hannahap.com/img_store/';
 }
@@ -33,11 +34,9 @@ if($env['environment'] == 'dev') {
   </div>
 </div>
 
-<hr /> 
-
 <div class="row" id="view-list">
   <div class="col">
-    <table class="table table-striped table-hover align-middle">
+    <table class="table table-striped table-hover align-middle" id="gallery-table-list">
       <tbody class="table-group-divider">
         <?php foreach($rows as $row) { ?>
           <tr>
