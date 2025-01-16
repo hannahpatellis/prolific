@@ -15,18 +15,21 @@
   <body>
     <nav>
       <div id="nav-stage">
-        <div id="nav-left">
-          <div class="nav-entry">
-            <img id="profile-pic" src="/asset/img/hannah.jpg" />
+  
+        <div id="nav-top">
+          <div id="nav-left">
+            <div class="nav-entry">
+              <a href="dashboard.php"><img id="profile-pic" src="/asset/img/hannah.jpg" /></a>
+            </div>
+            <div class="nav-entry" id="flag">
+              PROlific 2025
+            </div>
           </div>
-          <div class="nav-entry" id="flag">
-            PROlific 2025
-          </div>
-        </div>
 
-        <div id="nav-expand">
-          <div id="nav-expand-icon" role="button">
-            <img src="/asset/img/bars-light.svg" alt="Expand navigation" height="24px" width="auto">
+          <div id="nav-expand">
+            <div id="nav-expand-icon" role="button">
+              <img src="/asset/img/bars-light.svg" alt="Expand navigation" height="24px" width="auto">
+            </div>
           </div>
         </div>
 

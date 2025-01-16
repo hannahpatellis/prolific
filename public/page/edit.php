@@ -44,14 +44,15 @@ if($env['environment'] == 'dev') {
 
 <div class="row">
   <div class="col d-flex align-items-center">
-    <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg" target="_blank">
+    <a href="piece.php?id=<?php print($piece['id']); ?>">
       <img src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
     </a>
     <h1>Update: <?php print($piece['title']); ?></h1>
   </div>
 </div>
 
-<?php if(in_array('status', $_GET) && $_GET['status'] == '200') { ?>
+
+<?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
   <div class="row">
     <div class="col">
       <div class="alert alert-success" role="alert">"<?php print($piece['title']); ?>" was updated successfully</div>
@@ -59,7 +60,7 @@ if($env['environment'] == 'dev') {
   </div>
 <?php } ?>
 
-<?php if(in_array('status', $_GET) && $_GET['status'] == '500') { ?>
+<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
       <div class="alert alert-danger" role="alert">There was an error updating this EMOH<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
@@ -67,7 +68,7 @@ if($env['environment'] == 'dev') {
   </div>
 <?php } ?>
 
-<form action="/actions/update_piece.php" method="POST" enctype="multipart/form-data">
+<form action="/action/update_piece.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">
@@ -280,6 +281,8 @@ if($env['environment'] == 'dev') {
       </div>
     </div>
   </div>
+
+  <input type="text" id="form-id" name="id" required value="<?php print($piece['id']); ?>">
 
   <div class="row mb-4">
     <div class="col">
