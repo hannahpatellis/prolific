@@ -29,3 +29,5 @@ Temporary Items
 env.json
 img_store/
 public/env.json
+/vendor/
+composer.phar
