@@ -30,10 +30,12 @@ if($env['environment'] == 'dev') {
 
 ?>
 
-<div class="row">
-  <div class="col">
-    <h1 id="welcome" class="d-flex justify-content-between align-items-center">Create and spend it all — every time.<span class="badge text-bg-primary rounded-pill"><?php print(count($rows)); ?> total pieces</span></h1>
-  </div>
+<div id="dash-note">
+  <h1 id="welcome">Create and spend it all — every single time.</h1>
 </div>
+
+<div id="dash-counter">
+  <span class="badge text-bg-primary rounded-pill"><?php print(count($rows)); ?> total pieces</span>
+</div> 
 
 <?php require_once("../partial/dash-footer.php"); ?>

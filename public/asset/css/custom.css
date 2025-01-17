@@ -118,8 +118,21 @@ div#main-stage {
   width: 90vw;
   padding: 10px 10px 10px 10px;
 }
+
+/* Dashboard page */
 h1#welcome {
   font-weight: 200;
+  font-size: 5rem;
+}
+div#dash-note {
+  position: absolute;
+}
+div#dash-counter {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
 /* Gallery grid and table */
@@ -186,6 +199,7 @@ form {
   }
 
   nav {
+    margin-top: 30px;
     align-items: flex-start;
   }
   div#nav-stage {
@@ -213,7 +227,19 @@ form {
     display: block;
   }
 
+  h1#welcome {
+    font-size: 3rem;
+  }
+  div#dash-counter {
+    bottom: 100px;
+    right: 30px;
+    font-size: 1.5rem;
+  }
+
   div#main-stage {
     width: 95vw;
+  }
+  #grid {
+    gap: 5px;
   }
 }

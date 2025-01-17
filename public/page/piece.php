@@ -31,13 +31,13 @@ if($env['environment'] == 'dev') {
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-md-4 col-sm-12">
     <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg">
       <img class="piece" src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="100%" height="auto" />
     </a>
     <div class="mt-2"><pre><?php print $piece['thumbnail']; ?></pre></div>
   </div>
-  <div class="col">
+  <div class="col-md-8 col-sm-12">
     <div class="list-group">
       
       <div href="#" class="list-group-item">
