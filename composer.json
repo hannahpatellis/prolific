@@ -1,0 +1,17 @@
+{
+    "name": "hannah/prolific",
+    "description": "Art management software",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hannah\\Prolific\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexandria 'Hannah' I. Patellis",
+            "email": "hpatellis@icloud.com"
+        }
+    ],
+    "require": {}
+}
