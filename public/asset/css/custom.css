@@ -44,11 +44,11 @@ nav {
   z-index: 4;
 }
 div#nav-stage {
-  height: 70px;
+  height: 60px;
   width: 99vw;
   color: #FAF0E6;
   background-color: #282828;
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 10px 30px 10px 30px;
   display: flex;
   align-items: center;
@@ -86,9 +86,10 @@ a.nav-active {
   margin-left: 20px;
 }
 img#profile-pic {
-  height: 50px;
+  height: 45px;
   width: auto;
   border-radius: 50%;
+  border: 3px solid #121212;
 }
 .nav-entry#flag {
   color: #FAF0E6;
