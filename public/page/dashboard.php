@@ -31,7 +31,7 @@ if($env['environment'] == 'dev') {
 ?>
 
 <div id="dash-note">
-  <h1 id="welcome">Create and spend it all — every single time.</h1>
+  <h1 id="welcome">Create — and every single time, spend it all.</h1>
 </div>
 
 <div id="dash-counter">

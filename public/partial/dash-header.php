@@ -37,20 +37,14 @@
           <a href="gallery.php" class="nav-link <?php if($active_page == "gallery") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">Gallery</div>
           </a>
-          <a href="notes.php" class="nav-link <?php if($active_page == "notes") {print('nav-active" aria-current="page');} ?>">
-            <div class="nav-entry">Notes</div>
-          </a>
           <a href="admin.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">Admin</div>
           </a>
           <div class="nav-entry" id="nav-divider">
             |
           </div>
-          <a href="add.php" class="nav-link <?php if($active_page == "newpiece") {print('nav-active" aria-current="page');} ?>">
+          <a href="piece_new.php" class="nav-link <?php if($active_page == "newpiece") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">New piece</div>
-          </a>
-          <a href="new.php" class="nav-link <?php if($active_page == "newnote") {print('nav-active" aria-current="page');} ?>">
-            <div class="nav-entry">New note</div>
           </a>
         </div>
       </div>

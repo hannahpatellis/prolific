@@ -33,7 +33,7 @@ require_once("../partial/dash-header.php");
   </div>
 <?php } ?>
 
-<form action="/action/create_piece.php" method="POST" enctype="multipart/form-data">
+<form action="/action/piece_new.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">

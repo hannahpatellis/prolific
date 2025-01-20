@@ -42,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   array_push($errors, $mysqli->error_list);
   $stmt->close();
   $mysqli->close();
-  header("Location: /page/edit.php?id=" . $piece_id . "&status=201");
+  header("Location: /page/piece_edit.php?id=" . $piece_id . "&status=201");
 } else {
   // array_push($errors, "The request method was not POST");
-  header("Location: /page/edit.php?id=" . $piece_id . "&status=500&detail=notPOST");
+  header("Location: /page/piece_edit.php?id=" . $piece_id . "&status=500&detail=notPOST");
 }
 
 function strip_html_array($input_array) {

@@ -68,7 +68,7 @@ if($env['environment'] == 'dev') {
   </div>
 <?php } ?>
 
-<form action="/action/update_piece.php" method="POST" enctype="multipart/form-data">
+<form action="/action/piece_edit.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">

@@ -164,6 +164,33 @@ td.col-img {
   justify-content: center;
 }
 
+/* Show Stage */
+div#show-stage {
+  margin: 0 auto;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+div#stage-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div#stage-img img {
+  max-height: calc(100vh - 200px);
+  max-width: 100vw;
+}
+div#stage-desc {
+  width: 100%;
+  margin-top: 90px;
+}
+div#stage-desc h1 {
+  font-size: 1.5rem;
+}
+
 /* Input forms */
 form {
   color: #121212;
@@ -242,5 +269,19 @@ form {
   }
   #grid {
     gap: 5px;
+  }
+  
+  div#show-stage {
+    width: 100%;
+  }
+  div#stage-img img {
+    max-height: calc(100vh - 200px);
+    max-width: calc(100vw - 10vw);
+  }
+  div#stage-desc h1 {
+    font-size: 1.2rem;
+  }
+  img.stage-direction {
+    display: none;
   }
 }

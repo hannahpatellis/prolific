@@ -41,12 +41,12 @@ if($env['environment'] == 'dev') {
         <?php foreach($rows as $row) { ?>
           <tr>
             <td class="col-img">
-              <a href="/page/piece.php?id=<?php print $row['id']; ?>"><img src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" height="100px" width="auto" /></a>
+              <a href="/page/piece_view.php?id=<?php print $row['id']; ?>"><img src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" height="100px" width="auto" /></a>
             </td>
             <td><strong><?php print $row['title']; ?></strong></td>
             <td><?php print $row['collection']; ?></td>
             <td><?php print $row['subcollection']; ?></td>
-            <td><a href="/page/piece.php?id=<?php print $row['id']; ?>"><span class="badge text-bg-primary rounded-pill">#<?php print($row['id']); ?></span></a></td>
+            <td><a href="/page/piece_view.php?id=<?php print $row['id']; ?>"><span class="badge text-bg-primary rounded-pill">#<?php print($row['id']); ?></span></a></td>
           </tr>
         <?php } ?>
       </tbody>
@@ -57,7 +57,7 @@ if($env['environment'] == 'dev') {
 <div class="row" id="view-grid">
   <div class="col" id="grid">
     <?php foreach($rows as $row) { ?>
-      <a href="/page/piece.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
+      <a href="/page/piece_view.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
     <?php } ?>
   </div>
 </div>

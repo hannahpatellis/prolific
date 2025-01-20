@@ -32,10 +32,12 @@ if($env['environment'] == 'dev') {
 
 <div class="row">
   <div class="col-md-4 col-sm-12">
-    <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg">
+    <a href="show_stage.php?id=<?php print($piece['id']); ?>">
       <img class="piece" src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="100%" height="auto" />
     </a>
-    <div class="mt-2"><pre><?php print $piece['thumbnail']; ?></pre></div>
+    <a href="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg">
+      <div class="mt-2"><pre><?php print $piece['thumbnail']; ?></pre></div>
+    </a>
   </div>
   <div class="col-md-8 col-sm-12">
     <div class="list-group">
@@ -103,7 +105,7 @@ if($env['environment'] == 'dev') {
         </div>
       <?php } ?>
     </div>
-    <a href="/page/edit.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
+    <a href="/page/piece_edit.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
   </div>
 </div>
 
