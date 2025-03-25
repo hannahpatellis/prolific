@@ -37,15 +37,17 @@
           <a href="gallery.php" class="nav-link <?php if($active_page == "gallery") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">Gallery</div>
           </a>
-          <a href="admin.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
-            <div class="nav-entry">Admin</div>
-          </a>
-          <div class="nav-entry" id="nav-divider">
-            |
-          </div>
-          <a href="piece_new.php" class="nav-link <?php if($active_page == "newpiece") {print('nav-active" aria-current="page');} ?>">
-            <div class="nav-entry">New piece</div>
-          </a>
+          <?php if($_SESSION['isAdmin'] == true) { ?>
+            <a href="admin.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
+              <div class="nav-entry">Admin</div>
+            </a>
+            <div class="nav-entry" id="nav-divider">
+              |
+            </div>
+            <a href="piece_new.php" class="nav-link <?php if($active_page == "newpiece") {print('nav-active" aria-current="page');} ?>">
+              <div class="nav-entry">New piece</div>
+            </a>
+          <?php } ?>
         </div>
       </div>
     </nav>

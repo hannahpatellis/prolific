@@ -4,6 +4,9 @@ session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: login.php?error=forbidden');
 }
+if($_SESSION['isAdmin'] != true) {
+  header('Location: dashboard.php?error=forbidden');
+}
 
 require_once("../resource/db.php");
   

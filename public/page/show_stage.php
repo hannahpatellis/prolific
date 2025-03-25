@@ -6,10 +6,17 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
 }
 
 require_once("../resource/db.php");
-$stmt_string = "SELECT * FROM pieces WHERE id=$_GET[id]";
-$result = $mysqli -> query($stmt_string);
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-$piece = $rows[0];
+$stmt_get_img = "SELECT * FROM pieces WHERE id=$_GET[id]";
+$result_get_img = $mysqli -> query($stmt_get_img);
+$img = $result_get_img->fetch_all(MYSQLI_ASSOC);
+$piece = $img[0];
+
+require_once("../resource/db.php");
+
+$stmt_num = "SELECT * FROM pieces";
+$result_num = $mysqli -> query($stmt_num);
+$rows = $result_num->fetch_all(MYSQLI_ASSOC);
+$total_pieces = count($rows);
 
 $active_page = "gallery";
 $page_title = $piece['title'];
@@ -27,13 +34,13 @@ if($env['environment'] == 'dev') {
 <div id="show-stage">
     <div id="stage-img">
         <a href="show_stage.php?id=<?php print $piece['id'] - 1; ?>">
-            <img class="stage-direction" id="direction-left" src="../asset/img/square-chevron-left.svg" height="50px" />
+            <img class="stage-direction <?php if($piece['id'] == 1) { print("hidden"); } ?>" id="direction-left" src="../asset/img/square-chevron-left.svg" height="50px" />
         </a>
         <a href="piece_view.php?id=<?php print $piece['id']; ?>">
             <img src="<?php print($img_store_location); print($piece['thumbnail']); ?>.jpg" />
         </a>
         <a href="show_stage.php?id=<?php print $piece['id'] + 1; ?>">
-            <img class="stage-direction" id="direction-right" src="../asset/img/square-chevron-right.svg" height="50px" />
+            <img class="stage-direction <?php if($total_pieces == $piece['id']) { print("hidden"); } ?>" id="direction-right" src="../asset/img/square-chevron-right.svg" height="50px" />
         </a>
     </div>
     <div id="stage-desc">   

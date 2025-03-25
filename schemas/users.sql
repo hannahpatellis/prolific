@@ -5,5 +5,6 @@ CREATE TABLE "users" (
   "first_name" varchar(60) DEFAULT NULL,
   "last_name" varchar(120) DEFAULT NULL,
   "email" varchar(256) DEFAULT NULL,
+  "isAdmin" BOOLEAN not null default 0,
   PRIMARY KEY ("id")
 );

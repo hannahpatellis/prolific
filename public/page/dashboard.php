@@ -30,6 +30,14 @@ if($env['environment'] == 'dev') {
 
 ?>
 
+<?php if(isset($_GET['error']) && $_GET['error'] == 'forbidden') { ?>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-danger" role="alert">Sorry, you do not have permission to complete that action</div>
+    </div>
+  </div>
+<?php } ?>
+
 <div id="dash-note">
   <h1 id="welcome">Create — and every single time, spend it all.</h1>
 </div>

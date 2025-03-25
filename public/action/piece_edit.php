@@ -4,6 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
+  header('Location: login.php?error=forbidden');
+}
+if($_SESSION['isAdmin'] != true) {
+  header('Location: dashboard.php?error=forbidden');
+}
+
 require_once("../resource/db.php");
 require_once("../resource/env.php");
 

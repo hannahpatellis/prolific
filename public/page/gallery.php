@@ -64,6 +64,8 @@ if($env['environment'] == 'dev') {
 
 <script type="text/javascript">
 
+// const db = <?php // print(json_encode($rows)); ?>;
+
 const gridDiv = document.getElementById('view-grid');
 const listDiv = document.getElementById('view-list');
 

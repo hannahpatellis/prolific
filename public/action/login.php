@@ -14,6 +14,7 @@ $row = $result_user->fetch_all(MYSQLI_ASSOC);
 if (password_verify($_POST['password'], $row[0]['password_hash'])) {
     $_SESSION['active'] = true;
     $_SESSION['user'] = $row[0];
+    $_SESSION['isAdmin'] = $row[0]['isAdmin'];
     header('Location: ../page/dashboard.php');
 } else {
   header('Location: ../page/login.php?status=incorrect_login');

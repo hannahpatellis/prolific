@@ -19,6 +19,9 @@ hr {
 .row:first-child {
   margin-top: 0;
 }
+img.hidden {
+  display: none;
+}
 
 /* Login page */
 #login-logo {
