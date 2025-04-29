@@ -47,7 +47,7 @@ if($env['environment'] == 'dev') {
 
 <div class="row">
   <div class="col d-flex align-items-center">
-    <a href="piece.php?id=<?php print($piece['id']); ?>">
+    <a href="piece_view.php?id=<?php print($piece['id']); ?>">
       <img src="<?php print($img_store_location); print $piece['thumbnail']; ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
     </a>
     <h1>Update: <?php print($piece['title']); ?></h1>
@@ -260,28 +260,22 @@ if($env['environment'] == 'dev') {
 
   <div class="row">
     <div class="col">
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Visual description" id="form-description" name="description" style="height: 100px"><?php print($piece['description']); ?></textarea>
-        <label for="form-description">Visual description</label>
-      </div>
+      <p class="form-text">Visual description</p>
+      <textarea id="form-description" name="description"><?php print($piece['description']); ?></textarea>
     </div>
   </div>
   
   <div class="row">
     <div class="col">
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Story" id="form-story" name="story" style="height: 100px"><?php print($piece['story']); ?></textarea>
-        <label for="form-story">Story</label>
-      </div>
+      <p class="form-text">Story</p>
+      <textarea id="form-story" name="story"><?php print($piece['story']); ?></textarea>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Notes" id="form-notes" name="notes" style="height: 100px"><?php print($piece['notes']); ?></textarea>
-        <label for="form-notes">Notes</label>
-      </div>
+      <p class="form-text">Notes</p>
+      <textarea id="form-notes" name="notes"><?php print($piece['notes']); ?></textarea>
     </div>
   </div>
 
@@ -293,3 +287,24 @@ if($env['environment'] == 'dev') {
     </div>
   </div>
 </form>
+
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script type="text/javascript">
+  var simplemdeNotes = new SimpleMDE({
+    element: document.getElementById("form-notes"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeStory = new SimpleMDE({
+    element: document.getElementById("form-story"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeDescription = new SimpleMDE({
+    element: document.getElementById("form-description"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+</script>
+
+<?php require_once("../partial/dash-footer.php"); ?>

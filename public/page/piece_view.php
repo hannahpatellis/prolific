@@ -88,25 +88,44 @@ if($env['environment'] == 'dev') {
       <?php } ?>
       <?php if($piece['description']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['description']); ?></h3>
-          <small>Visual description</small>
+          <p>Visual description</p>
+          <textarea id="description"><?php print($piece['description']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['story']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['story']); ?></h3>
-          <small>Story</small>
+          <p>Story</p>
+          <textarea id="story"><?php print($piece['story']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['notes']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['notes']); ?></h3>
-          <small>Notes</small>
+          <p>Notes</p>
+          <textarea id="notes"><?php print($piece['notes']); ?></textarea>
         </div>
       <?php } ?>
     </div>
     <a href="/page/piece_edit.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script type="text/javascript">
+  var simplemdeNotes = new SimpleMDE({
+    element: document.getElementById("notes"),
+    toolbar: false
+  });
+  simplemdeNotes.togglePreview();
+  var simplemdeStory = new SimpleMDE({
+    element: document.getElementById("story"),
+    toolbar: false
+  });
+  simplemdeStory.togglePreview();
+  var simplemdeDescription = new SimpleMDE({
+    element: document.getElementById("description"),
+    toolbar: false
+  });
+  simplemdeDescription.togglePreview();
+</script>
 
 <?php require_once("../partial/dash-footer.php"); ?>
