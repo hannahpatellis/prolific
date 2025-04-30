@@ -93,6 +93,12 @@ img#profile-pic {
   width: auto;
   border-radius: 50%;
   border: 3px solid #121212;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+img#profile-pic:hover {
+  border-radius: 20%;
+  opacity: 1;
 }
 .nav-entry#flag {
   color: #FAF0E6;
@@ -206,6 +212,10 @@ form {
 }
 #form-id {
   display: none;
+}
+.editor-toolbar {
+  background-color: #FAF0E6;
+  opacity: 1;
 }
 
 /* View piece page */

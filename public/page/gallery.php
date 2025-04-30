@@ -36,21 +36,7 @@ if($env['environment'] == 'dev') {
 
 <div class="row" id="view-list">
   <div class="col">
-    <table class="table table-striped table-hover align-middle" id="gallery-table-list">
-      <tbody class="table-group-divider">
-        <?php foreach($rows as $row) { ?>
-          <tr>
-            <td class="col-img">
-              <a href="/page/piece_view.php?id=<?php print $row['id']; ?>"><img src="<?php print($img_store_location); print($row['thumbnail']); ?>.jpg" height="100px" width="auto" /></a>
-            </td>
-            <td><strong><?php print $row['title']; ?></strong></td>
-            <td><?php print $row['collection']; ?></td>
-            <td><?php print $row['subcollection']; ?></td>
-            <td><a href="/page/piece_view.php?id=<?php print $row['id']; ?>"><span class="badge text-bg-primary rounded-pill">#<?php print($row['id']); ?></span></a></td>
-          </tr>
-        <?php } ?>
-      </tbody>
-    </table>
+    <div id="table-wrapper"></div>
   </div>
 </div>
 
@@ -62,9 +48,22 @@ if($env['environment'] == 'dev') {
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
 <script type="text/javascript">
 
-// const db = <?php // print(json_encode($rows)); ?>;
+const db = <?php print(json_encode($rows)); ?>;
+const dbTable = db.map((row) => {
+  return [
+    row.id,
+    row.thumbnail,
+    row.title,
+    row.collection,
+    row.subcollection,
+    row.description,
+    row.notes,
+    row.story
+  ];
+});
 
 const gridDiv = document.getElementById('view-grid');
 const listDiv = document.getElementById('view-list');
@@ -96,6 +95,51 @@ gridBtn.addEventListener("click", setGridView);
 listBtn.addEventListener("click", setListView);
 
 setGridView();
+
+// console.log(db);
+// console.log(dbTable);
+
+new gridjs.Grid({
+  columns: [
+    "ID",
+    {
+      name: 'Thumbnail',
+      formatter: (cell, row) => gridjs.html(`<a href='/page/piece_view.php?id=${row.cells[0].data}'><img src='https://fs.hannahap.com/img_store/${cell}.jpg' height="80px" width="auto" /></a>`)
+    }, 
+    {
+      name: 'Title',
+      formatter: (cell, row) => gridjs.html(`<a href='/page/piece_view.php?id=${row.cells[0].data}'>${cell}</a>`)
+    },
+    {
+      name: 'Collection',
+      formatter: (cell, row) => {
+        let subcol = row.cells[4].data.length >= 1 ? ` / ${row.cells[4].data}` : "";
+        let format = `${cell}${subcol}`;
+        return gridjs.html(`${format}`);
+      }
+    },
+    { 
+      name: 'Subcollection',
+      hidden: true
+    },
+    { 
+      name: 'Description',
+      hidden: true
+    },
+    { 
+      name: 'Notes',
+      hidden: true
+    },
+    { 
+      name: 'Story',
+      hidden: true
+    }
+  ],
+  search: {
+    ignoreHiddenColumns: false,
+  },
+  data: dbTable
+}).render(document.getElementById("table-wrapper"));
 
 </script>
 

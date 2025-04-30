@@ -8,8 +8,6 @@ The goal behind PROlific was to be able to view all my works in one place and ke
 
 - Ability to replace an image without deleting the piece entry and re-adding it
 - Ability to add guest users and select which pieces they can view
-- Notes functionality separate from the notes attached to pieces
-  - Use rich text or markdown in these notes
 - Better error handling
 
 ## Databases
@@ -20,6 +18,13 @@ The goal behind PROlific was to be able to view all my works in one place and ke
   - `users` where each row is a username/password for logging into PROlific
 
 Schemas for these tables are located in the `schemas` directory.
+
+## Plugins Used
+
+- [SimpleMDE - Markdown Editor (JS)](https://github.com/sparksuite/simplemde-markdown-editor)
+  - Used for better input and viewing of notes, descriptions, and stories associated with each piece
+- [Grid.js (JS)](https://github.com/grid-js/gridjs)
+  - Used for dynamically building a table view of the gallery in JS, as well as for searching in the table view of the gallery
 
 ## env.json
 

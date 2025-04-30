@@ -170,6 +170,7 @@ if($env['environment'] == 'dev') {
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General" <?php if($piece['collection'] == 'General') {print("selected");} ?>>General</option>
+          <option value="Journey North" <?php if($piece['collection'] == 'Journey North') {print("selected");} ?>>Journey North</option>
           <option value="The Era" <?php if($piece['collection'] == 'The Era') {print("selected");} ?>>The Era</option>
           <option value="Untitled Trans Collection" <?php if($piece['collection'] == 'Untitled Trans Collection') {print("selected");} ?>>Untitled Trans Collection</option>
           <option value="I am ICONIC" <?php if($piece['collection'] == 'I am ICONIC') {print("selected");} ?>>I am ICONIC</option>
