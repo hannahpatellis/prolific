@@ -11,7 +11,8 @@
 
 @use 'pages/login';
 @use 'pages/dashboard';
-@use 'pages/gallery';
+@use 'pages/gallery/grid';
+@use 'pages/gallery/list';
 @use 'pages/piece/stage';
 @use 'pages/piece/view';
 

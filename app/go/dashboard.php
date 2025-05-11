@@ -21,13 +21,6 @@ $stmt_last_string = "SELECT * FROM pieces ORDER BY ID DESC LIMIT 1";
 $result_last = $mysqli -> query($stmt_last_string);
 $last = $result_last->fetch_all(MYSQLI_ASSOC);
 
-require_once(__DIR__ . "/../resources/env.php");
-if($env['environment'] == 'dev') {
-  $img_store_location = '/img_store/';
-} else if($env['environment'] == 'prod') {
-  $img_store_location = 'https://fs.hannahap.com/img_store/';
-}
-
 ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'forbidden') { ?>
@@ -46,4 +39,4 @@ if($env['environment'] == 'dev') {
   <span class="badge text-bg-primary rounded-pill"><?php print(count($rows)); ?> total pieces</span>
 </div> 
 
-<?php require_once("../partials/dash-footer.php"); ?>
+<?php require_once(__DIR__ . "/../partials/dash-footer.php"); ?>

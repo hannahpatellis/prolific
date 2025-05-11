@@ -19,7 +19,7 @@
             <div class="nav-entry">
               <a href="/go/dashboard.php"><img id="profile-pic" src="/assets/img/hannah.jpg" /></a>
             </div>
-            <div class="nav-entry serif" id="flag">
+            <div class="nav-entry" id="flag">
               Prolific
             </div>
           </div>
@@ -32,11 +32,14 @@
         </div>
 
         <div id="nav-right">
-          <a href="/go/gallery.php" class="nav-link <?php if($active_page == "gallery") {print('nav-active" aria-current="page');} ?>">
+          <a href="/go/gallery/grid.php" class="nav-link <?php if($active_page == "gallery") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">Gallery</div>
           </a>
+          <a href="/go/cfa/index.php" class="nav-link <?php if($active_page == "cfa") {print('nav-active" aria-current="page');} ?>">
+            <div class="nav-entry">Certified</div>
+          </a>
           <?php if($_SESSION['isAdmin'] == true) { ?>
-            <a href="/go/admin/dashboard.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
+            <a href="/go/admin/index.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
               <div class="nav-entry">Admin</div>
             </a>
             <div class="nav-entry" id="nav-divider">

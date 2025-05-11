@@ -6,39 +6,28 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
 }
 
 $active_page = "gallery";
-$page_title = "Gallery";
-require_once(__DIR__ . "/../partials/dash-header.php"); 
-require_once(__DIR__ . "/../resources/db.php");
+$page_title = "Gallery list";
+require_once(__DIR__ . "/../../partials/dash-header.php"); 
+require_once(__DIR__ . "/../../resources/db.php");
 
 $stmt_string = "SELECT * FROM pieces ORDER BY id DESC";
 $result = $mysqli -> query($stmt_string);
 $rows = $result->fetch_all(MYSQLI_ASSOC);
 
-require_once(__DIR__ . "/../resources/env.php");
+require_once(__DIR__ . "/../../resources/env.php");
 
 ?>
 
 <div class="row">
   <div class="col d-flex justify-content-between align-items-center">
     <h1>Gallery view</h1>
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-outline-primary" id="view-btn-grid">Grid view</button>
-      <button type="button" class="btn btn-outline-primary" id="view-btn-list">List view</button>
-    </div>
+    <a href="/go/gallery/grid.php"><button type="button" class="btn btn-outline-primary" id="view-btn-grid">Grid view</button></a>
   </div>
 </div>
 
 <div class="row" id="view-list">
   <div class="col">
     <div id="table-wrapper"></div>
-  </div>
-</div>
-
-<div class="row" id="view-grid">
-  <div class="col" id="grid">
-    <?php foreach($rows as $row) { ?>
-      <a href="/go/piece/view.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($env['img_store_url']); print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
-    <?php } ?>
   </div>
 </div>
 
@@ -58,37 +47,6 @@ const dbTable = db.map((row) => {
     row.story
   ];
 });
-
-const gridDiv = document.getElementById('view-grid');
-const listDiv = document.getElementById('view-list');
-
-const gridBtn = document.getElementById('view-btn-grid');
-const listBtn = document.getElementById('view-btn-list');
-
-function setGridView() {
-  gridBtn.classList.remove("btn-outline-primary");
-  gridBtn.classList.add("btn-primary");
-  listBtn.classList.remove("btn-primary");
-  listBtn.classList.add("btn-outline-primary");
-
-  listDiv.style.display = "none";
-  gridDiv.style.display = "block";
-}
-
-function setListView() {
-  gridBtn.classList.remove("btn-primary");
-  gridBtn.classList.add("btn-outline-primary");
-  listBtn.classList.remove("btn-outline-primary");
-  listBtn.classList.add("btn-primary");
-
-  gridDiv.style.display = "none";
-  listDiv.style.display = "block";
-}
-
-gridBtn.addEventListener("click", setGridView);
-listBtn.addEventListener("click", setListView);
-
-setGridView();
 
 // console.log(db);
 // console.log(dbTable);
@@ -137,4 +95,4 @@ new gridjs.Grid({
 
 </script>
 
-<?php require_once(__DIR__ . "/../partials/dash-footer.php"); ?>
+<?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

@@ -13464,6 +13464,7 @@ img#profile-pic:hover {
 .nav-entry#flag {
   color: #FAF0E6;
   font-size: 1.8rem;
+  font-weight: 100;
 }
 
 .nav-entry#nav-divider {
@@ -13580,10 +13581,6 @@ div#dash-counter {
   align-items: center;
   justify-content: space-evenly;
   gap: 10px;
-}
-
-div#view-list, div#view-grid {
-  display: none;
 }
 
 table#gallery-table-list tbody {
