@@ -1,0 +1,25 @@
+h1#welcome {
+  font-weight: 200;
+  font-size: 3rem;
+}
+div#dash-note {
+  position: absolute;
+}
+div#dash-counter {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+@media (max-width: 821px) {
+  h1#welcome {
+    font-size: 3.5rem;
+  }
+  div#dash-counter {
+    bottom: 100px;
+    right: 30px;
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,26 @@
+#grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+div#view-list, div#view-grid {
+  display: none;
+} 
+table#gallery-table-list tbody {
+  border: none;
+}
+table#gallery-table-list td {
+  background-color: #121212;
+  color: #FAF0E6;
+  border: 0;
+}
+table#gallery-table-list tr:hover td {
+  background-color: #282828;
+}
+td.col-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
