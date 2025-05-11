@@ -5,3 +5,13 @@
   justify-content: space-evenly;
   gap: 10px;
 }
+img.grid-item {
+  width: 200px;
+  height: auto;
+}
+
+@media (max-width: 821px) {
+  img.grid-item {
+    width: 140px;
+  }
+}

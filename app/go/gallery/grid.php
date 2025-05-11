@@ -28,7 +28,7 @@ require_once(__DIR__ . "/../../resources/env.php");
 <div class="row" id="view-grid">
   <div class="col" id="grid">
     <?php foreach($rows as $row) { ?>
-      <a href="/go/piece/view.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($env['img_store_url']); print($row['thumbnail']); ?>.jpg" width="200px" height="auto" /></a>
+      <a href="/go/piece/view.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($env['img_store_url']); print($row['thumbnail']); ?>.jpg" /></a>
     <?php } ?>
   </div>
 </div>
