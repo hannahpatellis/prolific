@@ -7,5 +7,7 @@ CREATE TABLE "users" (
   "email" varchar(256) DEFAULT NULL,
   "isAdmin" BOOLEAN not null default 0,
   "selectionOnly" BOOLEAN not null default 1,
+  "created_at" timestamp not null default CURRENT_TIMESTAMP,
+  "updated_at" timestamp not null default CURRENT_TIMESTAMP,
   PRIMARY KEY ("id")
 );

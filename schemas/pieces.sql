@@ -16,5 +16,7 @@ CREATE TABLE "pieces" (
   "notes" mediumtext NOT NULL,
   "location" varchar(300) NOT NULL,
   "thumbnail" varchar(300) NOT NULL,
+  "created_at" timestamp not null default CURRENT_TIMESTAMP,
+  "updated_at" timestamp not null default CURRENT_TIMESTAMP,
   PRIMARY KEY ("id")
 );

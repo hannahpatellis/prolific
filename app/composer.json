@@ -1,6 +1,12 @@
 {
     "require": {
         "cycle/orm": "^2.10",
-        "cycle/annotated": "^4.2"
+        "cycle/annotated": "^4.2",
+        "cycle/schema-builder": "^2.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Art\\": "resources/orm/entities/"
+        }
     }
 }
