@@ -9,5 +9,13 @@
     ],
     "require": {
         "propel/propel": "~2.0@beta"
+    },
+    "autoload": {
+        "psr-4": { "": ""},
+        "classmap": [
+            "resources/orm/Art/",
+            "resources/orm/Art/Base/",
+            "resources/orm/Art/Map/"
+        ]
     }
 }

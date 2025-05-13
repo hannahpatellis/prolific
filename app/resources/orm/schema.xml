@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" namespace="\Art" defaultPhpNamingMethod="underscore">
+  <table name="cfa" idMethod="native" phpName="Cfa">
+    <column name="record_id" phpName="RecordId" type="INTEGER" sqlType="int unsigned" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="piece_id" phpName="PieceId" type="INTEGER" required="true"/>
+    <column name="piece_id_run" phpName="PieceIdRun" type="INTEGER"/>
+    <column name="piece_id_count" phpName="PieceIdCount" type="INTEGER"/>
+    <column name="print_company" phpName="PrintCompany" type="VARCHAR" size="255"/>
+    <column name="print_date_sent" phpName="PrintDateSent" type="VARCHAR" size="255"/>
+    <column name="print_date_receipt" phpName="PrintDateReceipt" type="VARCHAR" size="255"/>
+    <column name="print_medium" phpName="PrintMedium" type="VARCHAR" size="255"/>
+    <column name="print_cost" phpName="PrintCost" type="VARCHAR" size="255"/>
+    <column name="print_notes" phpName="PrintNotes" type="VARCHAR" size="255"/>
+    <column name="buyer_name" phpName="BuyerName" type="VARCHAR" size="255"/>
+    <column name="buyer_location" phpName="BuyerLocation" type="VARCHAR" size="255"/>
+    <column name="buyer_date_purchase" phpName="BuyerDatePurchase" type="VARCHAR" size="255"/>
+    <column name="buyer_date_receipt" phpName="BuyerDateReceipt" type="VARCHAR" size="255"/>
+    <column name="notes" phpName="Notes" type="LONGVARCHAR"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="pieces" idMethod="native" phpName="Pieces">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="title" phpName="Title" type="VARCHAR" size="300" required="true"/>
+    <column name="start_date" phpName="StartDate" type="VARCHAR" size="10" required="true"/>
+    <column name="end_date" phpName="EndDate" type="VARCHAR" size="10" required="true"/>
+    <column name="collection" phpName="Collection" type="VARCHAR" size="300" required="true"/>
+    <column name="subcollection" phpName="Subcollection" type="VARCHAR" size="300" required="true"/>
+    <column name="size_height" phpName="SizeHeight" type="VARCHAR" size="7" required="true"/>
+    <column name="size_width" phpName="SizeWidth" type="VARCHAR" size="7" required="true"/>
+    <column name="size_unit" phpName="SizeUnit" type="VARCHAR" size="2" required="true"/>
+    <column name="temperature" phpName="Temperature" type="VARCHAR" size="300" required="true"/>
+    <column name="background" phpName="Background" type="VARCHAR" size="300" required="true"/>
+    <column name="colors" phpName="Colors" type="VARCHAR" size="300" required="true"/>
+    <column name="description" phpName="Description" type="LONGVARCHAR" required="true"/>
+    <column name="story" phpName="Story" type="LONGVARCHAR" required="true"/>
+    <column name="notes" phpName="Notes" type="LONGVARCHAR" required="true"/>
+    <column name="location" phpName="Location" type="VARCHAR" size="300" required="true"/>
+    <column name="thumbnail" phpName="Thumbnail" type="VARCHAR" size="300" required="true"/>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="registry" idMethod="native" phpName="Registry">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="1000" required="true"/>
+    <column name="value" phpName="Value" type="VARCHAR" size="1000" required="true"/>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="users" idMethod="native" phpName="Users">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="username" phpName="Username" type="VARCHAR" size="100"/>
+    <column name="password_hash" phpName="PasswordHash" type="VARCHAR" size="100"/>
+    <column name="first_name" phpName="FirstName" type="VARCHAR" size="60"/>
+    <column name="last_name" phpName="LastName" type="VARCHAR" size="120"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="256"/>
+    <column name="isAdmin" phpName="Isadmin" type="BOOLEAN" size="1" required="true" defaultValue="false"/>
+    <column name="selectionOnly" phpName="Selectiononly" type="BOOLEAN" size="1" required="true" defaultValue="true"/>
+    <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <column name="updated_at" phpName="UpdatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>
