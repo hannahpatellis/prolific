@@ -5,21 +5,15 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: login.php?error=forbidden');
 }
 
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../resources/orm/config.php';
+
+$query = new Art\PiecesQuery();
+$total_pieces = $query->count();
+
 $active_page = "dashboard";
 $page_title = "Dashboard";
 require_once(__DIR__ . "/../partials/dash-header.php");
-require_once(__DIR__ . "/../resources/db.php");
-
-$stmt_rand_string = "SELECT * FROM pieces";
-$result_rand = $mysqli -> query($stmt_rand_string);
-$rows = $result_rand->fetch_all(MYSQLI_ASSOC);
-
-$random_index = array_rand($rows);
-$random = $rows[$random_index];
-
-$stmt_last_string = "SELECT * FROM pieces ORDER BY ID DESC LIMIT 1";
-$result_last = $mysqli -> query($stmt_last_string);
-$last = $result_last->fetch_all(MYSQLI_ASSOC);
 
 ?>
 
@@ -36,7 +30,7 @@ $last = $result_last->fetch_all(MYSQLI_ASSOC);
 </div>
 
 <div id="dash-counter">
-  <span class="badge text-bg-primary rounded-pill"><?php print(count($rows)); ?> total pieces</span>
+  <span class="badge text-bg-primary rounded-pill"><?php print($total_pieces); ?> total pieces</span>
 </div> 
 
 <?php require_once(__DIR__ . "/../partials/dash-footer.php"); ?>

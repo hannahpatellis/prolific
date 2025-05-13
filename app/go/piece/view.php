@@ -5,103 +5,102 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
 }
 
-require_once(__DIR__ . "/../../resources/db.php");
-$stmt_string = "SELECT * FROM pieces WHERE id=$_GET[id]";
-$result = $mysqli -> query($stmt_string);
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-$piece = $rows[0];
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../resources/orm/config.php';
+
+$query = new Art\PiecesQuery();
+$piece = $query->findPK($_GET['id'])->toArray();
 
 $active_page = "gallery";
-$page_title = $piece['title'];
-require_once(__DIR__ . "/../../partials/dash-header.php");
-
+$page_title = $piece['Title'];
 require_once(__DIR__ . "/../../resources/env.php");
+require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
 <div class="row">
   <div class="col">
-    <h1 class="d-flex justify-content-between align-items-center"><?php print($piece['title']); ?><span class="badge text-bg-primary rounded-pill">#<?php print($piece['id']); ?></span></h1>
+    <h1 class="d-flex justify-content-between align-items-center"><?php print($piece['Title']); ?><span class="badge text-bg-primary rounded-pill">#<?php print($piece['Id']); ?></span></h1>
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-4 col-sm-12">
-    <a href="/go/piece/stage.php?id=<?php print($piece['id']); ?>">
-      <img class="piece" src="<?php print($env['img_store_url'] . $piece['thumbnail']); ?>.jpg" width="100%" height="auto" />
+    <a href="/go/piece/stage.php?id=<?php print($piece['Id']); ?>">
+      <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />
     </a>
-    <a href="<?php print($env['img_store_url'] . $piece['thumbnail']); ?>.jpg">
-      <div class="mt-2"><pre><?php print $piece['thumbnail']; ?></pre></div>
+    <a href="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg">
+      <div class="mt-2"><pre><?php print $piece['Thumbnail']; ?></pre></div>
     </a>
   </div>
   <div class="col-md-8 col-sm-12">
     <div class="list-group">
       
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['collection']); ?></h3>
+        <h3 class="mb-1"><?php print($piece['Collection']); ?></h3>
         <small>Part of collection...</small>
       </div>
-      <?php if($piece['subcollection']) { ?>
+      <?php if($piece['Subcollection']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['subcollection']); ?></h3>
+          <h3 class="mb-1"><?php print($piece['Subcollection']); ?></h3>
           <small>Part of subcollection(s)...</small>
         </div>
       <?php } ?>
-      <?php if($piece['start_date']) { ?>
+      <?php if($piece['StartDate']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['start_date']); ?></h3>
+          <h3 class="mb-1"><?php print($piece['StartDate']); ?></h3>
           <small>Started work on...</small>
         </div>
       <?php } ?>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['end_date']); ?></h3>
+        <h3 class="mb-1"><?php print($piece['EndDate']); ?></h3>
         <small>Finished work on...</small>
       </div>
-      <?php if($piece['location']) { ?>
+      <?php if($piece['Location']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['location']); ?></h3>
+          <h3 class="mb-1"><?php print($piece['Location']); ?></h3>
           <small>Creation location(s)...</small>
         </div>
       <?php } ?>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['size_height']." x ".$piece['size_width']." ".$piece['size_unit']); ?></h3>
+        <h3 class="mb-1"><?php print($piece['SizeHeight']." x ".$piece['SizeWidth']." ".$piece['SizeUnit']); ?></h3>
         <small>Size of original canvas</small>
       </div>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['temperature']);?></h3>
+        <h3 class="mb-1"><?php print($piece['Temperature']);?></h3>
         <small>Color temperature</small>
       </div>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['background']);?></h3>
+        <h3 class="mb-1"><?php print($piece['Background']);?></h3>
         <small>Background color</small>
       </div>
-      <?php if($piece['colors']) { ?>
+      <?php if($piece['Colors']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['colors']);?></h3>
+          <h3 class="mb-1"><?php print($piece['Colors']);?></h3>
           <small>Primary featured colors</small>
         </div>
       <?php } ?>
-      <?php if($piece['description']) { ?>
+      <?php if($piece['Description']) { ?>
         <div href="#" class="list-group-item">
           <p>Visual description</p>
-          <textarea id="description"><?php print($piece['description']); ?></textarea>
+          <textarea id="description"><?php print($piece['Description']); ?></textarea>
         </div>
       <?php } ?>
-      <?php if($piece['story']) { ?>
+      <?php if($piece['Story']) { ?>
         <div href="#" class="list-group-item">
           <p>Story</p>
-          <textarea id="story"><?php print($piece['story']); ?></textarea>
+          <textarea id="story"><?php print($piece['Story']); ?></textarea>
         </div>
       <?php } ?>
-      <?php if($piece['notes']) { ?>
+      <?php if($piece['Notes']) { ?>
         <div href="#" class="list-group-item">
           <p>Notes</p>
-          <textarea id="notes"><?php print($piece['notes']); ?></textarea>
+          <textarea id="Notes"><?php print($piece['Notes']); ?></textarea>
         </div>
       <?php } ?>
     </div>
-    <a href="/go/piece/edit.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
-    <a href="/go/cfa/new.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-success mt-4 ml-4">Create a CFA record</a>
+    <a href="/go/piece/edit.php?id=<?php print($piece['Id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
+    <a href="/go/cfa/new.php?id=<?php print($piece['Id']); ?>" type="link" class="btn btn-success mt-4 ml-4">Create a CFA record</a>
   </div>
 </div>
 

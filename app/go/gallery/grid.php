@@ -5,16 +5,16 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
 }
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../resources/orm/config.php';
+
+$query = new Art\PiecesQuery();
+$pieces = $query->orderById('desc')->find()->toArray();
+
 $active_page = "gallery";
 $page_title = "Gallery grid";
-require_once(__DIR__ . "/../../partials/dash-header.php"); 
-require_once(__DIR__ . "/../../resources/db.php");
-
-$stmt_string = "SELECT * FROM pieces ORDER BY id DESC";
-$result = $mysqli -> query($stmt_string);
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-
 require_once(__DIR__ . "/../../resources/env.php");
+require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
@@ -27,8 +27,8 @@ require_once(__DIR__ . "/../../resources/env.php");
 
 <div class="row" id="view-grid">
   <div class="col" id="grid">
-    <?php foreach($rows as $row) { ?>
-      <a href="/go/piece/view.php?id=<?php print($row['id']); ?>"><img class="grid-item" src="<?php print($env['img_store_url']); print($row['thumbnail']); ?>.jpg" /></a>
+    <?php foreach($pieces as $piece) { ?>
+      <a href="/go/piece/view.php?id=<?php print($piece['Id']); ?>"><img class="grid-item" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" /></a>
     <?php } ?>
   </div>
 </div>

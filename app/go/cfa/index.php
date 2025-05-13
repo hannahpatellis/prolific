@@ -8,14 +8,15 @@ if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
 }
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../resources/orm/config.php';
+
+$query = new Art\CfaQuery();
+$cfas = $query->find()->toArray();
+
 $active_page = "cfa";
 $page_title = "Certified fine art records";
 require_once(__DIR__ . "/../../partials/dash-header.php");
-require_once(__DIR__ . "/../../resources/db.php");
-
-// $stmt_cfa_list = "SELECT * FROM cfa ORDER BY id DESC";
-// $results_cfa_list = $mysqli -> query($stmt_cfa_list);
-// $cfas = $results_cfa_list->fetch_all(MYSQLI_ASSOC);
 
 ?>
 
@@ -31,17 +32,17 @@ require_once(__DIR__ . "/../../resources/db.php");
     <table class="table table-dark table-striped table-hover align-middle">
       <tbody>
         <tr>
-            <th>ID.Run.Count</th>
+            <th>ID . Run . Count</th>
             <th>Actions</th>
           </tr>
-        <?php // foreach($users as $user) { ?>
+        <?php foreach($cfas as $cfa) { ?>
           <tr>
-            <td>199.9.10</td>
+            <td><?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></td>
             <td>
-              <a href="/go/cfa/edit.php?id=<?php // print($user['id']); ?>"><button type="button" class="btn btn-warning">Edit CFA record</button></a>  
+              <a href="/go/cfa/edit.php?id=<?php print($cfa['RecordId']); ?>"><button type="button" class="btn btn-warning">Edit CFA record</button></a>  
             </td>
           </tr>
-        <?php // } ?>
+        <?php } ?>
       </tbody>
     </table>
   </div>

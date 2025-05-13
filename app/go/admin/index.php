@@ -8,14 +8,15 @@ if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
 }
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../resources/orm/config.php';
+
+$query = new Art\UsersQuery();
+$users = $query->find()->toArray();
+
 $active_page = "admin";
 $page_title = "Administration";
 require_once(__DIR__ . "/../../partials/dash-header.php");
-require_once(__DIR__ . "/../../resources/db.php");
-
-$stmt_user_list = "SELECT * FROM users ORDER BY id ASC";
-$results_user_list = $mysqli -> query($stmt_user_list);
-$users = $results_user_list->fetch_all(MYSQLI_ASSOC);
 
 ?>
 
@@ -38,15 +39,15 @@ $users = $results_user_list->fetch_all(MYSQLI_ASSOC);
           </tr>
         <?php foreach($users as $user) { ?>
           <tr>
-            <td><?php print($user['id']); ?></td>
-            <td><?php print($user['username']); ?></td>
-            <td><?php if($user['isAdmin']) {print("Administrator");} else {print("Visitor");} ?></td>
-            <td><?php if($user['isAdmin']) { ?>
+            <td><?php print($user['Id']); ?></td>
+            <td><?php print($user['Username']); ?></td>
+            <td><?php if($user['Isadmin']) {print("Administrator");} else {print("Visitor");} ?></td>
+            <td><?php if($user['Isadmin']) { ?>
               <button type="button" class="btn btn-dark" disabled>Edit user</button>
               <button type="button" class="btn btn-dark" disabled>Delete user</button>
             <?php } else { ?>
-              <a href="/go/admin/user/edit.php?id=<?php print($user['id']); ?>"><button type="button" class="btn btn-warning">Edit user</button></a>  
-              <a href="/go/admin/user/delete.php?id=<?php print($user['id']); ?>"><button type="button" class="btn btn-outline-danger">Delete user</button></a>
+              <a href="/go/admin/user/edit.php?id=<?php print($user['Id']); ?>"><button type="button" class="btn btn-warning">Edit user</button></a>  
+              <a href="/go/admin/user/delete.php?id=<?php print($user['Id']); ?>"><button type="button" class="btn btn-outline-danger">Delete user</button></a>
             <?php } ?></td>
           </tr>
         <?php } ?>

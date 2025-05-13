@@ -5,16 +5,16 @@ if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
 }
 
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../resources/orm/config.php';
+
+$query = new Art\PiecesQuery();
+$pieces = $query->orderById('desc')->find()->toArray();
+
 $active_page = "gallery";
 $page_title = "Gallery list";
-require_once(__DIR__ . "/../../partials/dash-header.php"); 
-require_once(__DIR__ . "/../../resources/db.php");
-
-$stmt_string = "SELECT * FROM pieces ORDER BY id DESC";
-$result = $mysqli -> query($stmt_string);
-$rows = $result->fetch_all(MYSQLI_ASSOC);
-
 require_once(__DIR__ . "/../../resources/env.php");
+require_once(__DIR__ . "/../../partials/dash-header.php"); 
 
 ?>
 
@@ -34,17 +34,17 @@ require_once(__DIR__ . "/../../resources/env.php");
 <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
 <script type="text/javascript">
 
-const db = <?php print(json_encode($rows)); ?>;
+const db = <?php print(json_encode($pieces)); ?>;
 const dbTable = db.map((row) => {
   return [
-    row.id,
-    row.thumbnail,
-    row.title,
-    row.collection,
-    row.subcollection,
-    row.description,
-    row.notes,
-    row.story
+    row.Id,
+    row.Thumbnail,
+    row.Title,
+    row.Collection,
+    row.Subcollection,
+    row.Description,
+    row.Notes,
+    row.Story
   ];
 });
 

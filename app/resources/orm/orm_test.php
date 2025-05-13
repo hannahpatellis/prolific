@@ -3,8 +3,8 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/config.php';
 
-$q = new Art\RegistryQuery();
-$firstAuthor = $q->findPK(2);
+$q = new Art\PiecesQuery();
+$current_piece = $q->findPK(2)->toArray();
 
 
 // $registry = new Art\Registry();
@@ -18,7 +18,7 @@ $firstAuthor = $q->findPK(2);
 <pre>
 
 <?php 
-print_r($firstAuthor);
+print_r($current_piece['SizeUnit']);
 
 ?>
 </pre>
