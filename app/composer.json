@@ -1,12 +1,13 @@
 {
-    "require": {
-        "cycle/orm": "^2.10",
-        "cycle/annotated": "^4.2",
-        "cycle/schema-builder": "^2.11"
-    },
-    "autoload": {
-        "psr-4": {
-            "Art\\": "resources/orm/entities/"
+    "name": "hannahpatellis/prolific",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexandria 'Hannah' I. Patellis",
+            "email": "hpatellis@icloud.com"
         }
+    ],
+    "require": {
+        "propel/propel": "~2.0@beta"
     }
 }

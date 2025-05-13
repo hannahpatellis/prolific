@@ -21,20 +21,27 @@ use Cycle\ORM\Entity\Behavior;
 )]
 class Registry
 {
-    #[Column(type: 'primary', name: 'id')]
-    private int $id;
+    public function __construct(
+        #[Column(type: 'primary', name: 'id')]
+        private int $id,
 
-    #[Column(type: 'string(1000)', name: 'name')]
-    private string $name;
+        #[Column(type: 'string(1000)', name: 'name')]
+        private string $name,
 
-    #[Column(type: 'string(1000)', name: 'value')]
-    private string $value;
+        #[Column(type: 'string(1000)', name: 'value')]
+        private string $value,
 
-    #[Column(type: 'datetime')]
-    private \DateTimeImmutable $createdAt;
-    
-    #[Column(type: 'datetime', nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
+        #[Column(type: 'datetime')]
+        private \DateTimeImmutable $createdAt,
+        
+        #[Column(type: 'datetime', nullable: true)]
+        private ?\DateTimeImmutable $updatedAt = null
+    ) {}
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
 }
 
 ?>

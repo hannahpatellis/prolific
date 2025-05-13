@@ -67,16 +67,19 @@ $schema = (new Schema\Compiler())->compile(new Schema\Registry($dbal), [
 use Cycle\ORM;
 use Cycle\ORM\EntityManager;
 
-
 $orm = new ORM\ORM(new ORM\Factory($dbal), new ORM\Schema($schema));
+$manager = new EntityManager($orm);
 
+$registry = $orm->getRepository(\Art\Registry::class)->findByPK(1);
+$registry->setName("Something agai2n");
+$manager->persist($registry)->run();
 ?>
 
 <pre>
 
 <?php
 
-print_r($orm);
+print_r($registry);
 
 ?>
 

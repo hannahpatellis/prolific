@@ -101,6 +101,7 @@ require_once(__DIR__ . "/../../resources/env.php");
       <?php } ?>
     </div>
     <a href="/go/piece/edit.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
+    <a href="/go/cfa/new.php?id=<?php print($piece['id']); ?>" type="link" class="btn btn-success mt-4 ml-4">Create a CFA record</a>
   </div>
 </div>
 
