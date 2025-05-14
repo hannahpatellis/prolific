@@ -83,13 +83,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <?php if($piece['Description']) { ?>
         <div href="#" class="list-group-item">
           <p>Visual description</p>
-          <textarea id="description"><?php print($piece['Description']); ?></textarea>
+          <textarea id="Description"><?php print($piece['Description']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['Story']) { ?>
         <div href="#" class="list-group-item">
           <p>Story</p>
-          <textarea id="story"><?php print($piece['Story']); ?></textarea>
+          <textarea id="Story"><?php print($piece['Story']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['Notes']) { ?>
@@ -107,17 +107,17 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">
   var simplemdeNotes = new SimpleMDE({
-    element: document.getElementById("notes"),
+    element: document.getElementById("Notes"),
     toolbar: false
   });
   simplemdeNotes.togglePreview();
   var simplemdeStory = new SimpleMDE({
-    element: document.getElementById("story"),
+    element: document.getElementById("Story"),
     toolbar: false
   });
   simplemdeStory.togglePreview();
   var simplemdeDescription = new SimpleMDE({
-    element: document.getElementById("description"),
+    element: document.getElementById("Description"),
     toolbar: false
   });
   simplemdeDescription.togglePreview();

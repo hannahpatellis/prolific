@@ -13569,6 +13569,10 @@ div#dash-counter {
     font-size: 1.5rem;
   }
 }
+label.form-check-label {
+  color: white;
+}
+
 #grid {
   display: flex;
   flex-wrap: wrap;
