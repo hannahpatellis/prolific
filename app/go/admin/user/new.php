@@ -46,7 +46,7 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="password" class="form-control" id="form-Email" name="Email" placeholder="Email">
+        <input type="email" class="form-control" id="form-Email" name="Email" placeholder="Email">
         <label for="form-Email">Email</label>
       </div>
     </div>
@@ -85,11 +85,11 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-check form-switch">
-        <input class="form-check-input" role="switch" type="checkbox" value="Isadmin" id="form-Isadmin">
+        <input class="form-check-input" role="switch" type="checkbox" value="Isadmin" name="Isadmin" id="form-Isadmin">
         <label class="form-check-label" for="form-Isadmin">Administrator</label>
       </div>
       <div class="form-check form-switch">
-        <input class="form-check-input" role="switch" type="checkbox" value="Selectiononly" id="form-Selectiononly" checked>
+        <input class="form-check-input" role="switch" type="checkbox" value="Selectiononly" name="Selectiononly" id="form-Selectiononly" checked>
         <label class="form-check-label" for="form-Selectiononly">Selections only</label>
       </div>
     </div>

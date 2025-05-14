@@ -140,13 +140,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintCompany" name="size-PrintCompany" placeholder="Print company" required>
+        <input type="text" class="form-control" id="form-PrintCompany" name="PrintCompany" placeholder="Print company" required>
         <label for="form-PrintCompany">Print company*</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintMedium" name="size-PrintMedium" placeholder="Print medium" required>
+        <input type="text" class="form-control" id="form-PrintMedium" name="PrintMedium" placeholder="Print medium" required>
         <label for="form-PrintMedium">Print medium*</label>
       </div>
     </div>
@@ -155,13 +155,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintCost" name="size-PrintCost" placeholder="Print cost" required>
+        <input type="text" class="form-control" id="form-PrintCost" name="PrintCost" placeholder="Print cost" required>
         <label for="form-PrintCost">Print cost ($x.xx)*</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintNotes" name="size-PrintNotes" placeholder="Print notes">
+        <input type="text" class="form-control" id="form-PrintNotes" name="PrintNotes" placeholder="Print notes">
         <label for="form-PrintNotes">Print notes</label>
       </div>
     </div>
@@ -172,13 +172,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerName" name="size-BuyerName" placeholder="Buyer name" required>
+        <input type="text" class="form-control" id="form-BuyerName" name="BuyerName" placeholder="Buyer name">
         <label for="form-BuyerName">Buyer name</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerLocation" name="size-BuyerLocation" placeholder="Buyer location" required>
+        <input type="text" class="form-control" id="form-BuyerLocation" name="BuyerLocation" placeholder="Buyer location">
         <label for="form-BuyerLocation">Buyer location</label>
       </div>
     </div>
@@ -187,13 +187,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <select class="form-select" id="form-BuyerDatePurchase-year" name="BuyerDatePurchase-year" aria-label="Buy date purchased year" required>
+        <select class="form-select" id="form-BuyerDatePurchase-year" name="BuyerDatePurchase-year" aria-label="Buy date purchased year">
           <option select></option>
           <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
         </select>
-        <label for="form-BuyerDatePurchase-year">Buy date purchased year*</label>
+        <label for="form-BuyerDatePurchase-year">Buy date purchased year</label>
       </div>
     </div>
     <div class="col">
@@ -227,13 +227,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <select class="form-select" id="form-BuyerDateReceipt-year" name="BuyerDateReceipt-year" aria-label="Buy date received year" required>
+        <select class="form-select" id="form-BuyerDateReceipt-year" name="BuyerDateReceipt-year" aria-label="Buy date received year">
           <option select></option>
           <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
         </select>
-        <label for="form-BuyerDateReceipt-year">Buy date received year*</label>
+        <label for="form-BuyerDateReceipt-year">Buy date received year</label>
       </div>
     </div>
     <div class="col">
