@@ -35,10 +35,10 @@
           <a href="/go/gallery/grid.php" class="nav-link <?php if($active_page == "gallery") {print('nav-active" aria-current="page');} ?>">
             <div class="nav-entry">Gallery</div>
           </a>
-          <a href="/go/cfa/index.php" class="nav-link <?php if($active_page == "cfa") {print('nav-active" aria-current="page');} ?>">
-            <div class="nav-entry">CFA Records</div>
-          </a>
           <?php if($_SESSION['isAdmin'] == true) { ?>
+            <a href="/go/cfa/index.php" class="nav-link <?php if($active_page == "cfa") {print('nav-active" aria-current="page');} ?>">
+              <div class="nav-entry">CFA Records</div>
+            </a>
             <a href="/go/admin/index.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
               <div class="nav-entry">Administration</div>
             </a>
