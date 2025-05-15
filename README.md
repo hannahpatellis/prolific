@@ -6,7 +6,6 @@ The goal behind Prolific was to be able to view all my works in one place and ke
 
 ## Upcoming features
 
-- Inclusion of an ORM for easier DB implementation (In progress)
 - Ability to replace an image without deleting the piece entry and re-adding it
 - Ability to add guest users and select which pieces they can view
 - New table and form handling for Certified Fine Art pieces (CFA) (In progress)
