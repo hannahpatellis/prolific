@@ -25,7 +25,7 @@ require_once(__DIR__ . "/../partials/gen-header.php");
       <p class="col-lg-10 fs-4" id="tagline">The artwork database of Hannah A. Patellis</p>
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
-      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="/actions/login.php">
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="/api/login.php">
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="floatingInput" name="username" placeholder="hannah">
           <label for="floatingInput">Username</label>

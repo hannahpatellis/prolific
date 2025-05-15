@@ -29,17 +29,19 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <div class="row">
   <div class="col">
-    <table class="table table-dark table-striped table-hover align-middle">
+    <table class="table table-dark table-striped table-hover align-middle table-responsive-sm">
       <tbody>
         <tr>
             <th>ID . Run . Count</th>
+            <th>Title</th>
             <th>Actions</th>
           </tr>
         <?php foreach($cfas as $cfa) { ?>
           <tr>
             <td><?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></td>
+            <td>Placeholder</td>
             <td>
-              <a href="/go/cfa/edit.php?id=<?php print($cfa['RecordId']); ?>"><button type="button" class="btn btn-warning">Edit CFA record</button></a>  
+              <a href="/go/cfa/view.php?id=<?php print($cfa['RecordId']); ?>"><button type="button" class="btn btn-warning">Edit CFA record</button></a>  
             </td>
           </tr>
         <?php } ?>

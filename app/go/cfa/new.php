@@ -138,13 +138,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-PrintCompany" name="PrintCompany" placeholder="Print company" required>
         <label for="form-PrintCompany">Print company*</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-PrintMedium" name="PrintMedium" placeholder="Print medium" required>
         <label for="form-PrintMedium">Print medium*</label>
@@ -153,13 +153,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-PrintCost" name="PrintCost" placeholder="Print cost" required>
         <label for="form-PrintCost">Print cost ($x.xx)*</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-PrintNotes" name="PrintNotes" placeholder="Print notes">
         <label for="form-PrintNotes">Print notes</label>
@@ -170,13 +170,13 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <hr />
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-BuyerName" name="BuyerName" placeholder="Buyer name">
         <label for="form-BuyerName">Buyer name</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="text" class="form-control" id="form-BuyerLocation" name="BuyerLocation" placeholder="Buyer location">
         <label for="form-BuyerLocation">Buyer location</label>

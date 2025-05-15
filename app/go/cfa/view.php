@@ -15,14 +15,14 @@ $query = new Art\CfaQuery();
 $cfa = $query->findPK($_GET['id'])->toArray();
 
 $active_page = "cfa";
-$page_title = "Edit CFA record: " . $cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount'];
+$page_title = 'CFA record: ' . $cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount'];
 require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
 <div class="row">
   <div class="col d-flex align-items-center">
-    <h1>Edit CFA record: <?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></h1>
+    <h1>CFA record: <?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></h1>
   </div>
 </div>
 

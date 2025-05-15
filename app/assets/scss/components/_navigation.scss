@@ -15,7 +15,7 @@ div#nav-stage {
   background-color: #36363670;
   backdrop-filter: blur(5px);
   border-radius: 15px;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 20px 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,12 +36,12 @@ div#nav-stage {
 }
 a.nav-link {
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300;
   transition: 0.5s;
 }
 a.nav-link:hover {
-  text-decoration: underline;
   transition: 0.5s;
+  color: rgb(105, 160, 242);
 }
 a.nav-active {
   font-weight: 700;
@@ -87,6 +87,7 @@ img#profile-pic:hover {
     width: 95vw;
     height: auto;
     flex-direction: column;
+    padding: 10px 20px 10px 15px;
   }
   #nav-top {
     width: 100%;

@@ -38,13 +38,13 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
 
 <form action="/api/admin/user/new.php" method="POST" enctype="multipart/form-data">
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
        <input type="text" class="form-control" id="form-Username" name="Username" placeholder="Username" required>
         <label for="form-Username">Username*</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="email" class="form-control" id="form-Email" name="Email" placeholder="Email">
         <label for="form-Email">Email</label>
@@ -53,13 +53,13 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
   </div> 
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
        <input type="text" class="form-control" id="form-FirstName" name="FirstName" placeholder="First name" required>
         <label for="form-FirstName">First name*</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
        <input type="text" class="form-control" id="form-LastName" name="LastName" placeholder="Last name">
         <label for="form-LastName">Last name</label>
@@ -68,13 +68,13 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="password" class="form-control" id="form-Password" name="Password" placeholder="Password" required>
         <label for="form-Password">Password*</label>
       </div>
     </div>
-    <div class="col">
+    <div class="col-sm-12 col-md-6">
       <div class="form-floating">
         <input type="password" class="form-control" id="form-PasswordConfirmation" name="PasswordConfirmation" placeholder="Password (Confirmation)" required>
         <label for="form-PasswordConfirmation">Password (Confirmation)*</label>
