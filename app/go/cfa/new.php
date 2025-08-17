@@ -65,6 +65,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
           <option value="2025" select>2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
+          <option value="2022">2022</option>
         </select>
         <label for="form-PrintDateSent-year">Print date sent year*</label>
       </div>
@@ -105,6 +106,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
           <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
+          <option value="2022">2022</option>
         </select>
         <label for="form-PrintDateReceipt-year">Print date received year</label>
       </div>
@@ -190,8 +192,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
         <select class="form-select" id="form-BuyerDatePurchase-year" name="BuyerDatePurchase-year" aria-label="Buy date purchased year">
           <option select></option>
           <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
         </select>
         <label for="form-BuyerDatePurchase-year">Buy date purchased year</label>
       </div>
@@ -230,8 +230,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
         <select class="form-select" id="form-BuyerDateReceipt-year" name="BuyerDateReceipt-year" aria-label="Buy date received year">
           <option select></option>
           <option value="2025">2025</option>
-          <option value="2024">2024</option>
-          <option value="2023">2023</option>
         </select>
         <label for="form-BuyerDateReceipt-year">Buy date received year</label>
       </div>
