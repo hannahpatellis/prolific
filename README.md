@@ -13,7 +13,7 @@ The goal behind Prolific was to be able to view all my works in one place and ke
 
 ## Databases
 
-- Prolific currently is designed to use a single MySQL database with three tables:
+- Prolific currently is designed to use a single MySQL database with four tables:
   - `pieces` where each row is an individual work of art
   - `registry` where each row is a "registry entry" for upcoming features like the guest gallery
   - `users` where each row is a username/password for logging into PROlific
@@ -35,7 +35,7 @@ Schemas for these tables are located in the `schemas` directory.
 
 ## env.json
 
-A `env.json` file is expected in the `public` directory. The `env.json` file follows this template:
+A `env.json` file is expected in the `app` directory. The `env.json` file follows this template:
 
 ```
 {
