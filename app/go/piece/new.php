@@ -257,6 +257,35 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
   <div class="row">
     <div class="col">
+      <div class="form-floating">
+        <p class="form-text">AI training data: Form description</p>
+        <textarea id="form-ai-training-form" name="ai-training-form"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-floating">
+        <p class="form-text">AI training data: Colored form description</p>
+        <textarea id="form-ai-training-colored" name="ai-training-colored"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-floating">
+        <p class="form-text">AI training data: Final piece description</p>
+        <textarea id="form-ai-training-final" name="ai-training-final"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col">
       <div class="input-group">
         <input type="file" class="form-control" id="form-file" name="img_upload" required>
       </div>
@@ -299,6 +328,21 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   var simplemdeDescription = new SimpleMDE({
     element: document.getElementById("form-description"),
     toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeAITrainingForm = new SimpleMDE({
+    element: document.getElementById("form-ai-training-form"),
+    toolbar: [],
+    spellChecker: true
+  });
+  var simplemdeAITrainingColored = new SimpleMDE({
+    element: document.getElementById("form-ai-training-colored"),
+    toolbar: [],
+    spellChecker: true
+  });
+  var simplemdeAITrainingFinal = new SimpleMDE({
+    element: document.getElementById("form-ai-training-final"),
+    toolbar: [],
     spellChecker: true
   });
 </script>

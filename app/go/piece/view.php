@@ -101,19 +101,19 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <?php if($piece['AITrainingForm']) { ?>
         <div href="#" class="list-group-item">
           <p>AI training data: Form description</p>
-          <textarea id="ta-AITrainingForm"><?php print($piece['AITrainingForm']); ?></textarea>
+          <textarea id="AITrainingForm"><?php print($piece['AITrainingForm']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['AITrainingColored']) { ?>
         <div href="#" class="list-group-item">
           <p>AI training data: Colored form description</p>
-          <textarea id="ta-AITrainingColored"><?php print($piece['AITrainingColored']); ?></textarea>
+          <textarea id="AITrainingColored"><?php print($piece['AITrainingColored']); ?></textarea>
         </div>
       <?php } ?>
       <?php if($piece['AITrainingFinal']) { ?>
         <div href="#" class="list-group-item">
           <p>AI training data: Final piece description</p>
-          <textarea id="ta-AITrainingFinal"><?php print($piece['AITrainingFinal']); ?></textarea>
+          <textarea id="AITrainingFinal"><?php print($piece['AITrainingFinal']); ?></textarea>
         </div>
       <?php } ?>
     </div>
@@ -128,32 +128,35 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     element: document.getElementById("Notes"),
     toolbar: false
   });
-  simplemdeNotes.togglePreview();
+
   var simplemdeStory = new SimpleMDE({
     element: document.getElementById("Story"),
     toolbar: false
   });
-  simplemdeStory.togglePreview();
+
   var simplemdeDescription = new SimpleMDE({
     element: document.getElementById("Description"),
     toolbar: false
   });
-  simplemdeDescription.togglePreview();
+  
   var simplemdeAITrainingForm = new SimpleMDE({
-    element: document.getElementById("ta-AITrainingForm"),
+    element: document.getElementById("AITrainingForm"),
     toolbar: false
   });
-  simplemdeAITrainingForm.togglePreview();
+
   var simplemdeAITrainingColored = new SimpleMDE({
-    element: document.getElementById("ta-AITrainingColored"),
+    element: document.getElementById("AITrainingColored"),
     toolbar: false
   });
-  simplemdeAITrainingColored.togglePreview();
+
   var simplemdeAITrainingFinal = new SimpleMDE({
-    element: document.getElementById("ta-AITrainingFinal"),
+    element: document.getElementById("AITrainingFinal"),
     toolbar: false
   });
-  simplemdeAITrainingFinal.togglePreview();
+
+
+
+
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

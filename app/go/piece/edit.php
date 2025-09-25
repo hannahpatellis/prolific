@@ -325,17 +325,17 @@ require_once(__DIR__ . "/../../resources/env.php");
   });
   var simplemdeAITrainingForm = new SimpleMDE({
     element: document.getElementById("form-ai-training-form"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    toolbar: [],
     spellChecker: true
   });
   var simplemdeAITrainingColored = new SimpleMDE({
     element: document.getElementById("form-ai-training-colored"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    toolbar: [],
     spellChecker: true
   });
   var simplemdeAITrainingFinal = new SimpleMDE({
     element: document.getElementById("form-ai-training-final"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    toolbar: [],
     spellChecker: true
   });
 </script>
