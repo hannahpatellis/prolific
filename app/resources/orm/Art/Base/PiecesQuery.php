@@ -32,6 +32,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPiecesQuery orderByDescription($order = Criteria::ASC) Order by the description column
  * @method     ChildPiecesQuery orderByStory($order = Criteria::ASC) Order by the story column
  * @method     ChildPiecesQuery orderByNotes($order = Criteria::ASC) Order by the notes column
+ * @method     ChildPiecesQuery orderByAITrainingForm($order = Criteria::ASC) Order by the ai_training_form column
+ * @method     ChildPiecesQuery orderByAITrainingColored($order = Criteria::ASC) Order by the ai_training_colored column
+ * @method     ChildPiecesQuery orderByAITrainingFinal($order = Criteria::ASC) Order by the ai_training_final column
  * @method     ChildPiecesQuery orderByLocation($order = Criteria::ASC) Order by the location column
  * @method     ChildPiecesQuery orderByThumbnail($order = Criteria::ASC) Order by the thumbnail column
  * @method     ChildPiecesQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -52,6 +55,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPiecesQuery groupByDescription() Group by the description column
  * @method     ChildPiecesQuery groupByStory() Group by the story column
  * @method     ChildPiecesQuery groupByNotes() Group by the notes column
+ * @method     ChildPiecesQuery groupByAITrainingForm() Group by the ai_training_form column
+ * @method     ChildPiecesQuery groupByAITrainingColored() Group by the ai_training_colored column
+ * @method     ChildPiecesQuery groupByAITrainingFinal() Group by the ai_training_final column
  * @method     ChildPiecesQuery groupByLocation() Group by the location column
  * @method     ChildPiecesQuery groupByThumbnail() Group by the thumbnail column
  * @method     ChildPiecesQuery groupByCreatedAt() Group by the created_at column
@@ -83,6 +89,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPieces|null findOneByDescription(string $description) Return the first ChildPieces filtered by the description column
  * @method     ChildPieces|null findOneByStory(string $story) Return the first ChildPieces filtered by the story column
  * @method     ChildPieces|null findOneByNotes(string $notes) Return the first ChildPieces filtered by the notes column
+ * @method     ChildPieces|null findOneByAITrainingForm(string $ai_training_form) Return the first ChildPieces filtered by the ai_training_form column
+ * @method     ChildPieces|null findOneByAITrainingColored(string $ai_training_colored) Return the first ChildPieces filtered by the ai_training_colored column
+ * @method     ChildPieces|null findOneByAITrainingFinal(string $ai_training_final) Return the first ChildPieces filtered by the ai_training_final column
  * @method     ChildPieces|null findOneByLocation(string $location) Return the first ChildPieces filtered by the location column
  * @method     ChildPieces|null findOneByThumbnail(string $thumbnail) Return the first ChildPieces filtered by the thumbnail column
  * @method     ChildPieces|null findOneByCreatedAt(string $created_at) Return the first ChildPieces filtered by the created_at column
@@ -106,6 +115,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPieces requireOneByDescription(string $description) Return the first ChildPieces filtered by the description column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByStory(string $story) Return the first ChildPieces filtered by the story column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByNotes(string $notes) Return the first ChildPieces filtered by the notes column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPieces requireOneByAITrainingForm(string $ai_training_form) Return the first ChildPieces filtered by the ai_training_form column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPieces requireOneByAITrainingColored(string $ai_training_colored) Return the first ChildPieces filtered by the ai_training_colored column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPieces requireOneByAITrainingFinal(string $ai_training_final) Return the first ChildPieces filtered by the ai_training_final column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByLocation(string $location) Return the first ChildPieces filtered by the location column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByThumbnail(string $thumbnail) Return the first ChildPieces filtered by the thumbnail column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByCreatedAt(string $created_at) Return the first ChildPieces filtered by the created_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -144,6 +156,12 @@ use Propel\Runtime\Exception\PropelException;
  * @psalm-method Collection&\Traversable<ChildPieces> findByStory(string|array<string> $story) Return ChildPieces objects filtered by the story column
  * @method     ChildPieces[]|Collection findByNotes(string|array<string> $notes) Return ChildPieces objects filtered by the notes column
  * @psalm-method Collection&\Traversable<ChildPieces> findByNotes(string|array<string> $notes) Return ChildPieces objects filtered by the notes column
+ * @method     ChildPieces[]|Collection findByAITrainingForm(string|array<string> $ai_training_form) Return ChildPieces objects filtered by the ai_training_form column
+ * @psalm-method Collection&\Traversable<ChildPieces> findByAITrainingForm(string|array<string> $ai_training_form) Return ChildPieces objects filtered by the ai_training_form column
+ * @method     ChildPieces[]|Collection findByAITrainingColored(string|array<string> $ai_training_colored) Return ChildPieces objects filtered by the ai_training_colored column
+ * @psalm-method Collection&\Traversable<ChildPieces> findByAITrainingColored(string|array<string> $ai_training_colored) Return ChildPieces objects filtered by the ai_training_colored column
+ * @method     ChildPieces[]|Collection findByAITrainingFinal(string|array<string> $ai_training_final) Return ChildPieces objects filtered by the ai_training_final column
+ * @psalm-method Collection&\Traversable<ChildPieces> findByAITrainingFinal(string|array<string> $ai_training_final) Return ChildPieces objects filtered by the ai_training_final column
  * @method     ChildPieces[]|Collection findByLocation(string|array<string> $location) Return ChildPieces objects filtered by the location column
  * @psalm-method Collection&\Traversable<ChildPieces> findByLocation(string|array<string> $location) Return ChildPieces objects filtered by the location column
  * @method     ChildPieces[]|Collection findByThumbnail(string|array<string> $thumbnail) Return ChildPieces objects filtered by the thumbnail column
@@ -251,7 +269,7 @@ abstract class PiecesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, title, start_date, end_date, collection, subcollection, size_height, size_width, size_unit, temperature, background, colors, description, story, notes, location, thumbnail, created_at, updated_at FROM pieces WHERE id = :p0';
+        $sql = 'SELECT id, title, start_date, end_date, collection, subcollection, size_height, size_width, size_unit, temperature, background, colors, description, story, notes, ai_training_form, ai_training_colored, ai_training_final, location, thumbnail, created_at, updated_at FROM pieces WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -776,6 +794,90 @@ abstract class PiecesQuery extends ModelCriteria
         }
 
         $this->addUsingAlias(PiecesTableMap::COL_NOTES, $notes, $comparison);
+
+        return $this;
+    }
+
+    /**
+     * Filter the query on the ai_training_form column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAITrainingForm('fooValue');   // WHERE ai_training_form = 'fooValue'
+     * $query->filterByAITrainingForm('%fooValue%', Criteria::LIKE); // WHERE ai_training_form LIKE '%fooValue%'
+     * $query->filterByAITrainingForm(['foo', 'bar']); // WHERE ai_training_form IN ('foo', 'bar')
+     * </code>
+     *
+     * @param string|string[] $aITrainingForm The value to use as filter.
+     * @param string|null $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this The current query, for fluid interface
+     */
+    public function filterByAITrainingForm($aITrainingForm = null, ?string $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($aITrainingForm)) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        $this->addUsingAlias(PiecesTableMap::COL_AI_TRAINING_FORM, $aITrainingForm, $comparison);
+
+        return $this;
+    }
+
+    /**
+     * Filter the query on the ai_training_colored column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAITrainingColored('fooValue');   // WHERE ai_training_colored = 'fooValue'
+     * $query->filterByAITrainingColored('%fooValue%', Criteria::LIKE); // WHERE ai_training_colored LIKE '%fooValue%'
+     * $query->filterByAITrainingColored(['foo', 'bar']); // WHERE ai_training_colored IN ('foo', 'bar')
+     * </code>
+     *
+     * @param string|string[] $aITrainingColored The value to use as filter.
+     * @param string|null $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this The current query, for fluid interface
+     */
+    public function filterByAITrainingColored($aITrainingColored = null, ?string $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($aITrainingColored)) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        $this->addUsingAlias(PiecesTableMap::COL_AI_TRAINING_COLORED, $aITrainingColored, $comparison);
+
+        return $this;
+    }
+
+    /**
+     * Filter the query on the ai_training_final column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByAITrainingFinal('fooValue');   // WHERE ai_training_final = 'fooValue'
+     * $query->filterByAITrainingFinal('%fooValue%', Criteria::LIKE); // WHERE ai_training_final LIKE '%fooValue%'
+     * $query->filterByAITrainingFinal(['foo', 'bar']); // WHERE ai_training_final IN ('foo', 'bar')
+     * </code>
+     *
+     * @param string|string[] $aITrainingFinal The value to use as filter.
+     * @param string|null $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this The current query, for fluid interface
+     */
+    public function filterByAITrainingFinal($aITrainingFinal = null, ?string $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($aITrainingFinal)) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        $this->addUsingAlias(PiecesTableMap::COL_AI_TRAINING_FINAL, $aITrainingFinal, $comparison);
 
         return $this;
     }

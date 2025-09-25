@@ -37,7 +37,10 @@ $map = array (
   array("colors","colors",false,false),
   array("description","description",false,false),
   array("story","story",false,false),
-  array("notes","notes",false,false)
+  array("notes","notes",false,false),
+  array("ai-training-form","ai_training_form",false,false),
+  array("ai-training-colored","ai_training_colored",false,false),
+  array("ai-training-final","ai_training_final",false,false),
 );
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -45,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $prepared_dates = prepare_dates($_POST);
   $stmt_string = prepare_query(strip_sql_array($map), $piece_id);
   $stmt = $mysqli->prepare($stmt_string);
-  $stmt->bind_param("ssssssssssssssss", $_POST["title"], $prepared_dates[0], $prepared_dates[1], $_POST["collection"], $_POST["subcollection"], $_POST["size-height"], $_POST["size-width"], $_POST["size-unit"], $_POST["location"], $_POST["temperature"], $_POST["background"], $_POST["colors"], $_POST["description"], $_POST["story"], $_POST["notes"], $_POST["id"]);
+  $stmt->bind_param("sssssssssssssssssss", $_POST["title"], $prepared_dates[0], $prepared_dates[1], $_POST["collection"], $_POST["subcollection"], $_POST["size-height"], $_POST["size-width"], $_POST["size-unit"], $_POST["location"], $_POST["temperature"], $_POST["background"], $_POST["colors"], $_POST["description"], $_POST["story"], $_POST["notes"], $_POST["ai-training-form"], $_POST["ai-training-colored"], $_POST["ai-training-final"], $_POST["id"]);
   $stmt->execute();
   array_push($errors, $mysqli->error_list);
   $stmt->close();

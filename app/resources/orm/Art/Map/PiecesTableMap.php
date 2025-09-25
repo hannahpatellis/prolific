@@ -63,7 +63,7 @@ class PiecesTableMap extends TableMap
     /**
      * The total number of columns
      */
-    public const NUM_COLUMNS = 19;
+    public const NUM_COLUMNS = 22;
 
     /**
      * The number of lazy-loaded columns
@@ -73,7 +73,7 @@ class PiecesTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    public const NUM_HYDRATE_COLUMNS = 19;
+    public const NUM_HYDRATE_COLUMNS = 22;
 
     /**
      * the column name for the id field
@@ -151,6 +151,21 @@ class PiecesTableMap extends TableMap
     public const COL_NOTES = 'pieces.notes';
 
     /**
+     * the column name for the ai_training_form field
+     */
+    public const COL_AI_TRAINING_FORM = 'pieces.ai_training_form';
+
+    /**
+     * the column name for the ai_training_colored field
+     */
+    public const COL_AI_TRAINING_COLORED = 'pieces.ai_training_colored';
+
+    /**
+     * the column name for the ai_training_final field
+     */
+    public const COL_AI_TRAINING_FINAL = 'pieces.ai_training_final';
+
+    /**
      * the column name for the location field
      */
     public const COL_LOCATION = 'pieces.location';
@@ -184,11 +199,11 @@ class PiecesTableMap extends TableMap
      * @var array<string, mixed>
      */
     protected static $fieldNames = [
-        self::TYPE_PHPNAME       => ['Id', 'Title', 'StartDate', 'EndDate', 'Collection', 'Subcollection', 'SizeHeight', 'SizeWidth', 'SizeUnit', 'Temperature', 'Background', 'Colors', 'Description', 'Story', 'Notes', 'Location', 'Thumbnail', 'CreatedAt', 'UpdatedAt', ],
-        self::TYPE_CAMELNAME     => ['id', 'title', 'startDate', 'endDate', 'collection', 'subcollection', 'sizeHeight', 'sizeWidth', 'sizeUnit', 'temperature', 'background', 'colors', 'description', 'story', 'notes', 'location', 'thumbnail', 'createdAt', 'updatedAt', ],
-        self::TYPE_COLNAME       => [PiecesTableMap::COL_ID, PiecesTableMap::COL_TITLE, PiecesTableMap::COL_START_DATE, PiecesTableMap::COL_END_DATE, PiecesTableMap::COL_COLLECTION, PiecesTableMap::COL_SUBCOLLECTION, PiecesTableMap::COL_SIZE_HEIGHT, PiecesTableMap::COL_SIZE_WIDTH, PiecesTableMap::COL_SIZE_UNIT, PiecesTableMap::COL_TEMPERATURE, PiecesTableMap::COL_BACKGROUND, PiecesTableMap::COL_COLORS, PiecesTableMap::COL_DESCRIPTION, PiecesTableMap::COL_STORY, PiecesTableMap::COL_NOTES, PiecesTableMap::COL_LOCATION, PiecesTableMap::COL_THUMBNAIL, PiecesTableMap::COL_CREATED_AT, PiecesTableMap::COL_UPDATED_AT, ],
-        self::TYPE_FIELDNAME     => ['id', 'title', 'start_date', 'end_date', 'collection', 'subcollection', 'size_height', 'size_width', 'size_unit', 'temperature', 'background', 'colors', 'description', 'story', 'notes', 'location', 'thumbnail', 'created_at', 'updated_at', ],
-        self::TYPE_NUM           => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ]
+        self::TYPE_PHPNAME       => ['Id', 'Title', 'StartDate', 'EndDate', 'Collection', 'Subcollection', 'SizeHeight', 'SizeWidth', 'SizeUnit', 'Temperature', 'Background', 'Colors', 'Description', 'Story', 'Notes', 'AITrainingForm', 'AITrainingColored', 'AITrainingFinal', 'Location', 'Thumbnail', 'CreatedAt', 'UpdatedAt', ],
+        self::TYPE_CAMELNAME     => ['id', 'title', 'startDate', 'endDate', 'collection', 'subcollection', 'sizeHeight', 'sizeWidth', 'sizeUnit', 'temperature', 'background', 'colors', 'description', 'story', 'notes', 'aITrainingForm', 'aITrainingColored', 'aITrainingFinal', 'location', 'thumbnail', 'createdAt', 'updatedAt', ],
+        self::TYPE_COLNAME       => [PiecesTableMap::COL_ID, PiecesTableMap::COL_TITLE, PiecesTableMap::COL_START_DATE, PiecesTableMap::COL_END_DATE, PiecesTableMap::COL_COLLECTION, PiecesTableMap::COL_SUBCOLLECTION, PiecesTableMap::COL_SIZE_HEIGHT, PiecesTableMap::COL_SIZE_WIDTH, PiecesTableMap::COL_SIZE_UNIT, PiecesTableMap::COL_TEMPERATURE, PiecesTableMap::COL_BACKGROUND, PiecesTableMap::COL_COLORS, PiecesTableMap::COL_DESCRIPTION, PiecesTableMap::COL_STORY, PiecesTableMap::COL_NOTES, PiecesTableMap::COL_AI_TRAINING_FORM, PiecesTableMap::COL_AI_TRAINING_COLORED, PiecesTableMap::COL_AI_TRAINING_FINAL, PiecesTableMap::COL_LOCATION, PiecesTableMap::COL_THUMBNAIL, PiecesTableMap::COL_CREATED_AT, PiecesTableMap::COL_UPDATED_AT, ],
+        self::TYPE_FIELDNAME     => ['id', 'title', 'start_date', 'end_date', 'collection', 'subcollection', 'size_height', 'size_width', 'size_unit', 'temperature', 'background', 'colors', 'description', 'story', 'notes', 'ai_training_form', 'ai_training_colored', 'ai_training_final', 'location', 'thumbnail', 'created_at', 'updated_at', ],
+        self::TYPE_NUM           => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, ]
     ];
 
     /**
@@ -200,11 +215,11 @@ class PiecesTableMap extends TableMap
      * @var array<string, mixed>
      */
     protected static $fieldKeys = [
-        self::TYPE_PHPNAME       => ['Id' => 0, 'Title' => 1, 'StartDate' => 2, 'EndDate' => 3, 'Collection' => 4, 'Subcollection' => 5, 'SizeHeight' => 6, 'SizeWidth' => 7, 'SizeUnit' => 8, 'Temperature' => 9, 'Background' => 10, 'Colors' => 11, 'Description' => 12, 'Story' => 13, 'Notes' => 14, 'Location' => 15, 'Thumbnail' => 16, 'CreatedAt' => 17, 'UpdatedAt' => 18, ],
-        self::TYPE_CAMELNAME     => ['id' => 0, 'title' => 1, 'startDate' => 2, 'endDate' => 3, 'collection' => 4, 'subcollection' => 5, 'sizeHeight' => 6, 'sizeWidth' => 7, 'sizeUnit' => 8, 'temperature' => 9, 'background' => 10, 'colors' => 11, 'description' => 12, 'story' => 13, 'notes' => 14, 'location' => 15, 'thumbnail' => 16, 'createdAt' => 17, 'updatedAt' => 18, ],
-        self::TYPE_COLNAME       => [PiecesTableMap::COL_ID => 0, PiecesTableMap::COL_TITLE => 1, PiecesTableMap::COL_START_DATE => 2, PiecesTableMap::COL_END_DATE => 3, PiecesTableMap::COL_COLLECTION => 4, PiecesTableMap::COL_SUBCOLLECTION => 5, PiecesTableMap::COL_SIZE_HEIGHT => 6, PiecesTableMap::COL_SIZE_WIDTH => 7, PiecesTableMap::COL_SIZE_UNIT => 8, PiecesTableMap::COL_TEMPERATURE => 9, PiecesTableMap::COL_BACKGROUND => 10, PiecesTableMap::COL_COLORS => 11, PiecesTableMap::COL_DESCRIPTION => 12, PiecesTableMap::COL_STORY => 13, PiecesTableMap::COL_NOTES => 14, PiecesTableMap::COL_LOCATION => 15, PiecesTableMap::COL_THUMBNAIL => 16, PiecesTableMap::COL_CREATED_AT => 17, PiecesTableMap::COL_UPDATED_AT => 18, ],
-        self::TYPE_FIELDNAME     => ['id' => 0, 'title' => 1, 'start_date' => 2, 'end_date' => 3, 'collection' => 4, 'subcollection' => 5, 'size_height' => 6, 'size_width' => 7, 'size_unit' => 8, 'temperature' => 9, 'background' => 10, 'colors' => 11, 'description' => 12, 'story' => 13, 'notes' => 14, 'location' => 15, 'thumbnail' => 16, 'created_at' => 17, 'updated_at' => 18, ],
-        self::TYPE_NUM           => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, ]
+        self::TYPE_PHPNAME       => ['Id' => 0, 'Title' => 1, 'StartDate' => 2, 'EndDate' => 3, 'Collection' => 4, 'Subcollection' => 5, 'SizeHeight' => 6, 'SizeWidth' => 7, 'SizeUnit' => 8, 'Temperature' => 9, 'Background' => 10, 'Colors' => 11, 'Description' => 12, 'Story' => 13, 'Notes' => 14, 'AITrainingForm' => 15, 'AITrainingColored' => 16, 'AITrainingFinal' => 17, 'Location' => 18, 'Thumbnail' => 19, 'CreatedAt' => 20, 'UpdatedAt' => 21, ],
+        self::TYPE_CAMELNAME     => ['id' => 0, 'title' => 1, 'startDate' => 2, 'endDate' => 3, 'collection' => 4, 'subcollection' => 5, 'sizeHeight' => 6, 'sizeWidth' => 7, 'sizeUnit' => 8, 'temperature' => 9, 'background' => 10, 'colors' => 11, 'description' => 12, 'story' => 13, 'notes' => 14, 'aITrainingForm' => 15, 'aITrainingColored' => 16, 'aITrainingFinal' => 17, 'location' => 18, 'thumbnail' => 19, 'createdAt' => 20, 'updatedAt' => 21, ],
+        self::TYPE_COLNAME       => [PiecesTableMap::COL_ID => 0, PiecesTableMap::COL_TITLE => 1, PiecesTableMap::COL_START_DATE => 2, PiecesTableMap::COL_END_DATE => 3, PiecesTableMap::COL_COLLECTION => 4, PiecesTableMap::COL_SUBCOLLECTION => 5, PiecesTableMap::COL_SIZE_HEIGHT => 6, PiecesTableMap::COL_SIZE_WIDTH => 7, PiecesTableMap::COL_SIZE_UNIT => 8, PiecesTableMap::COL_TEMPERATURE => 9, PiecesTableMap::COL_BACKGROUND => 10, PiecesTableMap::COL_COLORS => 11, PiecesTableMap::COL_DESCRIPTION => 12, PiecesTableMap::COL_STORY => 13, PiecesTableMap::COL_NOTES => 14, PiecesTableMap::COL_AI_TRAINING_FORM => 15, PiecesTableMap::COL_AI_TRAINING_COLORED => 16, PiecesTableMap::COL_AI_TRAINING_FINAL => 17, PiecesTableMap::COL_LOCATION => 18, PiecesTableMap::COL_THUMBNAIL => 19, PiecesTableMap::COL_CREATED_AT => 20, PiecesTableMap::COL_UPDATED_AT => 21, ],
+        self::TYPE_FIELDNAME     => ['id' => 0, 'title' => 1, 'start_date' => 2, 'end_date' => 3, 'collection' => 4, 'subcollection' => 5, 'size_height' => 6, 'size_width' => 7, 'size_unit' => 8, 'temperature' => 9, 'background' => 10, 'colors' => 11, 'description' => 12, 'story' => 13, 'notes' => 14, 'ai_training_form' => 15, 'ai_training_colored' => 16, 'ai_training_final' => 17, 'location' => 18, 'thumbnail' => 19, 'created_at' => 20, 'updated_at' => 21, ],
+        self::TYPE_NUM           => [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, ]
     ];
 
     /**
@@ -313,6 +328,30 @@ class PiecesTableMap extends TableMap
         'pieces.notes' => 'NOTES',
         'PiecesTableMap::COL_NOTES' => 'NOTES',
         'COL_NOTES' => 'NOTES',
+        'AITrainingForm' => 'AI_TRAINING_FORM',
+        'Pieces.AITrainingForm' => 'AI_TRAINING_FORM',
+        'aITrainingForm' => 'AI_TRAINING_FORM',
+        'pieces.aITrainingForm' => 'AI_TRAINING_FORM',
+        'PiecesTableMap::COL_AI_TRAINING_FORM' => 'AI_TRAINING_FORM',
+        'COL_AI_TRAINING_FORM' => 'AI_TRAINING_FORM',
+        'ai_training_form' => 'AI_TRAINING_FORM',
+        'pieces.ai_training_form' => 'AI_TRAINING_FORM',
+        'AITrainingColored' => 'AI_TRAINING_COLORED',
+        'Pieces.AITrainingColored' => 'AI_TRAINING_COLORED',
+        'aITrainingColored' => 'AI_TRAINING_COLORED',
+        'pieces.aITrainingColored' => 'AI_TRAINING_COLORED',
+        'PiecesTableMap::COL_AI_TRAINING_COLORED' => 'AI_TRAINING_COLORED',
+        'COL_AI_TRAINING_COLORED' => 'AI_TRAINING_COLORED',
+        'ai_training_colored' => 'AI_TRAINING_COLORED',
+        'pieces.ai_training_colored' => 'AI_TRAINING_COLORED',
+        'AITrainingFinal' => 'AI_TRAINING_FINAL',
+        'Pieces.AITrainingFinal' => 'AI_TRAINING_FINAL',
+        'aITrainingFinal' => 'AI_TRAINING_FINAL',
+        'pieces.aITrainingFinal' => 'AI_TRAINING_FINAL',
+        'PiecesTableMap::COL_AI_TRAINING_FINAL' => 'AI_TRAINING_FINAL',
+        'COL_AI_TRAINING_FINAL' => 'AI_TRAINING_FINAL',
+        'ai_training_final' => 'AI_TRAINING_FINAL',
+        'pieces.ai_training_final' => 'AI_TRAINING_FINAL',
         'Location' => 'LOCATION',
         'Pieces.Location' => 'LOCATION',
         'location' => 'LOCATION',
@@ -375,6 +414,9 @@ class PiecesTableMap extends TableMap
         $this->addColumn('description', 'Description', 'LONGVARCHAR', true, null, null);
         $this->addColumn('story', 'Story', 'LONGVARCHAR', true, null, null);
         $this->addColumn('notes', 'Notes', 'LONGVARCHAR', true, null, null);
+        $this->addColumn('ai_training_form', 'AITrainingForm', 'LONGVARCHAR', true, null, null);
+        $this->addColumn('ai_training_colored', 'AITrainingColored', 'LONGVARCHAR', true, null, null);
+        $this->addColumn('ai_training_final', 'AITrainingFinal', 'LONGVARCHAR', true, null, null);
         $this->addColumn('location', 'Location', 'VARCHAR', true, 300, null);
         $this->addColumn('thumbnail', 'Thumbnail', 'VARCHAR', true, 300, null);
         $this->addColumn('created_at', 'CreatedAt', 'TIMESTAMP', true, null, 'CURRENT_TIMESTAMP');
@@ -547,6 +589,9 @@ class PiecesTableMap extends TableMap
             $criteria->addSelectColumn(PiecesTableMap::COL_DESCRIPTION);
             $criteria->addSelectColumn(PiecesTableMap::COL_STORY);
             $criteria->addSelectColumn(PiecesTableMap::COL_NOTES);
+            $criteria->addSelectColumn(PiecesTableMap::COL_AI_TRAINING_FORM);
+            $criteria->addSelectColumn(PiecesTableMap::COL_AI_TRAINING_COLORED);
+            $criteria->addSelectColumn(PiecesTableMap::COL_AI_TRAINING_FINAL);
             $criteria->addSelectColumn(PiecesTableMap::COL_LOCATION);
             $criteria->addSelectColumn(PiecesTableMap::COL_THUMBNAIL);
             $criteria->addSelectColumn(PiecesTableMap::COL_CREATED_AT);
@@ -567,6 +612,9 @@ class PiecesTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.description');
             $criteria->addSelectColumn($alias . '.story');
             $criteria->addSelectColumn($alias . '.notes');
+            $criteria->addSelectColumn($alias . '.ai_training_form');
+            $criteria->addSelectColumn($alias . '.ai_training_colored');
+            $criteria->addSelectColumn($alias . '.ai_training_final');
             $criteria->addSelectColumn($alias . '.location');
             $criteria->addSelectColumn($alias . '.thumbnail');
             $criteria->addSelectColumn($alias . '.created_at');
@@ -604,6 +652,9 @@ class PiecesTableMap extends TableMap
             $criteria->removeSelectColumn(PiecesTableMap::COL_DESCRIPTION);
             $criteria->removeSelectColumn(PiecesTableMap::COL_STORY);
             $criteria->removeSelectColumn(PiecesTableMap::COL_NOTES);
+            $criteria->removeSelectColumn(PiecesTableMap::COL_AI_TRAINING_FORM);
+            $criteria->removeSelectColumn(PiecesTableMap::COL_AI_TRAINING_COLORED);
+            $criteria->removeSelectColumn(PiecesTableMap::COL_AI_TRAINING_FINAL);
             $criteria->removeSelectColumn(PiecesTableMap::COL_LOCATION);
             $criteria->removeSelectColumn(PiecesTableMap::COL_THUMBNAIL);
             $criteria->removeSelectColumn(PiecesTableMap::COL_CREATED_AT);
@@ -624,6 +675,9 @@ class PiecesTableMap extends TableMap
             $criteria->removeSelectColumn($alias . '.description');
             $criteria->removeSelectColumn($alias . '.story');
             $criteria->removeSelectColumn($alias . '.notes');
+            $criteria->removeSelectColumn($alias . '.ai_training_form');
+            $criteria->removeSelectColumn($alias . '.ai_training_colored');
+            $criteria->removeSelectColumn($alias . '.ai_training_final');
             $criteria->removeSelectColumn($alias . '.location');
             $criteria->removeSelectColumn($alias . '.thumbnail');
             $criteria->removeSelectColumn($alias . '.created_at');

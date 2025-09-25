@@ -38,6 +38,9 @@
     <column name="description" phpName="Description" type="LONGVARCHAR" required="true"/>
     <column name="story" phpName="Story" type="LONGVARCHAR" required="true"/>
     <column name="notes" phpName="Notes" type="LONGVARCHAR" required="true"/>
+    <column name="ai_training_form" phpName="AITrainingForm" type="LONGVARCHAR" required="true"/>
+    <column name="ai_training_colored" phpName="AITrainingColored" type="LONGVARCHAR" required="true"/>
+    <column name="ai_training_final" phpName="AITrainingFinal" type="LONGVARCHAR" required="true"/>
     <column name="location" phpName="Location" type="VARCHAR" size="300" required="true"/>
     <column name="thumbnail" phpName="Thumbnail" type="VARCHAR" size="300" required="true"/>
     <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>

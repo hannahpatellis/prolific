@@ -274,6 +274,29 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
   </div>
 
+  <hr />
+
+  <div class="row">
+    <div class="col">
+      <p class="form-text">AI training data: Form description</p>
+      <textarea id="form-ai-training-form" name="ai-training-form"><?php print($piece['AITrainingForm']); ?></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p class="form-text">AI training data: Colored form description</p>
+      <textarea id="form-ai-training-colored" name="ai-training-colored"><?php print($piece['AITrainingColored']); ?></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <p class="form-text">AI training data: Final piece description</p>
+      <textarea id="form-ai-training-final" name="ai-training-final"><?php print($piece['AITrainingFinal']); ?></textarea>
+    </div>
+  </div>
+
   <input type="text" id="form-id" name="id" required value="<?php print($piece['Id']); ?>">
 
   <div class="row mb-4">
@@ -297,6 +320,21 @@ require_once(__DIR__ . "/../../resources/env.php");
   });
   var simplemdeDescription = new SimpleMDE({
     element: document.getElementById("form-description"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeAITrainingForm = new SimpleMDE({
+    element: document.getElementById("form-ai-training-form"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeAITrainingColored = new SimpleMDE({
+    element: document.getElementById("form-ai-training-colored"),
+    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+    spellChecker: true
+  });
+  var simplemdeAITrainingFinal = new SimpleMDE({
+    element: document.getElementById("form-ai-training-final"),
     toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
     spellChecker: true
   });
