@@ -39,6 +39,9 @@
             <a href="/go/cfa/index.php" class="nav-link <?php if($active_page == "cfa") {print('nav-active" aria-current="page');} ?>">
               <div class="nav-entry">CFA Records</div>
             </a>
+            <a href="/go/training/gallery.php" class="nav-link <?php if($active_page == "training") {print('nav-active" aria-current="page');} ?>">
+              <div class="nav-entry">AI Training</div>
+            </a>
             <a href="/go/admin/index.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
               <div class="nav-entry">Administration</div>
             </a>

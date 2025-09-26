@@ -17,6 +17,8 @@ CREATE TABLE "pieces" (
   "ai_training_form" mediumtext NOT NULL,
   "ai_training_colored" mediumtext NOT NULL,
   "ai_training_final" mediumtext NOT NULL,
+  "training_exports" BOOLEAN not null DEFAULT false,
+  "training_descriptions" BOOLEAN not null DEFAULT false,
   "location" varchar(300) NOT NULL,
   "thumbnail" varchar(300) NOT NULL,
   "created_at" timestamp not null default CURRENT_TIMESTAMP,
