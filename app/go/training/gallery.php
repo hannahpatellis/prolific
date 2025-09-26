@@ -41,12 +41,8 @@ const dbTable = db.map((row) => {
   return [
     row.Id,
     row.Thumbnail,
-    row.Title,
-    row.Collection,
-    row.Subcollection,
-    row.Description,
-    row.Notes,
-    row.Story
+    row.TrainingExports,
+    row.TrainingDescriptions
   ];
 });
 
@@ -58,35 +54,15 @@ new gridjs.Grid({
     "ID",
     {
       name: 'Thumbnail',
-      formatter: (cell, row) => gridjs.html(`<a href='/go/piece/view.php?id=${row.cells[0].data}'><img src='<?php print($env['img_store_url']); ?>${cell}.jpg' height="80px" width="auto" /></a>`)
-    }, 
-    {
-      name: 'Title',
-      formatter: (cell, row) => gridjs.html(`<a href='/go/piece/view.php?id=${row.cells[0].data}'>${cell}</a>`)
-    },
-    {
-      name: 'Collection',
-      formatter: (cell, row) => {
-        let subcol = row.cells[4].data.length >= 1 ? ` / ${row.cells[4].data}` : "";
-        let format = `${cell}${subcol}`;
-        return gridjs.html(`${format}`);
-      }
+      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'><img src='<?php print($env['img_store_url']); ?>${cell}.jpg' height="80px" width="auto" /></a>`)
     },
     { 
-      name: 'Subcollection',
-      hidden: true
+      name: 'TrainingExports',
+      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'>${cell}</a>`)
     },
     { 
-      name: 'Description',
-      hidden: true
-    },
-    { 
-      name: 'Notes',
-      hidden: true
-    },
-    { 
-      name: 'Story',
-      hidden: true
+      name: 'TrainingDescriptions',
+      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'>${cell}</a>`)
     }
   ],
   search: {

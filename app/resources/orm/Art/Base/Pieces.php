@@ -190,6 +190,22 @@ abstract class Pieces implements ActiveRecordInterface
     protected $ai_training_final;
 
     /**
+     * The value for the training_exports field.
+     *
+     * Note: this column has a database default value of: (expression) false
+     * @var        boolean
+     */
+    protected $training_exports;
+
+    /**
+     * The value for the training_descriptions field.
+     *
+     * Note: this column has a database default value of: (expression) false
+     * @var        boolean
+     */
+    protected $training_descriptions;
+
+    /**
      * The value for the location field.
      *
      * @var        string
@@ -646,6 +662,46 @@ abstract class Pieces implements ActiveRecordInterface
     }
 
     /**
+     * Get the [training_exports] column value.
+     *
+     * @return boolean
+     */
+    public function getTrainingExports()
+    {
+        return $this->training_exports;
+    }
+
+    /**
+     * Get the [training_exports] column value.
+     *
+     * @return boolean
+     */
+    public function isTrainingExports()
+    {
+        return $this->getTrainingExports();
+    }
+
+    /**
+     * Get the [training_descriptions] column value.
+     *
+     * @return boolean
+     */
+    public function getTrainingDescriptions()
+    {
+        return $this->training_descriptions;
+    }
+
+    /**
+     * Get the [training_descriptions] column value.
+     *
+     * @return boolean
+     */
+    public function isTrainingDescriptions()
+    {
+        return $this->getTrainingDescriptions();
+    }
+
+    /**
      * Get the [location] column value.
      *
      * @return string
@@ -1070,6 +1126,62 @@ abstract class Pieces implements ActiveRecordInterface
     }
 
     /**
+     * Sets the value of the [training_exports] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param bool|integer|string $v The new value
+     * @return $this The current object (for fluent API support)
+     */
+    public function setTrainingExports($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->training_exports !== $v) {
+            $this->training_exports = $v;
+            $this->modifiedColumns[PiecesTableMap::COL_TRAINING_EXPORTS] = true;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of the [training_descriptions] column.
+     * Non-boolean arguments are converted using the following rules:
+     *   * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *   * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     * Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     *
+     * @param bool|integer|string $v The new value
+     * @return $this The current object (for fluent API support)
+     */
+    public function setTrainingDescriptions($v)
+    {
+        if ($v !== null) {
+            if (is_string($v)) {
+                $v = in_array(strtolower($v), array('false', 'off', '-', 'no', 'n', '0', '')) ? false : true;
+            } else {
+                $v = (boolean) $v;
+            }
+        }
+
+        if ($this->training_descriptions !== $v) {
+            $this->training_descriptions = $v;
+            $this->modifiedColumns[PiecesTableMap::COL_TRAINING_DESCRIPTIONS] = true;
+        }
+
+        return $this;
+    }
+
+    /**
      * Set the value of [location] column.
      *
      * @param string $v New value
@@ -1239,19 +1351,25 @@ abstract class Pieces implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 17 + $startcol : PiecesTableMap::translateFieldName('AITrainingFinal', TableMap::TYPE_PHPNAME, $indexType)];
             $this->ai_training_final = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 18 + $startcol : PiecesTableMap::translateFieldName('Location', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 18 + $startcol : PiecesTableMap::translateFieldName('TrainingExports', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->training_exports = (null !== $col) ? (boolean) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 19 + $startcol : PiecesTableMap::translateFieldName('TrainingDescriptions', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->training_descriptions = (null !== $col) ? (boolean) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 20 + $startcol : PiecesTableMap::translateFieldName('Location', TableMap::TYPE_PHPNAME, $indexType)];
             $this->location = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 19 + $startcol : PiecesTableMap::translateFieldName('Thumbnail', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 21 + $startcol : PiecesTableMap::translateFieldName('Thumbnail', TableMap::TYPE_PHPNAME, $indexType)];
             $this->thumbnail = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 20 + $startcol : PiecesTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 22 + $startcol : PiecesTableMap::translateFieldName('CreatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
             $this->created_at = (null !== $col) ? PropelDateTime::newInstance($col, null, 'DateTime') : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 21 + $startcol : PiecesTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 23 + $startcol : PiecesTableMap::translateFieldName('UpdatedAt', TableMap::TYPE_PHPNAME, $indexType)];
             if ($col === '0000-00-00 00:00:00') {
                 $col = null;
             }
@@ -1264,7 +1382,7 @@ abstract class Pieces implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 22; // 22 = PiecesTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 24; // 24 = PiecesTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Art\\Pieces'), 0, $e);
@@ -1520,6 +1638,12 @@ abstract class Pieces implements ActiveRecordInterface
         if ($this->isColumnModified(PiecesTableMap::COL_AI_TRAINING_FINAL)) {
             $modifiedColumns[':p' . $index++]  = 'ai_training_final';
         }
+        if ($this->isColumnModified(PiecesTableMap::COL_TRAINING_EXPORTS)) {
+            $modifiedColumns[':p' . $index++]  = 'training_exports';
+        }
+        if ($this->isColumnModified(PiecesTableMap::COL_TRAINING_DESCRIPTIONS)) {
+            $modifiedColumns[':p' . $index++]  = 'training_descriptions';
+        }
         if ($this->isColumnModified(PiecesTableMap::COL_LOCATION)) {
             $modifiedColumns[':p' . $index++]  = 'location';
         }
@@ -1613,6 +1737,14 @@ abstract class Pieces implements ActiveRecordInterface
                         break;
                     case 'ai_training_final':
                         $stmt->bindValue($identifier, $this->ai_training_final, PDO::PARAM_STR);
+
+                        break;
+                    case 'training_exports':
+                        $stmt->bindValue($identifier, (int) $this->training_exports, PDO::PARAM_INT);
+
+                        break;
+                    case 'training_descriptions':
+                        $stmt->bindValue($identifier, (int) $this->training_descriptions, PDO::PARAM_INT);
 
                         break;
                     case 'location':
@@ -1748,15 +1880,21 @@ abstract class Pieces implements ActiveRecordInterface
                 return $this->getAITrainingFinal();
 
             case 18:
-                return $this->getLocation();
+                return $this->getTrainingExports();
 
             case 19:
-                return $this->getThumbnail();
+                return $this->getTrainingDescriptions();
 
             case 20:
-                return $this->getCreatedAt();
+                return $this->getLocation();
 
             case 21:
+                return $this->getThumbnail();
+
+            case 22:
+                return $this->getCreatedAt();
+
+            case 23:
                 return $this->getUpdatedAt();
 
             default:
@@ -1804,17 +1942,19 @@ abstract class Pieces implements ActiveRecordInterface
             $keys[15] => $this->getAITrainingForm(),
             $keys[16] => $this->getAITrainingColored(),
             $keys[17] => $this->getAITrainingFinal(),
-            $keys[18] => $this->getLocation(),
-            $keys[19] => $this->getThumbnail(),
-            $keys[20] => $this->getCreatedAt(),
-            $keys[21] => $this->getUpdatedAt(),
+            $keys[18] => $this->getTrainingExports(),
+            $keys[19] => $this->getTrainingDescriptions(),
+            $keys[20] => $this->getLocation(),
+            $keys[21] => $this->getThumbnail(),
+            $keys[22] => $this->getCreatedAt(),
+            $keys[23] => $this->getUpdatedAt(),
         ];
-        if ($result[$keys[20]] instanceof \DateTimeInterface) {
-            $result[$keys[20]] = $result[$keys[20]]->format('Y-m-d H:i:s.u');
+        if ($result[$keys[22]] instanceof \DateTimeInterface) {
+            $result[$keys[22]] = $result[$keys[22]]->format('Y-m-d H:i:s.u');
         }
 
-        if ($result[$keys[21]] instanceof \DateTimeInterface) {
-            $result[$keys[21]] = $result[$keys[21]]->format('Y-m-d H:i:s.u');
+        if ($result[$keys[23]] instanceof \DateTimeInterface) {
+            $result[$keys[23]] = $result[$keys[23]]->format('Y-m-d H:i:s.u');
         }
 
         $virtualColumns = $this->virtualColumns;
@@ -1912,15 +2052,21 @@ abstract class Pieces implements ActiveRecordInterface
                 $this->setAITrainingFinal($value);
                 break;
             case 18:
-                $this->setLocation($value);
+                $this->setTrainingExports($value);
                 break;
             case 19:
-                $this->setThumbnail($value);
+                $this->setTrainingDescriptions($value);
                 break;
             case 20:
-                $this->setCreatedAt($value);
+                $this->setLocation($value);
                 break;
             case 21:
+                $this->setThumbnail($value);
+                break;
+            case 22:
+                $this->setCreatedAt($value);
+                break;
+            case 23:
                 $this->setUpdatedAt($value);
                 break;
         } // switch()
@@ -2004,16 +2150,22 @@ abstract class Pieces implements ActiveRecordInterface
             $this->setAITrainingFinal($arr[$keys[17]]);
         }
         if (array_key_exists($keys[18], $arr)) {
-            $this->setLocation($arr[$keys[18]]);
+            $this->setTrainingExports($arr[$keys[18]]);
         }
         if (array_key_exists($keys[19], $arr)) {
-            $this->setThumbnail($arr[$keys[19]]);
+            $this->setTrainingDescriptions($arr[$keys[19]]);
         }
         if (array_key_exists($keys[20], $arr)) {
-            $this->setCreatedAt($arr[$keys[20]]);
+            $this->setLocation($arr[$keys[20]]);
         }
         if (array_key_exists($keys[21], $arr)) {
-            $this->setUpdatedAt($arr[$keys[21]]);
+            $this->setThumbnail($arr[$keys[21]]);
+        }
+        if (array_key_exists($keys[22], $arr)) {
+            $this->setCreatedAt($arr[$keys[22]]);
+        }
+        if (array_key_exists($keys[23], $arr)) {
+            $this->setUpdatedAt($arr[$keys[23]]);
         }
 
         return $this;
@@ -2111,6 +2263,12 @@ abstract class Pieces implements ActiveRecordInterface
         }
         if ($this->isColumnModified(PiecesTableMap::COL_AI_TRAINING_FINAL)) {
             $criteria->add(PiecesTableMap::COL_AI_TRAINING_FINAL, $this->ai_training_final);
+        }
+        if ($this->isColumnModified(PiecesTableMap::COL_TRAINING_EXPORTS)) {
+            $criteria->add(PiecesTableMap::COL_TRAINING_EXPORTS, $this->training_exports);
+        }
+        if ($this->isColumnModified(PiecesTableMap::COL_TRAINING_DESCRIPTIONS)) {
+            $criteria->add(PiecesTableMap::COL_TRAINING_DESCRIPTIONS, $this->training_descriptions);
         }
         if ($this->isColumnModified(PiecesTableMap::COL_LOCATION)) {
             $criteria->add(PiecesTableMap::COL_LOCATION, $this->location);
@@ -2229,6 +2387,8 @@ abstract class Pieces implements ActiveRecordInterface
         $copyObj->setAITrainingForm($this->getAITrainingForm());
         $copyObj->setAITrainingColored($this->getAITrainingColored());
         $copyObj->setAITrainingFinal($this->getAITrainingFinal());
+        $copyObj->setTrainingExports($this->getTrainingExports());
+        $copyObj->setTrainingDescriptions($this->getTrainingDescriptions());
         $copyObj->setLocation($this->getLocation());
         $copyObj->setThumbnail($this->getThumbnail());
         $copyObj->setCreatedAt($this->getCreatedAt());
@@ -2288,6 +2448,8 @@ abstract class Pieces implements ActiveRecordInterface
         $this->ai_training_form = null;
         $this->ai_training_colored = null;
         $this->ai_training_final = null;
+        $this->training_exports = null;
+        $this->training_descriptions = null;
         $this->location = null;
         $this->thumbnail = null;
         $this->created_at = null;

@@ -41,6 +41,8 @@
     <column name="ai_training_form" phpName="AITrainingForm" type="LONGVARCHAR" required="true"/>
     <column name="ai_training_colored" phpName="AITrainingColored" type="LONGVARCHAR" required="true"/>
     <column name="ai_training_final" phpName="AITrainingFinal" type="LONGVARCHAR" required="true"/>
+    <column name="training_exports" phpName="TrainingExports" type="BOOLEAN" required="true" defaultExpr="false"/>
+    <column name="training_descriptions" phpName="TrainingDescriptions" type="BOOLEAN" required="true" defaultExpr="false"/>
     <column name="location" phpName="Location" type="VARCHAR" size="300" required="true"/>
     <column name="thumbnail" phpName="Thumbnail" type="VARCHAR" size="300" required="true"/>
     <column name="created_at" phpName="CreatedAt" type="TIMESTAMP" required="true" defaultExpr="CURRENT_TIMESTAMP"/>

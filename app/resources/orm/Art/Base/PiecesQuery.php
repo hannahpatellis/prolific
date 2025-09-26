@@ -35,6 +35,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPiecesQuery orderByAITrainingForm($order = Criteria::ASC) Order by the ai_training_form column
  * @method     ChildPiecesQuery orderByAITrainingColored($order = Criteria::ASC) Order by the ai_training_colored column
  * @method     ChildPiecesQuery orderByAITrainingFinal($order = Criteria::ASC) Order by the ai_training_final column
+ * @method     ChildPiecesQuery orderByTrainingExports($order = Criteria::ASC) Order by the training_exports column
+ * @method     ChildPiecesQuery orderByTrainingDescriptions($order = Criteria::ASC) Order by the training_descriptions column
  * @method     ChildPiecesQuery orderByLocation($order = Criteria::ASC) Order by the location column
  * @method     ChildPiecesQuery orderByThumbnail($order = Criteria::ASC) Order by the thumbnail column
  * @method     ChildPiecesQuery orderByCreatedAt($order = Criteria::ASC) Order by the created_at column
@@ -58,6 +60,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPiecesQuery groupByAITrainingForm() Group by the ai_training_form column
  * @method     ChildPiecesQuery groupByAITrainingColored() Group by the ai_training_colored column
  * @method     ChildPiecesQuery groupByAITrainingFinal() Group by the ai_training_final column
+ * @method     ChildPiecesQuery groupByTrainingExports() Group by the training_exports column
+ * @method     ChildPiecesQuery groupByTrainingDescriptions() Group by the training_descriptions column
  * @method     ChildPiecesQuery groupByLocation() Group by the location column
  * @method     ChildPiecesQuery groupByThumbnail() Group by the thumbnail column
  * @method     ChildPiecesQuery groupByCreatedAt() Group by the created_at column
@@ -92,6 +96,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPieces|null findOneByAITrainingForm(string $ai_training_form) Return the first ChildPieces filtered by the ai_training_form column
  * @method     ChildPieces|null findOneByAITrainingColored(string $ai_training_colored) Return the first ChildPieces filtered by the ai_training_colored column
  * @method     ChildPieces|null findOneByAITrainingFinal(string $ai_training_final) Return the first ChildPieces filtered by the ai_training_final column
+ * @method     ChildPieces|null findOneByTrainingExports(boolean $training_exports) Return the first ChildPieces filtered by the training_exports column
+ * @method     ChildPieces|null findOneByTrainingDescriptions(boolean $training_descriptions) Return the first ChildPieces filtered by the training_descriptions column
  * @method     ChildPieces|null findOneByLocation(string $location) Return the first ChildPieces filtered by the location column
  * @method     ChildPieces|null findOneByThumbnail(string $thumbnail) Return the first ChildPieces filtered by the thumbnail column
  * @method     ChildPieces|null findOneByCreatedAt(string $created_at) Return the first ChildPieces filtered by the created_at column
@@ -118,6 +124,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPieces requireOneByAITrainingForm(string $ai_training_form) Return the first ChildPieces filtered by the ai_training_form column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByAITrainingColored(string $ai_training_colored) Return the first ChildPieces filtered by the ai_training_colored column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByAITrainingFinal(string $ai_training_final) Return the first ChildPieces filtered by the ai_training_final column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPieces requireOneByTrainingExports(boolean $training_exports) Return the first ChildPieces filtered by the training_exports column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPieces requireOneByTrainingDescriptions(boolean $training_descriptions) Return the first ChildPieces filtered by the training_descriptions column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByLocation(string $location) Return the first ChildPieces filtered by the location column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByThumbnail(string $thumbnail) Return the first ChildPieces filtered by the thumbnail column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPieces requireOneByCreatedAt(string $created_at) Return the first ChildPieces filtered by the created_at column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -162,6 +170,10 @@ use Propel\Runtime\Exception\PropelException;
  * @psalm-method Collection&\Traversable<ChildPieces> findByAITrainingColored(string|array<string> $ai_training_colored) Return ChildPieces objects filtered by the ai_training_colored column
  * @method     ChildPieces[]|Collection findByAITrainingFinal(string|array<string> $ai_training_final) Return ChildPieces objects filtered by the ai_training_final column
  * @psalm-method Collection&\Traversable<ChildPieces> findByAITrainingFinal(string|array<string> $ai_training_final) Return ChildPieces objects filtered by the ai_training_final column
+ * @method     ChildPieces[]|Collection findByTrainingExports(boolean|array<boolean> $training_exports) Return ChildPieces objects filtered by the training_exports column
+ * @psalm-method Collection&\Traversable<ChildPieces> findByTrainingExports(boolean|array<boolean> $training_exports) Return ChildPieces objects filtered by the training_exports column
+ * @method     ChildPieces[]|Collection findByTrainingDescriptions(boolean|array<boolean> $training_descriptions) Return ChildPieces objects filtered by the training_descriptions column
+ * @psalm-method Collection&\Traversable<ChildPieces> findByTrainingDescriptions(boolean|array<boolean> $training_descriptions) Return ChildPieces objects filtered by the training_descriptions column
  * @method     ChildPieces[]|Collection findByLocation(string|array<string> $location) Return ChildPieces objects filtered by the location column
  * @psalm-method Collection&\Traversable<ChildPieces> findByLocation(string|array<string> $location) Return ChildPieces objects filtered by the location column
  * @method     ChildPieces[]|Collection findByThumbnail(string|array<string> $thumbnail) Return ChildPieces objects filtered by the thumbnail column
@@ -269,7 +281,7 @@ abstract class PiecesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, title, start_date, end_date, collection, subcollection, size_height, size_width, size_unit, temperature, background, colors, description, story, notes, ai_training_form, ai_training_colored, ai_training_final, location, thumbnail, created_at, updated_at FROM pieces WHERE id = :p0';
+        $sql = 'SELECT id, title, start_date, end_date, collection, subcollection, size_height, size_width, size_unit, temperature, background, colors, description, story, notes, ai_training_form, ai_training_colored, ai_training_final, training_exports, training_descriptions, location, thumbnail, created_at, updated_at FROM pieces WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -878,6 +890,64 @@ abstract class PiecesQuery extends ModelCriteria
         }
 
         $this->addUsingAlias(PiecesTableMap::COL_AI_TRAINING_FINAL, $aITrainingFinal, $comparison);
+
+        return $this;
+    }
+
+    /**
+     * Filter the query on the training_exports column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTrainingExports(true); // WHERE training_exports = true
+     * $query->filterByTrainingExports('yes'); // WHERE training_exports = true
+     * </code>
+     *
+     * @param bool|string $trainingExports The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param string|null $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this The current query, for fluid interface
+     */
+    public function filterByTrainingExports($trainingExports = null, ?string $comparison = null)
+    {
+        if (is_string($trainingExports)) {
+            $trainingExports = in_array(strtolower($trainingExports), array('false', 'off', '-', 'no', 'n', '0', ''), true) ? false : true;
+        }
+
+        $this->addUsingAlias(PiecesTableMap::COL_TRAINING_EXPORTS, $trainingExports, $comparison);
+
+        return $this;
+    }
+
+    /**
+     * Filter the query on the training_descriptions column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTrainingDescriptions(true); // WHERE training_descriptions = true
+     * $query->filterByTrainingDescriptions('yes'); // WHERE training_descriptions = true
+     * </code>
+     *
+     * @param bool|string $trainingDescriptions The value to use as filter.
+     *              Non-boolean arguments are converted using the following rules:
+     *                * 1, '1', 'true',  'on',  and 'yes' are converted to boolean true
+     *                * 0, '0', 'false', 'off', and 'no'  are converted to boolean false
+     *              Check on string values is case insensitive (so 'FaLsE' is seen as 'false').
+     * @param string|null $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this The current query, for fluid interface
+     */
+    public function filterByTrainingDescriptions($trainingDescriptions = null, ?string $comparison = null)
+    {
+        if (is_string($trainingDescriptions)) {
+            $trainingDescriptions = in_array(strtolower($trainingDescriptions), array('false', 'off', '-', 'no', 'n', '0', ''), true) ? false : true;
+        }
+
+        $this->addUsingAlias(PiecesTableMap::COL_TRAINING_DESCRIPTIONS, $trainingDescriptions, $comparison);
 
         return $this;
     }
