@@ -27,50 +27,39 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 </div>
 
-<div class="row" id="view-list">
+<div class="row" id="training-grid">
   <div class="col">
-    <div id="table-wrapper"></div>
+    <div id="item-wrap">
+      <?php foreach($pieces as $piece) { ?>
+        <div class="item">
+          <a href="/go/training/edit.php?id=<?php print($piece['Id']); ?>">
+            <img class="training-item" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
+          </a>
+          <h1>#<?php print($piece['Id']); ?></h1>
+          <div class="slider-container">
+            <div class="form-check form-switch">
+              <input class="form-check-input switch-exports" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingExports']) {print("checked");} ?>>
+              <label class="form-check-label">Exports</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input switch-desc" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingDescriptions']) {print("checked");} ?>>
+              <label class="form-check-label">Descriptions</label>
+            </div>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-
-const db = <?php print(json_encode($pieces)); ?>;
-const dbTable = db.map((row) => {
-  return [
-    row.Id,
-    row.Thumbnail,
-    row.TrainingExports,
-    row.TrainingDescriptions
-  ];
-});
-
-// console.log(db);
-// console.log(dbTable);
-
-new gridjs.Grid({
-  columns: [
-    "ID",
-    {
-      name: 'Thumbnail',
-      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'><img src='<?php print($env['img_store_url']); ?>${cell}.jpg' height="80px" width="auto" /></a>`)
-    },
-    { 
-      name: 'TrainingExports',
-      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'>${cell}</a>`)
-    },
-    { 
-      name: 'TrainingDescriptions',
-      formatter: (cell, row) => gridjs.html(`<a href='/go/training/edit.php?id=${row.cells[0].data}'>${cell}</a>`)
-    }
-  ],
-  search: {
-    ignoreHiddenColumns: false,
-  },
-  data: dbTable
-}).render(document.getElementById("table-wrapper"));
-
+  $('.switch-exports').change(function () {
+    alert("Exports: " + $(this).data("pieceId") + " is now " + $(this).prop('checked'));
+  });
+  $('.switch-desc').change(function () {
+    alert("Descriptions: " + $(this).data("pieceId") + " is now " + $(this).prop('checked'));
+  });
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

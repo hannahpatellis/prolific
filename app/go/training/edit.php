@@ -29,9 +29,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <div class="row">
   <div class="col-md-4 col-sm-12">
-    <a href="/go/piece/stage.php?id=<?php print($piece['Id']); ?>">
-      <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />
-    </a>
+    <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />
     <a href="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg">
       <div class="mt-2"><pre><?php print $piece['Thumbnail']; ?></pre></div>
     </a>
@@ -65,10 +63,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
           <small>Creation location(s)...</small>
         </div>
       <?php } ?>
-      <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['SizeHeight']." x ".$piece['SizeWidth']." ".$piece['SizeUnit']); ?></h3>
-        <small>Size of original canvas</small>
-      </div>
       <div href="#" class="list-group-item">
         <h3 class="mb-1"><?php print($piece['Temperature']);?></h3>
         <small>Color temperature</small>
@@ -120,8 +114,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
         </div>
       <?php } ?>
     </div>
-    <a href="/go/piece/edit.php?id=<?php print($piece['Id']); ?>" type="link" class="btn btn-warning mt-4">Edit this piece</a>
-    <a href="/go/cfa/new.php?id=<?php print($piece['Id']); ?>" type="link" class="btn btn-success mt-4 ml-4">Create a CFA record</a>
+    <a href="#" type="link" class="btn btn-warning mt-4">Update this piece</a>
   </div>
 </div>
 
@@ -156,10 +149,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     element: document.getElementById("AITrainingFinal"),
     toolbar: false
   });
-
-
-
-
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
