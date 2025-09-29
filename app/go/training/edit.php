@@ -28,53 +28,44 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-sm-12">
+  <div class="col-md-5 col-sm-12">
     <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />
     <a href="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg">
       <div class="mt-2"><pre><?php print $piece['Thumbnail']; ?></pre></div>
     </a>
   </div>
-  <div class="col-md-8 col-sm-12">
+  <div class="col-md-7 col-sm-12">
     <div class="list-group">
-      
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['Collection']); ?></h3>
-        <small>Part of collection...</small>
+        <small class="mb-1"><strong><?php print($piece['Collection']); ?></strong></small>
       </div>
       <?php if($piece['Subcollection']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['Subcollection']); ?></h3>
-          <small>Part of subcollection(s)...</small>
+          <small class="mb-1"><strong><?php print($piece['Subcollection']); ?></strong></small>
         </div>
       <?php } ?>
       <?php if($piece['StartDate']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['StartDate']); ?></h3>
-          <small>Started work on...</small>
+          <small class="mb-1">Started work on... <strong><?php print($piece['StartDate']); ?></strong></small>
         </div>
       <?php } ?>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['EndDate']); ?></h3>
-        <small>Finished work on...</small>
+        <small class="mb-1">Finished work on... <strong><?php print($piece['EndDate']); ?></strong></small>
       </div>
       <?php if($piece['Location']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['Location']); ?></h3>
-          <small>Creation location(s)...</small>
+          <small class="mb-1">Location(s): <strong><?php print($piece['Location']); ?></strong></small>
         </div>
       <?php } ?>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['Temperature']);?></h3>
-        <small>Color temperature</small>
+        <small class="mb-1">Color temperature: <strong><?php print($piece['Temperature']);?></strong></small>
       </div>
       <div href="#" class="list-group-item">
-        <h3 class="mb-1"><?php print($piece['Background']);?></h3>
-        <small>Background color</small>
+        <small class="mb-1">Background color: <strong><?php print($piece['Background']);?></strong></small>
       </div>
       <?php if($piece['Colors']) { ?>
         <div href="#" class="list-group-item">
-          <h3 class="mb-1"><?php print($piece['Colors']);?></h3>
-          <small>Primary featured colors</small>
+          <small class="mb-1">Primary colors: <strong><?php print($piece['Colors']);?></strong></small>
         </div>
       <?php } ?>
       <?php if($piece['Description']) { ?>
@@ -95,26 +86,36 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
           <textarea id="Notes"><?php print($piece['Notes']); ?></textarea>
         </div>
       <?php } ?>
-      <?php if($piece['AITrainingForm']) { ?>
+    </div>
+    <form action="/api/training/edit.php" method="POST" enctype="multipart/form-data">
+      <div class="list-group">
         <div href="#" class="list-group-item">
           <p>AI training data: Form description</p>
-          <textarea id="AITrainingForm"><?php print($piece['AITrainingForm']); ?></textarea>
+          <textarea id="AITrainingForm" name="ai-training-form"><?php print($piece['AITrainingForm']); ?></textarea>
         </div>
-      <?php } ?>
-      <?php if($piece['AITrainingColored']) { ?>
         <div href="#" class="list-group-item">
           <p>AI training data: Colored form description</p>
-          <textarea id="AITrainingColored"><?php print($piece['AITrainingColored']); ?></textarea>
+          <textarea id="AITrainingColored" name="ai-training-colored"><?php print($piece['AITrainingColored']); ?></textarea>
         </div>
-      <?php } ?>
-      <?php if($piece['AITrainingFinal']) { ?>
         <div href="#" class="list-group-item">
           <p>AI training data: Final piece description</p>
-          <textarea id="AITrainingFinal"><?php print($piece['AITrainingFinal']); ?></textarea>
+          <textarea id="AITrainingFinal" name="ai-training-final"><?php print($piece['AITrainingFinal']); ?></textarea>
         </div>
-      <?php } ?>
-    </div>
-    <a href="#" type="link" class="btn btn-warning mt-4">Update this piece</a>
+        <div href="#" class="list-group-item">
+          <div class="form-check form-switch">
+            <input class="form-check-input switch-exports" name="switch-exports" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingExports']) {print("checked");} ?>>
+            <label class="form-check-label">Exports</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input switch-desc" name="switch-desc" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingDescriptions']) {print("checked");} ?>>
+            <label class="form-check-label">Descriptions</label>
+          </div>
+        </div>
+      </div>
+      <input type="text" id="form-id" name="id" required value="<?php print($piece['Id']); ?>">
+
+      <button type="submit" class="btn btn-warning mt-4">Update EMOH</button>
+    </form>
   </div>
 </div>
 
