@@ -27,6 +27,22 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 </div>
 
+<?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-success" role="alert">Updated successfully</div>
+    </div>
+  </div>
+<?php } ?>
+
+<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-danger" role="alert">There was an error updating this EMOH<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
+    </div>
+  </div>
+<?php } ?>
+
 <div class="row">
   <div class="col-md-5 col-sm-12">
     <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />

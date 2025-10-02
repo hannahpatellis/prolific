@@ -11,6 +11,7 @@ if($_SESSION['isAdmin'] != true) {
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
 
+$id_excludes = ['151', '150', '149', '148', '147', '146'];
 $query = new Art\PiecesQuery();
 $pieces = $query->orderById('desc')->find()->toArray();
 
@@ -27,26 +28,11 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 </div>
 
-<?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
-  <div class="row">
-    <div class="col">
-      <div class="alert alert-success" role="alert">Updated successfully</div>
-    </div>
-  </div>
-<?php } ?>
-
-<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
-  <div class="row">
-    <div class="col">
-      <div class="alert alert-danger" role="alert">There was an error updating this EMOH<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
-    </div>
-  </div>
-<?php } ?>
-
 <div class="row" id="training-grid">
   <div class="col">
     <div id="item-wrap">
-      <?php foreach($pieces as $piece) { ?>
+      <?php foreach($pieces as $piece) { 
+        if(in_array($piece['Id'], $id_excludes)) { } else { ?>
         <div class="item">
           <a href="/go/training/edit.php?id=<?php print($piece['Id']); ?>">
             <img class="training-item" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
@@ -63,7 +49,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
             </div>
           </div>
         </div>
-      <?php } ?>
+      <?php } } ?>
     </div>
   </div>
 </div>

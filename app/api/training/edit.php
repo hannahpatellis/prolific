@@ -34,10 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   array_push($errors, $mysqli->error_list);
   $stmt->close();
   $mysqli->close();
-  header("Location: /go/training/gallery.php?status=201");
+  header("Location: /go/training/edit.php?status=201&id=".$_POST['id']);
 } else {
   array_push($errors, "The request method was not POST");
-  header("Location: /go/training/gallery.php?&status=500&detail=notPOST");
+  header("Location: /go/training/edit.php?&status=500&detail=notPOST&id=".$_POST['id']);
 }
 
 ?>
