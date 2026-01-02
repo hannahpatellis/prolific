@@ -156,10 +156,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     element: document.getElementById("AITrainingFinal"),
     toolbar: false
   });
-
-
-
-
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

@@ -23,7 +23,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <div class="row">
   <div class="col d-flex justify-content-between align-items-center">
     <h1>Certified fine art records</h1>
-    <a href="/go/cfa/new.php"><button type="button" class="btn btn-primary">New CFA record</button></a>
+    <a href="/go/cfa/new.php"><button type="button" class="btn btn-success">New CFA record</button></a>
   </div>
 </div>
 
@@ -32,16 +32,19 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     <table class="table table-dark table-striped table-hover align-middle table-responsive-sm">
       <tbody>
         <tr>
-            <th>ID . Run . Count</th>
+            <th>Piece ID, Piece Run, Run Count</th>
             <th>Title</th>
             <th>Actions</th>
           </tr>
-        <?php foreach($cfas as $cfa) { ?>
+        <?php foreach($cfas as $cfa) { 
+            $pieceQuery = new Art\PiecesQuery();
+            $piece = $pieceQuery->findPK($cfa['PieceId'])->toArray();
+          ?>
           <tr>
             <td><?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></td>
-            <td>Placeholder</td>
+            <td><?php print($piece['Title']); ?></td>
             <td>
-              <a href="/go/cfa/view.php?id=<?php print($cfa['RecordId']); ?>"><button type="button" class="btn btn-warning">Edit CFA record</button></a>  
+              <a href="/go/cfa/view.php?id=<?php print($cfa['RecordId']); ?>"><button type="button" class="btn btn-primary">View CFA record</button></a>  
             </td>
           </tr>
         <?php } ?>
