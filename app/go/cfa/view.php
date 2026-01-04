@@ -29,6 +29,22 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 </div>
 
+<?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-success" role="alert">CFA record updated successfully!</div>
+    </div>
+  </div>
+<?php } ?>
+
+<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-danger" role="alert">There was an error updating the CFA record<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
+    </div>
+  </div>
+<?php } ?>
+
 <div class="row">
   <div class="col-md-4 col-sm-12">
     <a href="/go/piece/stage.php?id=<?php print($piece['Id']); ?>">
