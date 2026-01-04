@@ -56,14 +56,16 @@ Notes:
 - The `sql_cert` may not be applicable to your MySQL setup and could be removed, although the `public/resource/db.php` file will need to be edited
 - Currently `hostname` and `environment` aren't really being used for anything
 
-## Screenshots of the 2025 edition
+## Screenshots from January 2026
 
-![Login screen](docs/2025/2025-prolific-login.png "Login screen")
-![Dashboard view](docs/2025/2025-prolific-dashboard.png "Dashboard view")
-![Gallery view](docs/2025/2025-prolific-gallery.png "Gallery view")
-![Details view](docs/2025/2025-prolific-details.png "Details view")
-![Update an existing piece](docs/2025/2025-prolific-update.png "Update an existing piece")
-![Add a new piece](docs/2025/2025-prolific-add.png "Add a new piece")
+More screenshots, including historical screenshots, can be found in the `docs` directory
+
+![Login screen](docs/2026/Login.png "Login screen")
+![Dashboard view](docs/2026/Dashboard.png "Dashboard view")
+![Gallery view](docs/2026/Gallery-Grid.png "Gallery view")
+![Details view](docs/2026/Piece-View.png "Details view")
+![Update an existing piece](docs/2026/CFA-List.png "Certified fine art list view")
+![Add a new piece](docs/2026/Piece-New.png "Add a new piece")
 
 ---
 
