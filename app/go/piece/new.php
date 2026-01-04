@@ -50,7 +50,8 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="start-year" aria-label="Start year">
-          <option value="2025" select>2025</option>
+          <option value="2026" select>2026</option>
+          <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
@@ -93,7 +94,8 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="end-year" aria-label="End year" required>
-          <option value="2025" select>2025</option>
+          <option value="2026" select>2026</option>
+          <option value="2025">2025</option>
           <option value="2024">2024</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>

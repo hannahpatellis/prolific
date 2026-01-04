@@ -79,6 +79,8 @@ require_once(__DIR__ . "/../../resources/env.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="start-year" aria-label="Start year">
+          <option value="2026" <?php if($deconst_start_date[0] == '2026') {print("selected");} ?>>2026</option>  
+          <option value="2025" <?php if($deconst_start_date[0] == '2025') {print("selected");} ?>>2025</option>
           <option value="2024" <?php if($deconst_start_date[0] == '2024') {print("selected");} ?>>2024</option>
           <option value="2023" <?php if($deconst_start_date[0] == '2023') {print("selected");} ?>>2023</option>
           <option value="2022" <?php if($deconst_start_date[0] == '2022') {print("selected");} ?>>2022</option>
@@ -121,6 +123,8 @@ require_once(__DIR__ . "/../../resources/env.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-start-year" name="end-year" aria-label="End year" required>
+          <option value="2026" <?php if($deconst_end_date[0] == '2026') {print("selected");} ?>>2026</option>
+          <option value="2025" <?php if($deconst_end_date[0] == '2025') {print("selected");} ?>>2025</option>
           <option value="2024" <?php if($deconst_end_date[0] == '2024') {print("selected");} ?>>2024</option>
           <option value="2023" <?php if($deconst_end_date[0] == '2023') {print("selected");} ?>>2023</option>
           <option value="2022" <?php if($deconst_end_date[0] == '2022') {print("selected");} ?>>2022</option>

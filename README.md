@@ -8,7 +8,6 @@ The goal behind Prolific was to be able to view all my works in one place and ke
 
 - Ability to replace an image without deleting the piece entry and re-adding it
 - Ability to add guest users and select which pieces they can view
-- New table and form handling for Certified Fine Art pieces (CFA) (In progress)
 - Better error handling
 
 ## Databases
@@ -30,7 +29,7 @@ Schemas for these tables are located in the `schemas` directory.
 
 ## Packages Used
 
-- [Propel ORM (PHP)](https://propelorm.org)
+- [Propel ORM v.2 (PHP)](https://propelorm.org)
   - MySQL database ORM
 
 ## env.json
