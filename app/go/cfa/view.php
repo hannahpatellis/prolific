@@ -96,8 +96,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
         </div>
       <?php } ?>
 
-
-
       <?php if($cfa['BuyerName']) { ?>
         <div href="#" class="list-group-item">
           <h3 class="mb-1"><?php print($cfa['BuyerName']); ?></h3>
