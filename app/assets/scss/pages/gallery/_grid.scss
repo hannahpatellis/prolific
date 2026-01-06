@@ -8,6 +8,8 @@
 img.grid-item {
   width: 200px;
   height: auto;
+  border-radius: 5px;
+  border: 1px solid #1a1a1a;
 }
 
 @media (max-width: 821px) {
