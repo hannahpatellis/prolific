@@ -26,7 +26,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
             <img class="stage-direction <?php if($piece['Id'] == 1) { print("hidden"); } ?>" id="direction-left" src="/assets/img/square-chevron-left.svg" height="50px" />
         </a>
         <a href="/go/piece/view.php?id=<?php print $piece['Id']; ?>">
-            <img src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
+            <img id="stage-image" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
         </a>
         <a href="/go/piece/stage.php?id=<?php print $piece['Id'] + 1; ?>">
             <img class="stage-direction <?php if($total_pieces == $piece['Id']) { print("hidden"); } ?>" id="direction-right" src="/assets/img/square-chevron-right.svg" height="50px" />
@@ -36,5 +36,23 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
         <h1 class="d-flex justify-content-between align-items-center"><?php print($piece['Title']); ?><span class="badge text-bg-primary rounded-pill">#<?php print($piece['Id']); ?></span></h1>
     </div>
 </div>
+
+<script type="text/javascript">
+
+const pieceId = <?php print $piece['Id']; ?>;
+const totalPieces = <?php print $total_pieces; ?>;
+
+document.addEventListener("keydown", function(event){
+    if(event.keyCode === 39) {
+        if(totalPieces != pieceId) {
+            window.location.href = `/go/piece/stage.php?id=${pieceId + 1}`;
+        }
+    }
+    if(event.keyCode === 37) {
+        window.location.href = `/go/piece/stage.php?id=${pieceId - 1}`;
+    }
+});
+
+</script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

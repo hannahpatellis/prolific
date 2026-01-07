@@ -13579,7 +13579,7 @@ label.form-check-label {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 15px;
 }
 
 img.grid-item {
@@ -13587,6 +13587,13 @@ img.grid-item {
   height: auto;
   border-radius: 5px;
   border: 1px solid #1a1a1a;
+  opacity: 0.85;
+  transition: 0.4s;
+}
+
+img.grid-item:hover {
+  transform: scale(110%);
+  opacity: 1;
 }
 
 @media (max-width: 821px) {
@@ -13614,6 +13621,14 @@ td.col-img {
   justify-content: center;
 }
 
+td.gridjs-td img {
+  transition: 0.4s;
+}
+
+td.gridjs-td img:hover {
+  transform: scale(125%);
+}
+
 div#show-stage {
   margin: 0 auto;
   width: 90vw;
@@ -13633,8 +13648,6 @@ div#stage-img {
 div#stage-img img {
   max-height: calc(100vh - 200px);
   max-width: 100vw;
-  border-radius: 5px;
-  border: 1px solid #1a1a1a;
 }
 
 div#stage-desc {

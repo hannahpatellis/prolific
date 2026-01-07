@@ -15,8 +15,10 @@ div#stage-img {
 div#stage-img img {
   max-height: calc(100vh - 200px);
   max-width: 100vw;
-  border-radius: 5px;
-  border: 1px solid #1a1a1a;
+}
+div#stage-img img#stage-image {
+  // border-radius: 5px;
+  // border: 1px solid #1a1a1a;
 }
 div#stage-desc {
   width: 100%;

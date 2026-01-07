@@ -14,3 +14,9 @@ td.col-img {
   align-items: center;
   justify-content: center;
 }
+td.gridjs-td img {
+  transition: 0.4s;
+}
+td.gridjs-td img:hover {
+  transform: scale(125%);
+}
