@@ -36,7 +36,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 <?php } ?>
 
-<form action="/actions/piece_new.php" method="POST" enctype="multipart/form-data">
+<form action="/actions/piece_img.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">
