@@ -9,12 +9,10 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
 
 $query = new Art\PiecesQuery();
-$piece = $query->findPK($_GET['id'])->toArray();
-$pieces = $query->find()->toArray();
-$total_pieces = count($pieces);
+$pieces = $query->orderById('asc')->find()->toArray();
 
 $active_page = "gallery";
-$page_title = $piece['Title'];
+$page_title = "Stage";
 require_once(__DIR__ . "/../../resources/env.php");
 require_once(__DIR__ . "/../../partials/dash-header.php");
 
@@ -23,17 +21,20 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <link type="text/css" rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css" />
 
 <div id="show-stage">
-    <div id="stage-img">
-        <div id="inline-gallery-container"></div>
-    </div>
-    <div id="stage-desc">   
- 
-    </div>
+    <div id="inline-gallery-container"></div>
 </div>
 
 <script type="text/javascript" src="/assets/js/lightgallery.min.js"></script>
-
 <script type="text/javascript">
+
+const db = <?php print(json_encode($pieces)); ?>;
+const dbTable = db.map((row) => {
+  return {
+    src: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
+    thumb: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
+    subHtml: `<h1 class="d-flex justify-content-between align-items-center">${row.Title}<span class="badge text-bg-primary rounded-pill">#${row.Id}</span></h1>`,
+  };
+});
 
 const lgContainer = document.getElementById('inline-gallery-container');
 const inlineGallery = lightGallery(lgContainer, {
@@ -41,30 +42,15 @@ const inlineGallery = lightGallery(lgContainer, {
     dynamic: true,
     closable: false,
     showMaximizeIcon: true,
-    appendSubHtmlTo: '.lg-item',
+    counter: false,
+    download: true,
+    appendSubHtmlTo: '#stage-desc',
     slideDelay: 400,
-    dynamicEl: [
-        {
-            src: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
-            thumb: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
-            subHtml: `<div class="lightGallery-captions">
-                <h4>Caption 1</h4>
-                <p>Description of the slide 1</p>
-            </div>`,
-        },
-        {
-            src: 'img/img2.jpg',
-            thumb: 'img/thumb2.jpg',
-            subHtml: `<div class="lightGallery-captions">
-                <h4>Caption 2</h4>
-                <p>Description of the slide 2</p>
-            </div>`,
-        }
-    ]
+    dynamicEl: dbTable
 });
 
-inlineGallery.openGallery();
-  
+inlineGallery.openGallery(<?php print($_GET['id']-1); ?>);
+
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

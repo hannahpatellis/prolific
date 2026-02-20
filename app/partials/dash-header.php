@@ -61,7 +61,7 @@
     </nav>
 
     <div id="main">
-      <div id="main-stage">
+      <?php if($page_title != "Stage") { ?><div id="main-stage"><?php } ?>
 
 
 
