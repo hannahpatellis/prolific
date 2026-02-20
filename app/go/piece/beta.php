@@ -64,7 +64,7 @@ const inlineGallery = lightGallery(lgContainer, {
 });
 
 inlineGallery.openGallery();
-
+  
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
