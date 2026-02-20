@@ -20,26 +20,51 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
+<link type="text/css" rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css" />
+
 <div id="show-stage">
     <div id="stage-img">
-        <a href="/go/piece/stage.php?id=<?php print $piece['Id'] - 1; ?>">
-            <img class="stage-direction <?php if($piece['Id'] == 1) { print("hidden"); } ?>" id="direction-left" src="/assets/img/square-chevron-left.svg" height="50px" />
-        </a>
-        <a href="/go/piece/view.php?id=<?php print $piece['Id']; ?>">
-            <img id="stage-image" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
-        </a>
-        <a href="/go/piece/stage.php?id=<?php print $piece['Id'] + 1; ?>">
-            <img class="stage-direction <?php if($total_pieces == $piece['Id']) { print("hidden"); } ?>" id="direction-right" src="/assets/img/square-chevron-right.svg" height="50px" />
-        </a>
+        <div id="inline-gallery-container"></div>
     </div>
     <div id="stage-desc">   
-        <h1 class="d-flex justify-content-between align-items-center"><?php print($piece['Title']); ?><span class="badge text-bg-primary rounded-pill">#<?php print($piece['Id']); ?></span></h1>
+ 
     </div>
 </div>
 
-<script type="text/javascript" src="/assets/js/list.min.2.3.1.js"></script>
+<script type="text/javascript" src="/assets/js/lightgallery.min.js"></script>
+
 <script type="text/javascript">
 
+const lgContainer = document.getElementById('inline-gallery-container');
+const inlineGallery = lightGallery(lgContainer, {
+    container: lgContainer,
+    dynamic: true,
+    closable: false,
+    showMaximizeIcon: true,
+    appendSubHtmlTo: '.lg-item',
+    slideDelay: 400,
+    dynamicEl: [
+        {
+            src: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
+            thumb: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
+            subHtml: `<div class="lightGallery-captions">
+                <h4>Caption 1</h4>
+                <p>Description of the slide 1</p>
+            </div>`,
+        },
+        {
+            src: 'img/img2.jpg',
+            thumb: 'img/thumb2.jpg',
+            subHtml: `<div class="lightGallery-captions">
+                <h4>Caption 2</h4>
+                <p>Description of the slide 2</p>
+            </div>`,
+        }
+    ]
+});
+
+inlineGallery.openGallery();
+  
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
