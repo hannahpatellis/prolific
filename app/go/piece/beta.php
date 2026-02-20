@@ -20,7 +20,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
-<link type="text/css" rel="stylesheet" href="/assets/css/lightgallery-bundle.css" />
+<link type="text/css" rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css" />
 
 <div id="show-stage">
     <div id="stage-img">
@@ -31,7 +31,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     </div>
 </div>
 
-<script type="text/javascript" src="js/lightgallery.min.js"></script>
+<script type="text/javascript" src="/assets/js/lightgallery.min.js"></script>
 
 <script type="text/javascript">
 
@@ -45,8 +45,8 @@ const inlineGallery = lightGallery(lgContainer, {
     slideDelay: 400,
     dynamicEl: [
         {
-            src: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail'];) ?>.jpg',
-            thumb: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail'];) ?>.jpgh',
+            src: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
+            thumb: 'https://fs.hannahap.com/img_store/<?php print($piece['Thumbnail']); ?>.jpg',
             subHtml: `<div class="lightGallery-captions">
                 <h4>Caption 1</h4>
                 <p>Description of the slide 1</p>
@@ -59,9 +59,8 @@ const inlineGallery = lightGallery(lgContainer, {
                 <h4>Caption 2</h4>
                 <p>Description of the slide 2</p>
             </div>`,
-        },
-        ...
-    ],
+        }
+    ]
 });
 
 inlineGallery.openGallery();
