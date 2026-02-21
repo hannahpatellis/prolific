@@ -13574,16 +13574,18 @@ label.form-check-label {
   color: white;
 }
 
-/* OG */
-#grid {
+/* New */
+div#gallery div.list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   gap: 15px;
 }
-
-img.grid-item {
+div#gallery div.list p.hidden {
+  display: none;
+}
+div#gallery div.list img.grid-item {
   width: 200px;
   height: auto;
   border-radius: 5px;
@@ -13591,13 +13593,11 @@ img.grid-item {
   opacity: 0.85;
   transition: 0.4s;
 }
-
-img.grid-item:hover {
+div#gallery div.list img.grid-item:hover {
   transform: scale(110%);
   opacity: 1;
 }
 
-/* New */
 @media (max-width: 821px) {
   img.grid-item {
     width: 140px;
@@ -13640,7 +13640,16 @@ div#show-stage {
 div#inline-gallery-container {
   height: 0;
   width: 100%;
-  padding-bottom: 65%;
+  padding-bottom: 95vh;
+}
+div#inline-gallery-container div.lg-sub-html div#stage-desc {
+  padding-top: 10px;
+}
+div#inline-gallery-container div.lg-sub-html h1 {
+  font-size: 1.5rem;
+}
+div#inline-gallery-container div.lg-sub-html a {
+  text-decoration: none;
 }
 
 @media (max-width: 821px) {

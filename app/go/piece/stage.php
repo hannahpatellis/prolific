@@ -9,49 +9,50 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
 
 $query = new Art\PiecesQuery();
-$piece = $query->findPK($_GET['id'])->toArray();
-$pieces = $query->find()->toArray();
-$total_pieces = count($pieces);
+$pieces = $query->orderById('asc')->find()->toArray();
 
 $active_page = "gallery";
-$page_title = $piece['Title'];
+$page_title = "Stage";
 require_once(__DIR__ . "/../../resources/env.php");
 require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
+<link type="text/css" rel="stylesheet" href="/assets/css/lightgallery-bundle.min.css" />
+
 <div id="show-stage">
-    <div id="stage-img">
-        <a href="/go/piece/stage.php?id=<?php print $piece['Id'] - 1; ?>">
-            <img class="stage-direction <?php if($piece['Id'] == 1) { print("hidden"); } ?>" id="direction-left" src="/assets/img/square-chevron-left.svg" height="50px" />
-        </a>
-        <a href="/go/piece/view.php?id=<?php print $piece['Id']; ?>">
-            <img id="stage-image" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
-        </a>
-        <a href="/go/piece/stage.php?id=<?php print $piece['Id'] + 1; ?>">
-            <img class="stage-direction <?php if($total_pieces == $piece['Id']) { print("hidden"); } ?>" id="direction-right" src="/assets/img/square-chevron-right.svg" height="50px" />
-        </a>
-    </div>
-    <div id="stage-desc">   
-        <h1 class="d-flex justify-content-between align-items-center"><?php print($piece['Title']); ?><span class="badge text-bg-primary rounded-pill">#<?php print($piece['Id']); ?></span></h1>
-    </div>
+    <div id="inline-gallery-container"></div>
 </div>
 
+<script type="text/javascript" src="/assets/js/lightgallery.min.js"></script>
+<script type="text/javascript" src="/assets/js/lg-fullscreen.min.js"></script>
 <script type="text/javascript">
 
-const pieceId = <?php print $piece['Id']; ?>;
-const totalPieces = <?php print $total_pieces; ?>;
-
-document.addEventListener("keydown", function(event){
-    if(event.keyCode === 39) {
-        if(totalPieces != pieceId) {
-            window.location.href = `/go/piece/stage.php?id=${pieceId + 1}`;
-        }
-    }
-    if(event.keyCode === 37) {
-        window.location.href = `/go/piece/stage.php?id=${pieceId - 1}`;
-    }
+const db = <?php print(json_encode($pieces)); ?>;
+const dbTable = db.map((row) => {
+  return {
+    src: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
+    thumb: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
+    subHtml: `<div id="stage-desc"><h1 class="d-flex justify-content-between align-items-center">${row.Title}<span class="badge text-bg-primary rounded-pill"><a href="/go/piece/view.php?id=${row.Id}">#${row.Id}</a></span></h1></div>`,
+  };
 });
+
+const lgContainer = document.getElementById('inline-gallery-container');
+const inlineGallery = lightGallery(lgContainer, {
+    plugins: [lgFullscreen],
+    container: lgContainer,
+    fullScreen: true,
+    dynamic: true,
+    closable: false,
+    showMaximizeIcon: true,
+    counter: false,
+    download: false,
+    appendSubHtmlTo: '.lg-sub-html',
+    slideDelay: 400,
+    dynamicEl: dbTable
+});
+
+inlineGallery.openGallery(<?php print($_GET['id']-1); ?>);
 
 </script>
 
