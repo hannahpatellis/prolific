@@ -1,4 +1,16 @@
-/* New */
+div#gallery-header {
+  div#search-filter-sort-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+
+    div#search-group-container {
+      margin-right: 20px;
+    }
+  }
+}
+
 div#gallery {
 
   div.list {
@@ -28,6 +40,13 @@ div#gallery {
 }
 
 @media (max-width: 821px) {
+  div#gallery-header {
+    flex-direction: column;
+
+    div#search-filter-sort-container {
+      width: 60%;
+    }
+  }
   img.grid-item {
     width: 140px;
   }

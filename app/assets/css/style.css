@@ -13379,7 +13379,7 @@ th.gridjs-th:last-child {
 nav {
   margin: 0 auto;
   width: 100%;
-  height: 100px;
+  height: 60px;
   position: fixed;
   display: flex;
   align-items: center;
@@ -13389,11 +13389,10 @@ nav {
 
 div#nav-stage {
   height: 60px;
-  width: 99vw;
+  width: 100%;
   color: #FAF0E6;
   background-color: rgba(54, 54, 54, 0.4392156863);
   backdrop-filter: blur(5px);
-  border-radius: 15px;
   padding: 10px 20px 10px 20px;
   display: flex;
   align-items: center;
@@ -13446,13 +13445,11 @@ img#profile-pic {
   width: auto;
   border-radius: 50%;
   border: 3px solid #121212;
-  opacity: 0.8;
   transition: 0.3s;
 }
 
 img#profile-pic:hover {
   border-radius: 20%;
-  opacity: 1;
 }
 
 .nav-entry#flag {
@@ -13472,11 +13469,11 @@ img#profile-pic:hover {
 
 @media (max-width: 821px) {
   nav {
-    margin-top: 30px;
+    margin-top: 0px;
     align-items: flex-start;
   }
   div#nav-stage {
-    width: 95vw;
+    width: 100%;
     height: auto;
     flex-direction: column;
     padding: 10px 20px 10px 15px;
@@ -13574,7 +13571,16 @@ label.form-check-label {
   color: white;
 }
 
-/* New */
+div#gallery-header div#search-filter-sort-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+div#gallery-header div#search-filter-sort-container div#search-group-container {
+  margin-right: 20px;
+}
+
 div#gallery div.list {
   display: flex;
   flex-wrap: wrap;
@@ -13599,6 +13605,12 @@ div#gallery div.list img.grid-item:hover {
 }
 
 @media (max-width: 821px) {
+  div#gallery-header {
+    flex-direction: column;
+  }
+  div#gallery-header div#search-filter-sort-container {
+    width: 60%;
+  }
   img.grid-item {
     width: 140px;
   }

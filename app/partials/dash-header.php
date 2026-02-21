@@ -21,7 +21,7 @@
         <div id="nav-top">
           <div id="nav-left">
             <div class="nav-entry">
-              <a href="/go/dashboard.php"><img id="profile-pic" src="/assets/img/hannah.jpg" /></a>
+              <a href="/go/dashboard.php"><img id="profile-pic" src="/assets/img/logo.png" /></a>
             </div>
             <div class="nav-entry" id="flag">
               Prolific

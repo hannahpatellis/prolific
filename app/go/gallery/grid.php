@@ -18,9 +18,20 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
 
-<div class="row">
-  <div class="col d-flex justify-content-between align-items-center">
-    <h1>Gallery view</h1>
+<div class="row mb-5">
+  <div class="col d-flex justify-content-between align-items-center" id="gallery-header">
+    <h1 class="mb-4">Gallery view</h1>
+
+    <div id="search-filter-sort-container" class="mb-4">
+      <div class="input-group input-group-sm" id="search-group-container">
+        <span class="input-group-text" id="inputGroup-sizing-sm">🔍</span>
+        <input type="search" class="form-control search" placeholder="Search..." />
+      </div>
+      <div class="btn-group btn-group-sm" role="group" >
+        <button type="button" class="btn btn-outline-primary">Filters</button>
+        <button type="button" class="btn btn-outline-primary">Sort</button> 
+      </div>
+  </div>
   </div>
 </div>
 
