@@ -289,4 +289,9 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   });
 </script>
 
-<?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
+<?php 
+
+require_once(__DIR__ . "/../../partials/beforeunload.js.php");
+require_once(__DIR__ . "/../../partials/dash-footer.php");
+
+?>

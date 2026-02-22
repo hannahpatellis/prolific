@@ -136,18 +136,20 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">
+<?php if($cfa['PrintNotes']) { ?>
   var simplemdePrintNotes = new SimpleMDE({
     element: document.getElementById("PrintNotes"),
     toolbar: false
   });
+  simplemdePrintNotes.togglePreview();
+<?php } ?>
+<?php if($cfa['Notes']) { ?>
   var simplemdeNotes = new SimpleMDE({
     element: document.getElementById("Notes"),
     toolbar: false
   });
+  simplemdeNotes.togglePreview();
+<?php } ?>
 </script>
-
-
-
-
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>

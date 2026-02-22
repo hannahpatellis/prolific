@@ -312,36 +312,41 @@ require_once(__DIR__ . "/../../resources/env.php");
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">
-  var simplemdeNotes = new SimpleMDE({
-    element: document.getElementById("form-notes"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
-    spellChecker: true
-  });
-  var simplemdeStory = new SimpleMDE({
-    element: document.getElementById("form-story"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
-    spellChecker: true
-  });
-  var simplemdeDescription = new SimpleMDE({
-    element: document.getElementById("form-description"),
-    toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
-    spellChecker: true
-  });
-  var simplemdeAITrainingForm = new SimpleMDE({
-    element: document.getElementById("form-ai-training-form"),
-    toolbar: [],
-    spellChecker: true
-  });
-  var simplemdeAITrainingColored = new SimpleMDE({
-    element: document.getElementById("form-ai-training-colored"),
-    toolbar: [],
-    spellChecker: true
-  });
-  var simplemdeAITrainingFinal = new SimpleMDE({
-    element: document.getElementById("form-ai-training-final"),
-    toolbar: [],
-    spellChecker: true
-  });
+var simplemdeNotes = new SimpleMDE({
+  element: document.getElementById("form-notes"),
+  toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+  spellChecker: true
+});
+var simplemdeStory = new SimpleMDE({
+  element: document.getElementById("form-story"),
+  toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+  spellChecker: true
+});
+var simplemdeDescription = new SimpleMDE({
+  element: document.getElementById("form-description"),
+  toolbar: ["bold", "italic", "strikethrough", "|", "code", "quote", "unordered-list", "|", "link", "image", "table", "horizontal-rule"],
+  spellChecker: true
+});
+var simplemdeAITrainingForm = new SimpleMDE({
+  element: document.getElementById("form-ai-training-form"),
+  toolbar: [],
+  spellChecker: true
+});
+var simplemdeAITrainingColored = new SimpleMDE({
+  element: document.getElementById("form-ai-training-colored"),
+  toolbar: [],
+  spellChecker: true
+});
+var simplemdeAITrainingFinal = new SimpleMDE({
+  element: document.getElementById("form-ai-training-final"),
+  toolbar: [],
+  spellChecker: true
+});
 </script>
 
-<?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
+<?php 
+
+require_once(__DIR__ . "/../../partials/beforeunload.js.php");
+require_once(__DIR__ . "/../../partials/dash-footer.php");
+
+?>
