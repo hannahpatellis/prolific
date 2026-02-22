@@ -25,7 +25,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     <div id="search-filter-sort-container" class="mb-4">
       <div class="input-group input-group-sm" id="search-group-container">
         <span class="input-group-text" id="inputGroup-sizing-sm">🔍</span>
-        <input type="search" class="form-control search" placeholder="Search..." />
+        <input type="search" id="search-input" class="form-control search" placeholder="Search..." />
       </div>
       <div class="btn-group btn-group-sm" role="group" >
         <button type="button" class="btn btn-outline-primary">Filters</button>
@@ -91,7 +91,14 @@ var options = {
   <p class="hidden location"></p></div>`
 };
 
-var galleryGrid = new List('gallery', options, dbTable);
+let galleryGrid = new List('gallery', options, dbTable);
+
+let searchInputDOM = document.getElementById('search-input');
+searchInputDOM.addEventListener('keyup', function(e) {
+  var searchString = this.value;
+  galleryGrid.search(searchString);
+});
+
 </script>
 
 <?php require_once(__DIR__ . "/../../partials/dash-footer.php"); ?>
