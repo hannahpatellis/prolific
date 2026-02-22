@@ -4,28 +4,33 @@ Art management software by Hannah A. Patellis
 
 The goal behind Prolific was to be able to view all my works in one place and keep an up-to-date SQL database that would be easy to work with in future projects.
 
-## Upcoming features
+## Planned features
 
 - Ability to replace an image without deleting the piece entry and re-adding it
 - Ability to add guest users and select which pieces they can view
 - Better error handling
+- Authentication that will persist, separate from PHP sessions
+- Complete sorting and filtering on the gallery grid
 
 ## Databases
 
 - Prolific currently is designed to use a single MySQL database with four tables:
   - `pieces` where each row is an individual work of art
   - `registry` where each row is a "registry entry" for upcoming features like the guest gallery
-  - `users` where each row is a username/password for logging into PROlific
+  - `users` where each row is a username/password for logging into Prolific
   - `cfa` where each row is a singular piece of physical certified fine art
 
-Schemas for these tables are located in the `schemas` directory.
+Schemas for these tables are located in the `./schemas` directory.
 
 ## Plugins Used
 
 - [SimpleMDE - Markdown Editor (JS)](https://github.com/sparksuite/simplemde-markdown-editor)
   - Used for better input and viewing of notes, descriptions, and stories associated with each piece
-- [Grid.js (JS)](https://github.com/grid-js/gridjs)
-  - Used for dynamically building a table view of the gallery in JS, as well as for searching in the table view of the gallery
+- [List.js (JS)](https://listjs.com)
+  - Used for dynamically adding entries to the gallery grid, as well as for searching/filtering/sorting the gallery grid
+- [lightGallery (JS)](https://www.lightgalleryjs.com)
+  - Used on the pieces stage to allow for better "gallery"-like viewing, including full-screen and lazy-loading
+
 
 ## Packages Used
 
@@ -34,7 +39,7 @@ Schemas for these tables are located in the `schemas` directory.
 
 ## env.json
 
-A `env.json` file is expected in the `app` directory. The `env.json` file follows this template:
+A `env.json` file is expected in the `./app` directory. The `./app/env.json` file follows this template:
 
 ```
 {
@@ -53,8 +58,14 @@ A `env.json` file is expected in the `app` directory. The `env.json` file follow
 
 Notes:
 - The `img_store_path` is where images uploaded will be placed. The filename is the only thing kept in the SQL database
-- The `sql_cert` may not be applicable to your MySQL setup and could be removed, although the `public/resource/db.php` file will need to be edited
+- The `sql_cert` may not be applicable to your MySQL setup and could be removed, although the `./app/resources/db.php` file will need to be edited
 - Currently `hostname` and `environment` aren't really being used for anything
+
+## Utilities included
+
+Two shell scrips are included in the `./utils` directory:
+- `model_build.sh` will rebuild the ORM model files after you modify `./app/resources/orm/schema.xml`
+- `sass.sh` will load up a watchful SASS compiler
 
 ## Screenshots from January 2026
 
