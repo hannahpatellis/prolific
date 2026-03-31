@@ -18,14 +18,14 @@ div#gallery {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    gap: 15px;
+    gap: 20px;
 
     p.hidden {
       display: none;
     }
 
     img.grid-item {
-      width: 200px;
+      width: 250px;
       height: auto;
       border-radius: 5px;
       border: 1px solid #1a1a1a;
@@ -40,14 +40,20 @@ div#gallery {
 }
 
 @media (max-width: 821px) {
+  div#gallery {
+    div.list {
+      gap: 15px;
+
+      img.grid-item {
+        width: 160px;
+      }
+    }
+  }
   div#gallery-header {
     flex-direction: column;
 
     div#search-filter-sort-container {
-      width: 60%;
+      width: 80%;
     }
-  }
-  img.grid-item {
-    width: 140px;
   }
 }

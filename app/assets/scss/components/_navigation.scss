@@ -11,8 +11,8 @@ nav {
 div#nav-stage {
   height: 60px;
   width: 100%;
-  color: #FAF0E6;
-  background-color: #36363670;
+  color: #FAF0E685;
+  background-color: #00000085;
   backdrop-filter: blur(5px);
   // border-radius: 15px;
   padding: 10px 20px 10px 20px;
@@ -41,11 +41,10 @@ a.nav-link {
 }
 a.nav-link:hover {
   transition: 0.5s;
-  color: rgb(105, 160, 242);
+  color: #FAF0E6;
 }
 a.nav-active {
   font-weight: 700;
-  color: rgb(13, 110, 253);
 }
 #nav-left .nav-entry {
   margin-right: 20px;
@@ -64,7 +63,7 @@ img#profile-pic:hover {
   border-radius: 20%;
 }
 .nav-entry#flag {
-  color: #FAF0E6;
+  color: #FAF0E685;
   font-size: 1.8rem;
   font-weight: 100;
 }

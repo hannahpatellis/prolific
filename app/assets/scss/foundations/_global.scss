@@ -1,10 +1,13 @@
 body {
   background-color: black;
-  color: #FAF0E6;
+  color: #FAF0E685;
   font-family: 'Lato', 'Proxima Nova', 'Gotham', 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
-h1, h2, h3 {
+h2, h3 {
   font-weight: 600;
+}
+h1 {
+  font-weight: 100;
 }
 hr {
   border-top: 2px solid #282828;

@@ -12205,12 +12205,16 @@ textarea.form-control-lg {
 }
 body {
   background-color: black;
-  color: #FAF0E6;
+  color: rgba(250, 240, 230, 0.5215686275);
   font-family: "Lato", "Proxima Nova", "Gotham", "Trebuchet MS", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3 {
+h2, h3 {
   font-weight: 600;
+}
+
+h1 {
+  font-weight: 100;
 }
 
 hr {
@@ -13390,8 +13394,8 @@ nav {
 div#nav-stage {
   height: 60px;
   width: 100%;
-  color: #FAF0E6;
-  background-color: rgba(54, 54, 54, 0.4392156863);
+  color: rgba(250, 240, 230, 0.5215686275);
+  background-color: rgba(0, 0, 0, 0.5215686275);
   backdrop-filter: blur(5px);
   padding: 10px 20px 10px 20px;
   display: flex;
@@ -13424,12 +13428,11 @@ a.nav-link {
 
 a.nav-link:hover {
   transition: 0.5s;
-  color: rgb(105, 160, 242);
+  color: #FAF0E6;
 }
 
 a.nav-active {
   font-weight: 700;
-  color: rgb(13, 110, 253);
 }
 
 #nav-left .nav-entry {
@@ -13453,7 +13456,7 @@ img#profile-pic:hover {
 }
 
 .nav-entry#flag {
-  color: #FAF0E6;
+  color: rgba(250, 240, 230, 0.5215686275);
   font-size: 1.8rem;
   font-weight: 100;
 }
@@ -13586,13 +13589,13 @@ div#gallery div.list {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  gap: 15px;
+  gap: 20px;
 }
 div#gallery div.list p.hidden {
   display: none;
 }
 div#gallery div.list img.grid-item {
-  width: 200px;
+  width: 250px;
   height: auto;
   border-radius: 5px;
   border: 1px solid #1a1a1a;
@@ -13605,14 +13608,17 @@ div#gallery div.list img.grid-item:hover {
 }
 
 @media (max-width: 821px) {
+  div#gallery div.list {
+    gap: 15px;
+  }
+  div#gallery div.list img.grid-item {
+    width: 160px;
+  }
   div#gallery-header {
     flex-direction: column;
   }
   div#gallery-header div#search-filter-sort-container {
-    width: 60%;
-  }
-  img.grid-item {
-    width: 140px;
+    width: 80%;
   }
 }
 table#gallery-table-list tbody {
