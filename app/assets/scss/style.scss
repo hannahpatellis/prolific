@@ -1,23 +1,29 @@
-@use 'foundations/reset';
-@use 'foundations/bootstrap_5-3-6';
-@use 'foundations/fonts';
-@use 'foundations/global';
+$primary: #005286;
+$danger: #890C2A;
+$warning: rgb(158, 116, 0);
+$success: rgb(5, 104, 58);
+$white: #beb5ad;
 
-@use 'plugins/simplemde_core';
-@use 'plugins/simplemde_theme-mermaids';
-@use 'plugins/simplemde_addon';
+@import 'foundations/reset';
+@import "bootstrap/bootstrap";
+@import 'foundations/fonts';
+@import 'foundations/global';
 
-@use 'components/navigation';
-@use 'components/forms';
+@import 'plugins/simplemde_core';
+@import 'plugins/simplemde_theme-mermaids';
+@import 'plugins/simplemde_addon';
 
-@use 'pages/login';
-@use 'pages/dashboard';
-@use 'pages/admin/users';
-@use 'pages/gallery/grid';
-@use 'pages/gallery/list';
-@use 'pages/piece/stage';
-@use 'pages/piece/view';
-@use 'pages/training/gallery';
-@use 'pages/training/edit';
+@import 'components/navigation';
+@import 'components/forms';
 
-@use 'animations';
+@import 'pages/login';
+@import 'pages/dashboard';
+@import 'pages/admin/users';
+@import 'pages/gallery/grid';
+@import 'pages/gallery/list';
+@import 'pages/piece/stage';
+@import 'pages/piece/view';
+@import 'pages/training/gallery';
+@import 'pages/training/edit';
+
+@import 'animations';
