@@ -76,7 +76,7 @@ More screenshots, including historical screenshots, can be found in the `docs` d
 ![Gallery view](docs/2026/Gallery-Grid.png "Gallery view")
 ![Details view](docs/2026/Piece-View.png "Details view")
 ![Update an existing piece](docs/2026/CFA-List.png "Certified fine art list view")
-![Add a new piece](docs/2026/Piece-New.png "Add a new piece")
+![Add a new piece](docs/2026/Piece-New.png "Add a new piece to the database")
 
 ---
 
