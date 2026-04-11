@@ -5,13 +5,14 @@ $success: rgb(5, 104, 58);
 $white: #beb5ad;
 
 @import 'foundations/reset';
-@import "bootstrap/bootstrap";
+@import 'bootstrap/bootstrap';
 @import 'foundations/fonts';
 @import 'foundations/global';
+@import 'foundations/bootstrap_overrides';
 
 @import 'plugins/simplemde_core';
 @import 'plugins/simplemde_theme-mermaids';
-@import 'plugins/simplemde_addon';
+@import 'plugins/simplemde_overrides';
 
 @import 'components/navigation';
 @import 'components/forms';

@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php print($page_title); ?> | Prolific by Hannah A. Patellis</title>
     <link href="/assets/css/style.css" rel="stylesheet" crossorigin="anonymous">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="PROlific">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png?v=20260411" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260411" />
+    <link rel="shortcut icon" href="/favicon.ico?v=20260411" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260411" />
+    <meta name="apple-mobile-web-app-title" content="Prolific" />
+    <link rel="manifest" href="/site.webmanifest?v=20260411" />
+
 
     <script async src="https://ana-ab.hannahap.com/js/pa-yPvUntvFx2ARGk6qXeLci.js"></script>
     <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
@@ -24,7 +28,7 @@
               <a href="/go/dashboard.php"><img id="profile-pic" src="/assets/img/logo.png" /></a>
             </div> -->
             <div class="nav-entry" id="flag">
-              Prolific
+              <a href="/go/dashboard.php">Prolific</a>
             </div>
           </div>
 

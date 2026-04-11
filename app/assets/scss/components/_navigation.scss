@@ -66,6 +66,16 @@ img#profile-pic:hover {
   color: $white;
   font-size: 1.8rem;
   font-weight: 100;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  a:hover {
+    transition: 0.5s;
+    color: #FAF0E6;
+  }
 }
 .nav-entry#nav-divider {
   font-weight: 100;

@@ -12068,6 +12068,10 @@ div#main-stage {
     gap: 5px;
   }
 }
+span.input-group-text {
+  background-color: #beb5ad;
+}
+
 /**
  * simplemde v1.11.2
  * Copyright Next Step Webs, Inc.
@@ -13265,6 +13269,15 @@ img#profile-pic:hover {
   color: #beb5ad;
   font-size: 1.8rem;
   font-weight: 100;
+}
+.nav-entry#flag a {
+  color: #beb5ad;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.nav-entry#flag a:hover {
+  transition: 0.5s;
+  color: #FAF0E6;
 }
 
 .nav-entry#nav-divider {
