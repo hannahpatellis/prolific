@@ -21,7 +21,7 @@ div#item-wrap {
         }
         img.training-item {
             border-radius: 5px;
-            width: 150px;
+            width: 200px;
             height: auto;
         }
     }
@@ -29,5 +29,13 @@ div#item-wrap {
 
 
 @media (max-width: 821px) {
-
+    div#item-wrap {
+        div.item {
+            img.training-item {
+                border-radius: 5px;
+                width: 150px;
+                height: auto;
+            }
+        }
+    }
 }

@@ -13546,10 +13546,17 @@ div#item-wrap div.item h1, div#item-wrap div.item .h1 {
 }
 div#item-wrap div.item img.training-item {
   border-radius: 5px;
-  width: 150px;
+  width: 200px;
   height: auto;
 }
 
+@media (max-width: 821px) {
+  div#item-wrap div.item img.training-item {
+    border-radius: 5px;
+    width: 150px;
+    height: auto;
+  }
+}
 @keyframes welcome {
   0% {
     transform: translateY(100%);

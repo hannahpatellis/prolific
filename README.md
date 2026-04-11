@@ -6,9 +6,11 @@ The goal behind Prolific was to be able to view all my works in one place and ke
 
 ## Planned features
 
-- Ability to replace an image without deleting the piece entry and re-adding it
-- Ability to add guest users and select which pieces they can view
-- Better error handling
+- Ability to replace an existing piece's image without deleting the piece entry and re-adding it
+- Ability to select which pieces specific users can view
+- Ability to delete users from the administration page
+- Ability to edit users from the administration page
+- Better error handling across the application
 - Authentication that will persist, separate from PHP sessions
 - Complete sorting and filtering on the gallery grid
 
