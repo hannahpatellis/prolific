@@ -69,6 +69,10 @@ Two shell scrips are included in the `./utils` directory:
 - `model_build.sh` will rebuild the ORM model files after you modify `./app/resources/orm/schema.xml`
 - `sass.sh` will load up a watchful SASS compiler
 
+## Note on AI usage
+
+Prolific was developed entirely by hand until April 11, 2026 when I began to use Claude Code to assist in writing new features. I consider this to be an aid, just like Stack Overflow or other Google-fu resourcing. I do not intend for Claude Code to maintain this app entirely going forward. The goal here is to be able to rapidly  add more complex features to this passion-project. If you would like to discuss my use of AI/Claude Code or share feelings about AI usage (positive or negative!) please reach out to me! As I embark on a journey into learning more about this landscape-altering technology, I am very interested to hear all the hot takes. I love this project, I love art, and AI doesn't change or replace that. Ever.
+
 ## Screenshots from January 2026
 
 More screenshots, including historical screenshots, can be found in the `docs` directory
