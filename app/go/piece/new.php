@@ -177,8 +177,8 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     <div class="col">
       <div class="form-floating">
         <select class="form-select" id="form-size-unit" name="size-unit" aria-label="Size unit" required>
-          <option value="px" selected>px</option>
-          <option value="in">in</option>
+          <option value="in" selected>in</option>
+          <option value="px">px</option>
           <option value="mm">mm</option>
           <option value="cm">cm</option>
         </select>
@@ -292,7 +292,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <div class="input-group">
         <input type="file" class="form-control" id="form-file" name="img_upload" required>
       </div>
-      <div class="form-text"><a href="#" data-bs-toggle="modal" data-bs-target="#imgrequirements">View consistency requirements for exporting EMOHs for this database</a></div>
+      <!-- helper text <div class="form-text"><a href="#" data-bs-toggle="modal" data-bs-target="#imgrequirements">View consistency requirements for exporting EMOHs for this database</a></div> -->
     </div>
   </div>
 
@@ -302,19 +302,6 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     </div>
   </div>
 </form>
-
-<div class="modal fade" tabindex="-1" id="imgrequirements" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <?php include_once(__DIR__ . "/../../partials/img_requirements.php"); ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">

@@ -13484,6 +13484,7 @@ div#inline-gallery-container div.lg-sub-html div#stage-desc {
 }
 div#inline-gallery-container div.lg-sub-html h1, div#inline-gallery-container div.lg-sub-html .h1 {
   font-size: 1.5rem;
+  text-align: left;
 }
 div#inline-gallery-container div.lg-sub-html a {
   text-decoration: none;
@@ -13545,7 +13546,7 @@ div#item-wrap div.item h1, div#item-wrap div.item .h1 {
 }
 div#item-wrap div.item img.training-item {
   border-radius: 5px;
-  width: 200px;
+  width: 150px;
   height: auto;
 }
 

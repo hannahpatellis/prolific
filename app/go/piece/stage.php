@@ -33,7 +33,7 @@ const dbTable = db.map((row) => {
   return {
     src: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
     thumb: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
-    subHtml: `<div id="stage-desc"><h1 class="d-flex justify-content-between align-items-center">${row.Title}<span class="badge text-bg-primary rounded-pill"><a href="/go/piece/view.php?id=${row.Id}">#${row.Id}</a></span></h1></div>`,
+    subHtml: `<div id="stage-desc"><div class="d-flex justify-content-between align-items-center"><h1>${row.Title}</h1><span class="badge text-bg-primary rounded-pill"><a href="/go/piece/view.php?id=${row.Id}">#${row.Id}</a></span></div></div>`,
   };
 });
 
