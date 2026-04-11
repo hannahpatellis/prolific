@@ -49,6 +49,8 @@ const inlineGallery = lightGallery(lgContainer, {
     download: false,
     appendSubHtmlTo: '.lg-sub-html',
     slideDelay: 400,
+    hideControlOnEnd: true,
+    loop: false,
     dynamicEl: dbTable
 });
 
