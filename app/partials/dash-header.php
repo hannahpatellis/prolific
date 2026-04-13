@@ -45,21 +45,21 @@
           </a>
           <?php if($_SESSION['isAdmin'] == true) { ?>
             <a href="/go/cfa/index.php" class="nav-link <?php if($active_page == "cfa") {print('nav-active" aria-current="page');} ?>">
-              <div class="nav-entry">CFA Records</div>
+              <div class="nav-entry">CFA</div>
             </a>
             <a href="/go/training/gallery.php" class="nav-link <?php if($active_page == "training") {print('nav-active" aria-current="page');} ?>">
               <div class="nav-entry">AI Training</div>
             </a>
             <a href="/go/admin/index.php" class="nav-link <?php if($active_page == "admin") {print('nav-active" aria-current="page');} ?>">
-              <div class="nav-entry">Administration</div>
+              <div class="nav-entry">Users</div>
             </a>
-            <div class="nav-entry" id="nav-divider">
-              |
-            </div>
-            <a href="/go/piece/new.php" class="nav-link <?php if($active_page == "newpiece") {print('nav-active" aria-current="page');} ?>">
-              <div class="nav-entry">New piece</div>
+            <a href="/go/piece/new.php" class="nav-link">
+              <div class="nav-entry"><img src="/assets/img/new-emoh.svg" alt="New piece" height="24px" width="auto"></div>
             </a>
           <?php } ?>
+          <a href="/api/logout.php" class="nav-link">
+            <div class="nav-entry"><img src="/assets/img/logout.svg" alt="Logout" height="24px" width="auto"></div>
+          </a>
         </div>
       </div>
     </nav>
