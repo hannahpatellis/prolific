@@ -17,9 +17,7 @@ bash ./utils/model_build.sh
 Regenerates classes in `app/resources/orm/Art/`. Do not manually edit generated files there.
 
 **Run locally:**
-```bash
-php -S localhost:8000 -t ./app
-```
+Uses MAMP to serve the app via a local Apache server. Start MAMP and point the document root to the `app/` directory. Runs at `http://localhost` (port 80).
 Requires `app/env.json` (see `env.template.json` for structure).
 
 **Install PHP dependencies:**
