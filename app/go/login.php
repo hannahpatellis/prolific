@@ -3,6 +3,7 @@
 session_start();
 if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
   header('Location: /go/dashboard.php');
+  exit;
 }
 
 require_once(__DIR__ . "/../partials/gen-header.php"); 

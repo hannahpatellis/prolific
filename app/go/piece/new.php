@@ -3,9 +3,11 @@
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 $active_page = "newpiece";
@@ -36,7 +38,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 <?php } ?>
 
-<form action="/actions/piece_new.php" method="POST" enctype="multipart/form-data">
+<form action="/api/piece/new.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">

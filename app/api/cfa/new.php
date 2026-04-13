@@ -7,9 +7,11 @@ error_reporting(E_ALL);
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -22,8 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $new_cfa->setUpdatedAt('now');
   $new_cfa->save();
   header("Location: /go/cfa/new.php?status=201");
+  exit;
 } else {
   header("Location: /go/cfa/new.php?status=500&detail=notPOST");
+  exit;
 }
 
 function prepare_dates($raw_post) {
