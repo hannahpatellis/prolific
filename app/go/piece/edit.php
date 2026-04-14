@@ -170,7 +170,7 @@ require_once(__DIR__ . "/../../resources/env.php");
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General" <?php if($piece['Collection'] == 'General') {print("selected");} ?>>General</option>
-          <option value="The Era II" <?php if($piece['Collection'] == 'The Era II') {print("selected");} ?>>The Era II</option>
+          <option value="Upscaled26" <?php if($piece['Collection'] == 'Upscaled26') {print("selected");} ?>>Upscaled26</option>
           <option value="Journey North" <?php if($piece['Collection'] == 'Journey North') {print("selected");} ?>>Journey North</option>
           <option value="The Era" <?php if($piece['Collection'] == 'The Era') {print("selected");} ?>>The Era</option>
           <option value="Untitled Trans Collection" <?php if($piece['Collection'] == 'Untitled Trans Collection') {print("selected");} ?>>Untitled Trans Collection</option>

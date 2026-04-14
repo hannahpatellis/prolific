@@ -141,7 +141,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General">General</option>
-          <option value="The Era II" selected>The Era II</option>
+          <option value="Upscaled26" selected>Upscaled26</option>
           <option value="Journey North">Journey North</option>
           <option value="The Era">The Era</option>
           <option value="Untitled Trans Collection">Untitled Trans Collection</option>
