@@ -7,9 +7,11 @@ error_reporting(E_ALL);
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 require_once __DIR__ . '/../../../vendor/autoload.php';
@@ -19,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $prepared_password_hash = prepare_password_hash($_POST);
   if(!$prepared_password_hash) {
     header("Location: /go/admin/user/new.php?status=500&detail=passwordMismatch");
+    exit;
   } else {
     $prepared_properties = prepare_properties($_POST, $prepared_password_hash);
     $new_user = new Art\Users();
@@ -26,9 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_user->setUpdatedAt('now');
     $new_user->save();
     header("Location: /go/admin/user/new.php?status=201");
+    exit;
   }
 } else {
   header("Location: /go/admin/user/new.php?status=500&detail=notPOST");
+  exit;
 }
 
 function prepare_password_hash($raw_post) {

@@ -13346,7 +13346,7 @@ form {
 }
 
 #login-logo {
-  fill: #FAF0E6;
+  fill: #beb5ad;
 }
 
 #login-box form {
@@ -13354,12 +13354,17 @@ form {
 }
 
 #login-container h1, #login-container .h1 {
-  color: #FAF0E6;
+  color: #beb5ad;
   font-size: 3.5rem;
 }
 
 #login-container p#tagline {
   font-weight: 100;
+}
+
+form#login-form-wrapper {
+  background-color: rgb(18, 18, 18);
+  border: solid 2px rgb(40, 40, 40);
 }
 
 h1#welcome, #welcome.h1 {
@@ -13391,6 +13396,10 @@ div#dash-counter {
 }
 label.form-check-label {
   color: white;
+}
+
+button#delete-user {
+  margin-right: 20px;
 }
 
 div#gallery-header div#search-filter-sort-container {

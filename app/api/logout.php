@@ -5,5 +5,6 @@ session_unset();
 session_destroy();
 
 header('Location: /go/login.php?status=logout_success');
+exit;
 
 ?>

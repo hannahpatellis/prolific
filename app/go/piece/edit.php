@@ -3,9 +3,11 @@
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -65,7 +67,7 @@ require_once(__DIR__ . "/../../resources/env.php");
   </div>
 <?php } ?>
 
-<form action="/actions/piece_edit.php" method="POST" enctype="multipart/form-data">
+<form action="/api/piece/edit.php" method="POST" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
       <div class="form-floating">
@@ -168,7 +170,7 @@ require_once(__DIR__ . "/../../resources/env.php");
       <div class="form-floating">
         <select class="form-select" id="form-collection" name="collection" aria-label="Collection" required>
           <option value="General" <?php if($piece['Collection'] == 'General') {print("selected");} ?>>General</option>
-          <option value="The Era II" <?php if($piece['Collection'] == 'The Era II') {print("selected");} ?>>The Era II</option>
+          <option value="Upscaled26" <?php if($piece['Collection'] == 'Upscaled26') {print("selected");} ?>>Upscaled26</option>
           <option value="Journey North" <?php if($piece['Collection'] == 'Journey North') {print("selected");} ?>>Journey North</option>
           <option value="The Era" <?php if($piece['Collection'] == 'The Era') {print("selected");} ?>>The Era</option>
           <option value="Untitled Trans Collection" <?php if($piece['Collection'] == 'Untitled Trans Collection') {print("selected");} ?>>Untitled Trans Collection</option>

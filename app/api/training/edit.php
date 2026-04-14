@@ -7,9 +7,11 @@ error_reporting(E_ALL);
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 require_once(__DIR__ . "/../../resources/db.php");
@@ -35,9 +37,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stmt->close();
   $mysqli->close();
   header("Location: /go/training/edit.php?status=201&id=".$_POST['id']);
+  exit;
 } else {
   array_push($errors, "The request method was not POST");
   header("Location: /go/training/edit.php?&status=500&detail=notPOST&id=".$_POST['id']);
+  exit;
 }
 
 ?>

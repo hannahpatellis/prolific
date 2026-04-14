@@ -3,6 +3,7 @@
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 
 require_once __DIR__ . '/../../vendor/autoload.php';

@@ -3,9 +3,11 @@
 session_start();
 if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
   header('Location: /go/login.php?error=forbidden');
+  exit;
 }
 if($_SESSION['isAdmin'] != true) {
   header('Location: /go/dashboard.php?error=forbidden');
+  exit;
 }
 
 require_once __DIR__ . '/../../vendor/autoload.php';
@@ -22,10 +24,30 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <div class="row">
   <div class="col d-flex justify-content-between align-items-center">
-    <h1>Administration</h1>
+    <h1>User administration</h1>
     <a href="/go/admin/user/new.php"><button type="button" class="btn btn-primary">New user</button></a>
   </div>
 </div>
+
+<?php if(isset($_GET['status']) && $_GET['status'] == '200') { ?>
+  <div class="row">
+    <div class="col">
+      <?php if(isset($_GET['detail']) && $_GET['detail'] == 'deleteSuccess') { ?>
+        <div class="alert alert-success" role="alert">User deleted successfully.</div>
+      <?php } ?>
+    </div>
+  </div>
+<?php } ?>
+
+<?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
+  <div class="row">
+    <div class="col">
+      <?php if(isset($_GET['detail']) && $_GET['detail'] == 'deleteUserNotFound') { ?>
+        <div class="alert alert-danger" role="alert">There was an error deleting the user<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
+      <?php } ?>
+    </div>
+  </div>
+<?php } ?>
 
 <div class="row">
   <div class="col">

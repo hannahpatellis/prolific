@@ -1,13 +1,17 @@
 #login-logo {
-  fill: #FAF0E6;
+  fill: $white;
 }
 #login-box form {
   background-color: #282828;
 }
 #login-container h1 {
-  color: #FAF0E6;
+  color: $white;
   font-size: 3.5rem;
 }
 #login-container p#tagline {
   font-weight: 100;
+}
+form#login-form-wrapper {
+  background-color: rgb(18, 18, 18);
+  border: solid 2px rgb(40, 40, 40);
 }

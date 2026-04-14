@@ -3,6 +3,7 @@
 session_start();
 if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
   header('Location: /go/dashboard.php');
+  exit;
 }
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -19,8 +20,10 @@ if (password_verify($_POST['password'], $row[0]['PasswordHash'])) {
     $_SESSION['isAdmin'] = $row[0]['Isadmin'];
     $_SESSION['selectionOnly'] = $row[0]['Selectiononly'];
     header('Location: /go/dashboard.php');
+    exit;
 } else {
   header('Location: /go/login.php?status=incorrect_login');
+  exit;
 }
 
 ?>
