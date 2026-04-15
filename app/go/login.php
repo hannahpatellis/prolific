@@ -6,7 +6,8 @@ if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
   exit;
 }
 
-require_once(__DIR__ . "/../partials/gen-header.php"); 
+require_once __DIR__ . '/../resources/csrf.php';
+require_once(__DIR__ . "/../partials/gen-header.php");
 
 ?>
 
@@ -27,6 +28,7 @@ require_once(__DIR__ . "/../partials/gen-header.php");
     </div>
     <div class="col-md-10 mx-auto col-lg-5">
       <form class="p-4 p-md-5 rounded-3" id="login-form-wrapper" method="POST" action="/api/login.php">
+        <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="floatingInput" name="username" placeholder="hannah">
           <label for="floatingInput">Username</label>

@@ -55,7 +55,7 @@ const inlineGallery = lightGallery(lgContainer, {
     dynamicEl: dbTable
 });
 
-inlineGallery.openGallery(<?php print($_GET['id']-1); ?>);
+inlineGallery.openGallery(<?php print((int)$_GET['id']-1); ?>);
 
 </script>
 

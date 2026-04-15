@@ -10,6 +10,7 @@ if($_SESSION['isAdmin'] != true) {
   exit;
 }
 
+require_once __DIR__ . '/../../resources/csrf.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
 
@@ -62,12 +63,13 @@ require_once(__DIR__ . "/../../resources/env.php");
 <?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
-      <div class="alert alert-danger" role="alert">There was an error updating this EMOH<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
+      <div class="alert alert-danger" role="alert">There was an error updating this EMOH<?php if($_GET['detail']) {print(": " . htmlspecialchars($_GET['detail'], ENT_QUOTES, 'UTF-8'));}; ?></div>
     </div>
   </div>
 <?php } ?>
 
 <form action="/api/piece/edit.php" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
   <div class="row">
     <div class="col">
       <div class="form-floating">

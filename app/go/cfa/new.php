@@ -10,6 +10,8 @@ if($_SESSION['isAdmin'] != true) {
   exit;
 }
 
+require_once __DIR__ . '/../../resources/csrf.php';
+
 $active_page = "cfa";
 $page_title = "New CFA record";
 require_once(__DIR__ . "/../../partials/dash-header.php");
@@ -18,7 +20,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <div class="row">
   <div class="col">
-    <h1>New CFA record <?php if(isset($_GET['id'])) {print("for piece #".$_GET['id']);} ?></h1>
+    <h1>New CFA record <?php if(isset($_GET['id'])) {print("for piece #" . htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'));} ?></h1>
   </div>
 </div>
 
@@ -33,16 +35,17 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
-      <div class="alert alert-danger" role="alert">There was an error adding the new CFA record<?php if($_GET['detail']) {print(": ".$_GET['detail']);}; ?></div>
+      <div class="alert alert-danger" role="alert">There was an error adding the new CFA record<?php if($_GET['detail']) {print(": " . htmlspecialchars($_GET['detail'], ENT_QUOTES, 'UTF-8'));}; ?></div>
     </div>
   </div>
 <?php } ?>
 
 <form action="/api/cfa/new.php" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
   <div class="row">
     <div class="col">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php if(isset($_GET['id'])) {print($_GET['id']);} ?>">
+       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php if(isset($_GET['id'])) {print(htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'));} ?>">
         <label for="form-PieceId">Piece ID*</label>
       </div>
     </div>

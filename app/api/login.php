@@ -6,6 +6,14 @@ if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
   exit;
 }
 
+require_once __DIR__ . '/../resources/csrf.php';
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  header('Location: /go/login.php');
+  exit;
+}
+csrf_verify();
+
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../resources/orm/config.php';
 

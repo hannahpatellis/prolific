@@ -14,8 +14,11 @@ if($_SESSION['isAdmin'] != true) {
   exit;
 }
 
+require_once __DIR__ . '/../../resources/csrf.php';
 require_once(__DIR__ . "/../../resources/db.php");
 require_once(__DIR__ . "/../../resources/env.php");
+
+csrf_verify();
 
 $errors = array();
 $switch_exports = 0;

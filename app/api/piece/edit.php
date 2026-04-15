@@ -14,8 +14,11 @@ if($_SESSION['isAdmin'] != true) {
   exit;
 }
 
+require_once __DIR__ . '/../../resources/csrf.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
+
+csrf_verify();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $piece_id = (int) $_POST['id'];
