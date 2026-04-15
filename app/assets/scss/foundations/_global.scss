@@ -1,7 +1,7 @@
 body {
-  background-color: black;
+  background-color: #111111;
   color: $white;
-  font-family: 'Lato', 'Proxima Nova', 'Gotham', 'Trebuchet MS', Helvetica, Arial, sans-serif;
+  font-family: 'InterVariable', 'Lato', 'Proxima Nova', 'Gotham', 'Trebuchet MS', Helvetica, Arial, sans-serif;
 }
 h2, h3 {
   color: $white;
@@ -32,9 +32,23 @@ hr {
 img.hidden {
   display: none;
 }
+div#nav-expand-icon path.icn-std {
+  fill: $white;
+  transition: 0.3s;
+}
+div#nav-expand-icon:hover path.icn-std {
+  fill: #FAF0E6;
+}
+a path.icn-std {
+  fill: $white;
+  transition: 0.3s;
+}
+a:hover path.icn-std {
+  fill: #FAF0E6;
+}
 .serif {
-  font-family: Georgia, Garamond, 'Times New Roman', Times, serif;
-  font-weight: lighter;
+  font-family: 'Instrument Serif', Georgia, Garamond, 'Times New Roman', Times, serif;
+  font-weight: normal;
 }
 
 div#main {

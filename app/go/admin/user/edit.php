@@ -22,7 +22,7 @@ $page_title = "Edit user: " . $user['Username'];
 require_once(__DIR__ . "/../../../partials/dash-header.php");
 
 ?>
-
+<div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col d-flex align-items-center">
     <h1>Edit user: <?php print($user['Username']); ?></h1>
@@ -113,6 +113,7 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
     </div>
   </div>
 </form>
+</div></div>
 
 <?php 
 

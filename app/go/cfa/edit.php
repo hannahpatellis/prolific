@@ -55,7 +55,7 @@ function deconstruct_date($incoming_date) {
 print_r(!empty($deconst_buyer_receipt_date));
 
 ?>
-
+<div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col">
     <h1 class="d-flex justify-content-between align-items-center"><span class="me-3">Edit CFA record: <?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></span><span class="badge text-bg-primary rounded-pill me-3"><?php print($piece['Title']); ?></span></h1>
@@ -330,6 +330,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
   </div>
 </form>
+</div></div>
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">

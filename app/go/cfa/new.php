@@ -17,7 +17,7 @@ $page_title = "New CFA record";
 require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
-
+<div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col">
     <h1>New CFA record <?php if(isset($_GET['id'])) {print("for piece #" . htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'));} ?></h1>
@@ -284,6 +284,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     </div>
   </div>
 </form>
+</div></div>
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">

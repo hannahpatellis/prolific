@@ -41,7 +41,7 @@ function deconstruct_date($incoming_date) {
 require_once(__DIR__ . "/../../resources/env.php");
 
 ?>
-
+<div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col d-flex align-items-center">
     <a href="/go/piece/view.php?id=<?php print($piece['Id']); ?>">
@@ -314,6 +314,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
   </div>
 </form>
+</div></div>
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">

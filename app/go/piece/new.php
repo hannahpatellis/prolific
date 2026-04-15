@@ -17,7 +17,7 @@ $page_title = "New piece";
 require_once(__DIR__ . "/../../partials/dash-header.php");
 
 ?>
-
+<div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col">
     <h1>Add a piece</h1>
@@ -307,6 +307,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
     </div>
   </div>
 </form>
+</div></div>
 
 <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
 <script type="text/javascript">

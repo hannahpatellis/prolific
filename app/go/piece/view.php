@@ -26,7 +26,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-sm-12">
+  <div class="col-md-5 col-sm-12">
     <a href="/go/piece/stage.php?id=<?php print($piece['Id']); ?>">
       <img class="piece" src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="100%" height="auto" />
     </a>
@@ -34,7 +34,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <div class="mt-2"><pre><?php print $piece['Thumbnail']; ?></pre></div>
     </a>
   </div>
-  <div class="col-md-8 col-sm-12">
+  <div class="col-md-7 col-sm-12">
     <div class="list-group">
       
       <div href="#" class="list-group-item">
