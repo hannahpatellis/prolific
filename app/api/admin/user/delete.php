@@ -14,10 +14,17 @@ if($_SESSION['isAdmin'] != true) {
   exit;
 }
 
+require_once __DIR__ . '/../../../resources/csrf.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../../resources/orm/config.php';
 
-$user_id = (int) $_GET['id'];
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+  header('Location: /go/admin/index.php');
+  exit;
+}
+csrf_verify();
+
+$user_id = (int) $_POST['id'];
 
 $user = Art\UsersQuery::create()->findPK($user_id);
 
