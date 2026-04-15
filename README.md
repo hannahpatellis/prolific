@@ -6,13 +6,20 @@ The goal behind Prolific was to be able to view all my works in one place and ke
 
 ## Planned features
 
+- Security
+  - Modularize the auth/permission blocks on each page
+  - Persistent authentication
+  - General security overview
+- Implement List.js search/sort/filter on gallery grid
+- Piece title on hover on gallery grid
+- Lazy loading images on gallery grid
+- Implement List.js on CFA and Administration pages
+- PWA friendly
+  - Add a "Liquid Glass" style icon for iOS/iPadOS
 - Ability to replace an existing piece's image without deleting the piece entry and re-adding it
-- Ability to select which pieces specific users can view
-- Ability to delete users from the administration page
-- Ability to edit users from the administration page
+- Ability to create "albums" that pieces can be added to
+  - Ability to assign "albums" to users so they can only see pieces in select albums
 - Better error handling across the application
-- Authentication that will persist, separate from PHP sessions
-- Complete sorting and filtering on the gallery grid
 
 ## Databases
 
@@ -61,7 +68,7 @@ A `env.json` file is expected in the `./app` directory. The `./app/env.json` fil
 Notes:
 - The `img_store_path` is where images uploaded will be placed. The filename is the only thing kept in the SQL database
 - The `sql_cert` may not be applicable to your MySQL setup and could be removed, although the `./app/resources/db.php` file will need to be edited
-- Currently `hostname` and `environment` aren't really being used for anything
+- Currently `hostname` and `environment` are not in use
 
 ## Utilities included
 
