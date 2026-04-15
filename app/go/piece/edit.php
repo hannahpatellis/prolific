@@ -306,7 +306,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
   </div>
 
-  <input type="text" id="form-id" name="id" required value="<?php print($piece['Id']); ?>">
+  <input type="hidden" id="form-id" name="id" value="<?php print((int)$piece['Id']); ?>">
 
   <div class="row mb-4">
     <div class="col">

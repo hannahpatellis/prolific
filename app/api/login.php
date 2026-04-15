@@ -21,6 +21,7 @@ $query = new Art\UsersQuery();
 $row = $query->filterByUsername($_POST['username'])->limit(1)->find()->toArray();
 
 if (password_verify($_POST['password'], $row[0]['PasswordHash'])) {
+    session_regenerate_id(true);
     $_SESSION['active'] = true;
     $_SESSION['user'] = $row[0]['Username'];
     $_SESSION['first_name'] = $row[0]['FirstName'];

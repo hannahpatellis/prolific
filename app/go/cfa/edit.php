@@ -322,7 +322,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
   </div>
 
-  <input type="text" id="form-id" name="RecordId" required value="<?php print($cfa['RecordId']); ?>">
+  <input type="hidden" id="form-id" name="RecordId" value="<?php print((int)$cfa['RecordId']); ?>">
 
   <div class="row mb-4">
     <div class="col">

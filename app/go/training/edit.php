@@ -132,7 +132,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
           </div>
         </div>
       </div>
-      <input type="text" id="form-id" name="id" required value="<?php print($piece['Id']); ?>">
+      <input type="hidden" id="form-id" name="id" value="<?php print((int)$piece['Id']); ?>">
 
       <button type="submit" class="btn btn-warning mt-4">Update EMOH</button>
     </form>

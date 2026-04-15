@@ -105,7 +105,7 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
     </div>
   </div>
 
-  <input type="text" id="form-id" name="Id" required value="<?php print($user['Id']); ?>">
+  <input type="hidden" id="form-id" name="Id" value="<?php print((int)$user['Id']); ?>">
 
   <div class="row mb-4">
     <div class="col">
