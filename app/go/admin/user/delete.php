@@ -18,7 +18,12 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 require_once __DIR__ . '/../../../resources/orm/config.php';
 
 $query = new Art\UsersQuery();
-$user = $query->findPK($_GET['id'])->toArray();
+$user = $query->findPK($_GET['id']);
+if (!$user) {
+    header('Location: /go/admin/index.php?status=500&detail=deleteUserNotFound');
+    exit;
+}
+$user = $user->toArray();
 
 $active_page = "admin";
 $page_title = "Delete user: " . $user['Username'];
