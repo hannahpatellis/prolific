@@ -1,5 +1,15 @@
 <?php
 
+require_once __DIR__ . '/../resources/env.php';
+
+session_set_cookie_params([
+    'lifetime' => 0,
+    'path'     => '/',
+    'secure'   => $env['environment'] !== 'dev',
+    'httponly' => true,
+    'samesite' => 'Lax',
+]);
+
 session_start();
 if(isset($_SESSION['active']) && $_SESSION['active'] == true) {
   header('Location: /go/dashboard.php');

@@ -39,17 +39,17 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
       <?php foreach($pieces as $piece) { 
         if(in_array($piece['Id'], $id_excludes)) { } else { ?>
         <div class="item">
-          <a href="/go/training/edit.php?id=<?php print($piece['Id']); ?>">
-            <img class="training-item" src="<?php print($env['img_store_url']); print($piece['Thumbnail']); ?>.jpg" />
+          <a href="/go/training/edit.php?id=<?php print((int)$piece['Id']); ?>">
+            <img class="training-item" src="<?php print($env['img_store_url'] . h($piece['Thumbnail'])); ?>.jpg" />
           </a>
-          <h1>#<?php print($piece['Id']); ?></h1>
+          <h1>#<?php print((int)$piece['Id']); ?></h1>
           <div class="slider-container">
             <div class="form-check form-switch">
-              <input class="form-check-input switch-exports" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingExports']) {print("checked");} ?> disabled>
+              <input class="form-check-input switch-exports" type="checkbox" role="switch" data-piece-id="<?php print((int)$piece['Id']); ?>" <?php if($piece['TrainingExports']) {print("checked");} ?> disabled>
               <label class="form-check-label">Exports</label>
             </div>
             <div class="form-check form-switch">
-              <input class="form-check-input switch-desc" type="checkbox" role="switch" data-piece-id=<?php print($piece['Id']); ?> <?php if($piece['TrainingDescriptions']) {print("checked");} ?> disabled>
+              <input class="form-check-input switch-desc" type="checkbox" role="switch" data-piece-id="<?php print((int)$piece['Id']); ?>" <?php if($piece['TrainingDescriptions']) {print("checked");} ?> disabled>
               <label class="form-check-label">Descriptions</label>
             </div>
           </div>
@@ -59,7 +59,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="/assets/js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
   // $('.switch-exports').change(function () {
   //   alert("Exports: " + $(this).data("pieceId") + " is now " + $(this).prop('checked'));

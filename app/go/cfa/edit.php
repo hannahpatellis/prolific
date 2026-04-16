@@ -61,7 +61,7 @@ print_r(!empty($deconst_buyer_receipt_date));
 <div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col">
-    <h1 class="d-flex justify-content-between align-items-center"><span class="me-3">Edit CFA record: <?php print($cfa['PieceId'] . '.' . $cfa['PieceIdRun'] . '.' . $cfa['PieceIdCount']); ?></span><span class="badge text-bg-primary rounded-pill me-3"><?php print($piece['Title']); ?></span></h1>
+    <h1 class="d-flex justify-content-between align-items-center"><span class="me-3">Edit CFA record: <?php print((int)$cfa['PieceId'] . '.' . (int)$cfa['PieceIdRun'] . '.' . (int)$cfa['PieceIdCount']); ?></span><span class="badge text-bg-primary rounded-pill me-3"><?php print(h($piece['Title'])); ?></span></h1>
   </div>
 </div>
 
@@ -86,19 +86,19 @@ print_r(!empty($deconst_buyer_receipt_date));
   <div class="row">
     <div class="col">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php print($cfa['PieceId']) ?>">
+       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php print((int)$cfa['PieceId']) ?>">
         <label for="form-PieceId">Piece ID*</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-PieceIdRun" name="PieceIdRun" placeholder="Run number" required value="<?php print($cfa['PieceIdRun']); ?>">
+       <input type="text" class="form-control" id="form-PieceIdRun" name="PieceIdRun" placeholder="Run number" required value="<?php print((int)$cfa['PieceIdRun']); ?>">
         <label for="form-PieceIdRun">Run Number*</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-PieceIdCount" name="PieceIdCount" placeholder="Count number" required value="<?php print($cfa['PieceIdCount']); ?>">
+       <input type="text" class="form-control" id="form-PieceIdCount" name="PieceIdCount" placeholder="Count number" required value="<?php print((int)$cfa['PieceIdCount']); ?>">
         <label for="form-PieceIdCount">Count Number*</label>
       </div>
     </div>
@@ -140,7 +140,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintDateSent-day" name="PrintDateSent-day" placeholder="Print date sent day" value="<?php if(!empty($deconst_print_sent_date[2])) {print($deconst_print_sent_date[2]);} ?>">
+        <input type="text" class="form-control" id="form-PrintDateSent-day" name="PrintDateSent-day" placeholder="Print date sent day" value="<?php if(!empty($deconst_print_sent_date[2])) {print(h($deconst_print_sent_date[2]));} ?>">
         <label for="form-PrintDateSent-day">Print date sent day</label>
       </div>
     </div>
@@ -182,7 +182,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintDateReceipt-day" name="PrintDateReceipt-day" placeholder="Print date received day" value="<?php if(!empty($deconst_print_receipt_date[2])) {print($deconst_print_receipt_date[2]);} ?>">
+        <input type="text" class="form-control" id="form-PrintDateReceipt-day" name="PrintDateReceipt-day" placeholder="Print date received day" value="<?php if(!empty($deconst_print_receipt_date[2])) {print(h($deconst_print_receipt_date[2]));} ?>">
         <label for="form-PrintDateReceipt-day">Print date received day</label>
       </div>
     </div>
@@ -191,13 +191,13 @@ print_r(!empty($deconst_buyer_receipt_date));
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintCompany" name="PrintCompany" placeholder="Print company" required value="<?php print($cfa['PrintCompany']); ?>">
+        <input type="text" class="form-control" id="form-PrintCompany" name="PrintCompany" placeholder="Print company" required value="<?php print(h($cfa['PrintCompany'])); ?>">
         <label for="form-PrintCompany">Print company*</label>
       </div>
     </div>
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintCost" name="PrintCost" placeholder="Print cost" required value="<?php print($cfa['PrintCost']); ?>">
+        <input type="text" class="form-control" id="form-PrintCost" name="PrintCost" placeholder="Print cost" required value="<?php print(h($cfa['PrintCost'])); ?>">
         <label for="form-PrintCost">Print cost ($x.xx)*</label>
       </div>
     </div>
@@ -206,7 +206,7 @@ print_r(!empty($deconst_buyer_receipt_date));
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-PrintMedium" name="PrintMedium" placeholder="Print medium" required value="<?php print($cfa['PrintMedium']); ?>">
+        <input type="text" class="form-control" id="form-PrintMedium" name="PrintMedium" placeholder="Print medium" required value="<?php print(h($cfa['PrintMedium'])); ?>">
         <label for="form-PrintMedium">Print medium*</label>
       </div>
     </div>
@@ -216,7 +216,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     <div class="col">
       <div class="form-floating">
         <p class="form-text">Print Notes</p>
-        <textarea id="form-PrintNotes" name="PrintNotes"><?php print($cfa['PrintNotes']); ?></textarea>
+        <textarea id="form-PrintNotes" name="PrintNotes"><?php print(h($cfa['PrintNotes'])); ?></textarea>
       </div>
     </div>
   </div>
@@ -226,13 +226,13 @@ print_r(!empty($deconst_buyer_receipt_date));
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerName" name="BuyerName" placeholder="Buyer name" value="<?php print($cfa['BuyerName']); ?>">
+        <input type="text" class="form-control" id="form-BuyerName" name="BuyerName" placeholder="Buyer name" value="<?php print(h($cfa['BuyerName'])); ?>">
         <label for="form-BuyerName">Buyer name</label>
       </div>
     </div>
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerLocation" name="BuyerLocation" placeholder="Buyer location" value="<?php print($cfa['BuyerLocation']); ?>">
+        <input type="text" class="form-control" id="form-BuyerLocation" name="BuyerLocation" placeholder="Buyer location" value="<?php print(h($cfa['BuyerLocation'])); ?>">
         <label for="form-BuyerLocation">Buyer location</label>
       </div>
     </div>
@@ -270,7 +270,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerDatePurchase-day" name="BuyerDatePurchase-day" placeholder="Buy date purchased day" value="<?php if(!empty($deconst_buyer_purchase_date[2])) {print($deconst_buyer_purchase_date[2]);} ?>">
+        <input type="text" class="form-control" id="form-BuyerDatePurchase-day" name="BuyerDatePurchase-day" placeholder="Buy date purchased day" value="<?php if(!empty($deconst_buyer_purchase_date[2])) {print(h($deconst_buyer_purchase_date[2]));} ?>">
         <label for="form-BuyerDatePurchase-day">Buy date purchased day</label>
       </div>
     </div>
@@ -308,7 +308,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-BuyerDateReceipt-day" name="BuyerDateReceipt-day" placeholder="Buy date received day" value="<?php if(!empty($deconst_buyer_receipt_date[2])) {print($deconst_buyer_receipt_date[2]);} ?>">
+        <input type="text" class="form-control" id="form-BuyerDateReceipt-day" name="BuyerDateReceipt-day" placeholder="Buy date received day" value="<?php if(!empty($deconst_buyer_receipt_date[2])) {print(h($deconst_buyer_receipt_date[2]));} ?>">
         <label for="form-BuyerDateReceipt-day">Buy date received day</label>
       </div>
     </div>
@@ -320,7 +320,7 @@ print_r(!empty($deconst_buyer_receipt_date));
     <div class="col">
       <div class="form-floating">
         <p class="form-text">Notes</p>
-        <textarea id="form-Notes" name="Notes"><?php print($cfa['Notes']); ?></textarea>
+        <textarea id="form-Notes" name="Notes"><?php print(h($cfa['Notes'])); ?></textarea>
       </div>
     </div>
   </div>
@@ -335,7 +335,7 @@ print_r(!empty($deconst_buyer_receipt_date));
 </form>
 </div></div>
 
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="/assets/js/simplemde.min.js"></script>
 <script type="text/javascript">
   var simplemdePrintNotes = new SimpleMDE({
     element: document.getElementById("form-PrintNotes"),

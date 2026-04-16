@@ -289,7 +289,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 </form>
 </div></div>
 
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="/assets/js/simplemde.min.js"></script>
 <script type="text/javascript">
   var simplemdeNotes = new SimpleMDE({
     element: document.getElementById("form-Notes"),

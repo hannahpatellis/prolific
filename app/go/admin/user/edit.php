@@ -28,7 +28,7 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
 <div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col d-flex align-items-center">
-    <h1>Edit user: <?php print($user['Username']); ?></h1>
+    <h1>Edit user: <?php print(h($user['Username'])); ?></h1>
   </div>
 </div>
 
@@ -53,13 +53,13 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-Username" name="Username" placeholder="Username" required value="<?php print($user['Username']) ?>">
+       <input type="text" class="form-control" id="form-Username" name="Username" placeholder="Username" required value="<?php print(h($user['Username'])) ?>">
         <label for="form-Username">Username*</label>
       </div>
     </div>
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-        <input type="email" class="form-control" id="form-Email" name="Email" placeholder="Email" value="<?php print($user['Email']) ?>">
+        <input type="email" class="form-control" id="form-Email" name="Email" placeholder="Email" value="<?php print(h($user['Email'])) ?>">
         <label for="form-Email">Email</label>
       </div>
     </div>
@@ -68,13 +68,13 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-FirstName" name="FirstName" placeholder="First name" required value="<?php print($user['FirstName']) ?>">
+       <input type="text" class="form-control" id="form-FirstName" name="FirstName" placeholder="First name" required value="<?php print(h($user['FirstName'])) ?>">
         <label for="form-FirstName">First name*</label>
       </div>
     </div>
     <div class="col-sm-12 col-md-6">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-LastName" name="LastName" placeholder="Last name" value="<?php print($user['LastName']) ?>">
+       <input type="text" class="form-control" id="form-LastName" name="LastName" placeholder="Last name" value="<?php print(h($user['LastName'])) ?>">
         <label for="form-LastName">Last name</label>
       </div>
     </div>

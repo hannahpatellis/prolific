@@ -47,10 +47,10 @@ require_once(__DIR__ . "/../../resources/env.php");
 <div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col d-flex align-items-center">
-    <a href="/go/piece/view.php?id=<?php print($piece['Id']); ?>">
-      <img src="<?php print($env['img_store_url'] . $piece['Thumbnail']); ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
+    <a href="/go/piece/view.php?id=<?php print((int)$piece['Id']); ?>">
+      <img src="<?php print($env['img_store_url'] . h($piece['Thumbnail'])); ?>.jpg" width="auto" height="100px" style="margin-right: 20px" />
     </a>
-    <h1>Update: <?php print($piece['Title']); ?></h1>
+    <h1>Update: <?php print(h($piece['Title'])); ?></h1>
   </div>
 </div>
 
@@ -58,7 +58,7 @@ require_once(__DIR__ . "/../../resources/env.php");
 <?php if(isset($_GET['status']) && $_GET['status'] == '201') { ?>
   <div class="row">
     <div class="col">
-      <div class="alert alert-success" role="alert">"<?php print($piece['Title']); ?>" was updated successfully</div>
+      <div class="alert alert-success" role="alert">"<?php print(h($piece['Title'])); ?>" was updated successfully</div>
     </div>
   </div>
 <?php } ?>
@@ -76,7 +76,7 @@ require_once(__DIR__ . "/../../resources/env.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-title" name="title" placeholder="Title" required value="<?php print($piece['Title']); ?>">
+        <input type="text" class="form-control" id="form-title" name="title" placeholder="Title" required value="<?php print(h($piece['Title'])); ?>">
         <label for="form-title">EMOH Title*</label>
       </div>
     </div>
@@ -120,7 +120,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-start-day" name="start-day" placeholder="Start day" value="<?php print($deconst_start_date[2]); ?>">
+        <input type="text" class="form-control" id="form-start-day" name="start-day" placeholder="Start day" value="<?php print(h($deconst_start_date[2])); ?>">
         <label for="form-start-day">Start day</label>
       </div>
     </div>
@@ -164,7 +164,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-end-day" name="end-day" placeholder="End day" value="<?php print($deconst_end_date[2]); ?>">
+        <input type="text" class="form-control" id="form-end-day" name="end-day" placeholder="End day" value="<?php print(h($deconst_end_date[2])); ?>">
         <label for="form-end-day">End day</label>
       </div>
     </div>
@@ -190,7 +190,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-subcollection" name="subcollection" placeholder="Subcollection" data-role="tagsinput" value="<?php print($piece['Subcollection']); ?>">
+        <input type="text" class="form-control" id="form-subcollection" name="subcollection" placeholder="Subcollection" data-role="tagsinput" value="<?php print(h($piece['Subcollection'])); ?>">
         <label for="form-subcollection">Subcollection(s)</label>
         <div class="form-text">Comma separated</div>
       </div>
@@ -200,13 +200,13 @@ require_once(__DIR__ . "/../../resources/env.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-height" name="size-height" placeholder="Height" required value="<?php print($piece['SizeHeight']); ?>">
+        <input type="text" class="form-control" id="form-height" name="size-height" placeholder="Height" required value="<?php print(h($piece['SizeHeight'])); ?>">
         <label for="form-height">Height*</label>
       </div>
     </div>
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-width" name="size-width" placeholder="Width" required value="<?php print($piece['SizeWidth']); ?>">
+        <input type="text" class="form-control" id="form-width" name="size-width" placeholder="Width" required value="<?php print(h($piece['SizeWidth'])); ?>">
         <label for="form-width">Width*</label>
       </div>
     </div>
@@ -226,7 +226,7 @@ require_once(__DIR__ . "/../../resources/env.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-location" name="location" placeholder="Location" data-role="tagsinput" value="<?php print($piece['Location']); ?>">
+        <input type="text" class="form-control" id="form-location" name="location" placeholder="Location" data-role="tagsinput" value="<?php print(h($piece['Location'])); ?>">
         <label for="form-location">Creation location(s)</label>
         <div class="form-text">Comma separated</div>
       </div>
@@ -258,7 +258,7 @@ require_once(__DIR__ . "/../../resources/env.php");
     </div>
     <div class="col-sm-12 col-md-4">
       <div class="form-floating">
-        <input type="text" class="form-control" id="form-colors" name="colors" placeholder="Primary featured colors" value="<?php print($piece['Colors']); ?>">
+        <input type="text" class="form-control" id="form-colors" name="colors" placeholder="Primary featured colors" value="<?php print(h($piece['Colors'])); ?>">
         <label for="form-colors">Primary featured colors</label>
         <div class="form-text">Comma separated</div>
       </div>
@@ -268,21 +268,21 @@ require_once(__DIR__ . "/../../resources/env.php");
   <div class="row">
     <div class="col">
       <p class="form-text">Visual description</p>
-      <textarea id="form-description" name="description"><?php print($piece['Description']); ?></textarea>
+      <textarea id="form-description" name="description"><?php print(h($piece['Description'])); ?></textarea>
     </div>
   </div>
   
   <div class="row">
     <div class="col">
       <p class="form-text">Story</p>
-      <textarea id="form-story" name="story"><?php print($piece['Story']); ?></textarea>
+      <textarea id="form-story" name="story"><?php print(h($piece['Story'])); ?></textarea>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <p class="form-text">Notes</p>
-      <textarea id="form-notes" name="notes"><?php print($piece['Notes']); ?></textarea>
+      <textarea id="form-notes" name="notes"><?php print(h($piece['Notes'])); ?></textarea>
     </div>
   </div>
 
@@ -291,21 +291,21 @@ require_once(__DIR__ . "/../../resources/env.php");
   <div class="row">
     <div class="col">
       <p class="form-text">AI training data: Form description</p>
-      <textarea id="form-ai-training-form" name="ai-training-form"><?php print($piece['AITrainingForm']); ?></textarea>
+      <textarea id="form-ai-training-form" name="ai-training-form"><?php print(h($piece['AITrainingForm'])); ?></textarea>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <p class="form-text">AI training data: Colored form description</p>
-      <textarea id="form-ai-training-colored" name="ai-training-colored"><?php print($piece['AITrainingColored']); ?></textarea>
+      <textarea id="form-ai-training-colored" name="ai-training-colored"><?php print(h($piece['AITrainingColored'])); ?></textarea>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <p class="form-text">AI training data: Final piece description</p>
-      <textarea id="form-ai-training-final" name="ai-training-final"><?php print($piece['AITrainingFinal']); ?></textarea>
+      <textarea id="form-ai-training-final" name="ai-training-final"><?php print(h($piece['AITrainingFinal'])); ?></textarea>
     </div>
   </div>
 
@@ -319,7 +319,7 @@ require_once(__DIR__ . "/../../resources/env.php");
 </form>
 </div></div>
 
-<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+<script src="/assets/js/simplemde.min.js"></script>
 <script type="text/javascript">
 var simplemdeNotes = new SimpleMDE({
   element: document.getElementById("form-notes"),
