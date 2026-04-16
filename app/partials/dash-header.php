@@ -9,8 +9,12 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260411" />
     <link rel="shortcut icon" href="/favicon.ico?v=20260411" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260411" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Prolific" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#beb5ad" />
     <link rel="manifest" href="/site.webmanifest?v=20260411" />
+    <script>if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js'); }</script>
 
 
     <script async src="https://ana-ab.hannahap.com/js/pa-yPvUntvFx2ARGk6qXeLci.js"></script>
