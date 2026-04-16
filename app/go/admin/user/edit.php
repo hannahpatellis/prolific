@@ -1,14 +1,17 @@
 <?php
 
-session_start();
-if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
-  header('Location: /go/login.php?error=forbidden');
-  exit;
-}
-if($_SESSION['isAdmin'] != true) {
-  header('Location: /go/dashboard.php?error=forbidden');
-  exit;
-}
+// session_start();
+// if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
+//   header('Location: /go/login.php?error=forbidden');
+//   exit;
+// }
+// if($_SESSION['isAdmin'] != true) {
+//   header('Location: /go/dashboard.php?error=forbidden');
+//   exit;
+// }
+
+$adminRequired = true;
+require_once __DIR__ . '/../../resources/permissions.php';
 
 require_once __DIR__ . '/../../../resources/csrf.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';

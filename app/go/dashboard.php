@@ -1,10 +1,13 @@
 <?php
 
-session_start();
-if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
-  header('Location: login.php?error=forbidden');
-  exit;
-}
+// session_start();
+// if(!isset($_SESSION['active']) || $_SESSION['active'] != true) {
+//   header('Location: login.php?error=forbidden');
+//   exit;
+// }
+
+$adminRequired = false;
+require_once __DIR__ . '/../../resources/permissions.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../resources/orm/config.php';
