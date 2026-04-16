@@ -11985,7 +11985,7 @@ textarea.form-control-lg {
   font-style: normal;
 }
 body {
-  background-color: #111111;
+  background: #000000;
   color: #beb5ad;
   font-family: "InterVariable", "Lato", "Proxima Nova", "Gotham", "Trebuchet MS", Helvetica, Arial, sans-serif;
 }
@@ -12009,7 +12009,7 @@ small, .small {
 }
 
 hr {
-  border-top: 2px solid #282828;
+  border-top: 2px solid #343434;
   opacity: 1;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -13240,7 +13240,7 @@ div#nav-stage {
   align-items: center;
   justify-content: space-between;
   z-index: 5;
-  border-bottom: 2px solid rgba(41, 41, 41, 0.2509803922);
+  border-bottom: 2px solid rgba(52, 52, 52, 0.2509803922);
 }
 
 #nav-left, #nav-right, #nav-top {
@@ -13378,24 +13378,81 @@ form {
   fill: #beb5ad;
 }
 
-#login-box form {
-  background-color: #282828;
-}
-
 #login-container h1, #login-container .h1 {
   color: #beb5ad;
   font-size: 3.5rem;
 }
 
 #login-container p#tagline {
-  font-weight: 100;
+  font-weight: 200;
+  font-size: 1rem;
 }
 
-form#login-form-wrapper {
-  background-color: rgb(18, 18, 18);
-  border: solid 2px rgb(40, 40, 40);
+#login-container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+#login-container div#login-left {
+  background-color: #212121;
+  padding: 50px 50px 50px 50px;
+  border-right: 2px solid #beb5ad;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#login-container div#login-right {
+  background-image: url("/assets/img/AtmosphereDK.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 50px 50px 50px 50px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#login-container div#login-right form {
+  margin-bottom: 60px;
+}
+#login-container div#login-right form button {
+  background-color: rgba(190, 181, 173, 0.2509803922);
+  transition: 0.3s;
+  color: black;
+  backdrop-filter: blur(2px);
+}
+#login-container div#login-right form button:hover {
+  background-color: rgba(190, 181, 173, 0.5647058824);
 }
 
+@media (max-width: 821px) {
+  #login-container {
+    width: 90%;
+    margin-top: 10%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 15%;
+  }
+  #login-container div#login-left {
+    padding: 30px 30px 30px 30px;
+    border-bottom: 2px solid #beb5ad;
+    border-right: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0;
+  }
+  #login-container div#login-right {
+    padding: 30px 30px 30px 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 0;
+  }
+}
 h1#welcome, #welcome.h1 {
   font-weight: 200;
   font-size: 3rem;

@@ -11,7 +11,7 @@
 // }
 
 $adminRequired = true;
-require_once __DIR__ . '/../../resources/permissions.php';
+require_once __DIR__ . '/../../../resources/permissions.php';
 
 require_once __DIR__ . '/../../../resources/csrf.php';
 require_once __DIR__ . '/../../../vendor/autoload.php';

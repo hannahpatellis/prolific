@@ -1,17 +1,80 @@
 #login-logo {
   fill: $white;
 }
-#login-box form {
-  background-color: #282828;
-}
 #login-container h1 {
   color: $white;
   font-size: 3.5rem;
 }
 #login-container p#tagline {
-  font-weight: 100;
+  font-weight: 200;
+  font-size: 1rem;
 }
-form#login-form-wrapper {
-  background-color: rgb(18, 18, 18);
-  border: solid 2px rgb(40, 40, 40);
+#login-container {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  div#login-left {
+    background-color: #212121;
+    padding: 50px 50px 50px 50px;
+    border-right: 2px solid $white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  div#login-right {
+    background-image: url('/assets/img/AtmosphereDK.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 50px 50px 50px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    form {
+      margin-bottom: 60px;
+
+      button {
+        background-color: #beb5ad40;
+        transition: 0.3s;
+        color: black;
+        backdrop-filter: blur(2px);
+      }
+      button:hover {
+        background-color: #beb5ad90;
+      }
+    }
+  }
+}
+
+@media (max-width: 821px) {
+  #login-container {
+    width: 90%;
+    margin-top: 10%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 15%;
+
+    div#login-left {
+      padding: 30px 30px 30px 30px;
+      border-bottom: 2px solid $white;
+      border-right: 0;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 0;
+    }
+    div#login-right {
+      padding: 30px 30px 30px 30px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 0;
+    }
+  }
 }

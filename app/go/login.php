@@ -19,15 +19,15 @@ require_once(__DIR__ . "/../partials/gen-header.php");
   </symbol>
 </svg>
 
-<div class="container col-xl-10 col-xxl-8 px-4 py-5" id="login-container">
-  <div class="row align-items-center g-lg-5 py-5">
-    <div class="col-lg-7 text-center text-lg-start">
-      <svg id="login-logo" class="bi pe-none mb-4" width="70" height="70"><use xlink:href="#hannahap"></use></svg>
-      <h1 class="mb-3 serif">Welcome to Prolific</h1>
-      <p class="col-lg-10 fs-4" id="tagline">The artwork database of Hannah A. Patellis</p>
-    </div>
-    <div class="col-md-10 mx-auto col-lg-5">
-      <form class="p-4 p-md-5 rounded-3" id="login-form-wrapper" method="POST" action="/api/login.php">
+<div id="login-container">
+  <div id="login-left">
+    <div><svg id="login-logo" class="bi pe-none mb-4" width="70" height="70"><use xlink:href="#hannahap"></use></svg>
+    <h1 class="mb-3 serif">Welcome to Prolific</h1></div>
+    <p id="tagline">The artwork database of Hannah A. Patellis</p>
+  </div>
+  <div id="login-right">
+    <div id="login-form-container">
+      <form method="POST" action="/api/login.php">
         <input type="hidden" name="csrf_token" value="<?php echo csrf_token(); ?>">
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="floatingInput" name="username" placeholder="hannah">
@@ -37,7 +37,7 @@ require_once(__DIR__ . "/../partials/gen-header.php");
           <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
           <label for="floatingPassword">Password</label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        <button class="w-100 btn btn-lg" type="submit">Login</button>
       </form>
     </div>
   </div>
