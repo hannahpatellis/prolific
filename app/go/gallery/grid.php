@@ -51,6 +51,7 @@ const dbTable = db.map((row) => {
   return {
     link: `/go/piece/view.php?id=${row.Id}`,
     thumbnail: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
+    img_title: row.Title,
     title: row.Title,
     end_date: row.EndDate,
     collection: row.Collection,
@@ -69,6 +70,7 @@ var options = {
   valueNames: [
     { name: 'link', attr: 'href' },
     { name: 'thumbnail', attr: 'src' },
+    { name: 'img_title', attr: 'data-bs-title' },
     'title',
     'end_date',
     'collection',
@@ -81,7 +83,7 @@ var options = {
     'notes',
     'location'
   ],
-  item: `<div><a class="link"><img class="thumbnail grid-item" /></a>
+  item: `<div><a class="link"><img class="thumbnail img_title grid-item" data-bs-toggle="tooltip" data-bs-placement="bottom" /></a>
   <p class="hidden title"></p>
   <p class="hidden end_date"></p>
   <p class="hidden collection"></p>
@@ -96,6 +98,17 @@ var options = {
 };
 
 let galleryGrid = new List('gallery', options, dbTable);
+
+function initTooltips() {
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+    const existing = bootstrap.Tooltip.getInstance(el);
+    if (existing) existing.dispose();
+    new bootstrap.Tooltip(el);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initTooltips);
+galleryGrid.on('updated', initTooltips);
 
 let searchInputDOM = document.getElementById('search-input');
 searchInputDOM.addEventListener('keyup', function(e) {

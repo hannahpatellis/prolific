@@ -7,7 +7,7 @@
 // }
 
 $adminRequired = false;
-require_once __DIR__ . '/../../resources/permissions.php';
+require_once __DIR__ . '/../resources/permissions.php';
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../resources/orm/config.php';

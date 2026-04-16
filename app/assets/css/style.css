@@ -12084,6 +12084,18 @@ span.input-group-text {
   background-color: #beb5ad;
 }
 
+.tooltip {
+  --bs-tooltip-bg: #beb5ad;
+  --bs-tooltip-color: #000;
+}
+.tooltip.bs-tooltip-bottom, .tooltip.bs-tooltip-auto[data-popper-placement^=bottom] {
+  margin-top: -10px;
+}
+
+.tooltip-inner {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 table tbody tr th {
   font-weight: 700;
 }

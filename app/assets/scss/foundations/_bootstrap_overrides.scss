@@ -1,6 +1,19 @@
 span.input-group-text {
     background-color: $white;
 }
+
+.tooltip {
+    --bs-tooltip-bg: #{$white};
+    --bs-tooltip-color: #{$black};
+
+    &.bs-tooltip-bottom {
+        margin-top: -10px;
+    }
+}
+
+.tooltip-inner {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
 table tbody tr th {
     font-weight: 700;
 }
