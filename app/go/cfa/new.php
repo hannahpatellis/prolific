@@ -23,7 +23,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <div class="row justify-content-center"><div class="col-md-8 col-sm-12">
 <div class="row">
   <div class="col">
-    <h1>New CFA record <?php if(isset($_GET['id'])) {print("for piece #" . htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'));} ?></h1>
+    <h1>New CFA record <?php if(isset($_GET['id'])) {print("for piece #" . h($_GET['id']));} ?></h1>
   </div>
 </div>
 
@@ -38,7 +38,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
-      <div class="alert alert-danger" role="alert">There was an error adding the new CFA record<?php if($_GET['detail']) {print(": " . htmlspecialchars($_GET['detail'], ENT_QUOTES, 'UTF-8'));}; ?></div>
+      <div class="alert alert-danger" role="alert">There was an error adding the new CFA record<?php if($_GET['detail']) {print(": " . h($_GET['detail']));}; ?></div>
     </div>
   </div>
 <?php } ?>
@@ -48,7 +48,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
   <div class="row">
     <div class="col">
       <div class="form-floating">
-       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php if(isset($_GET['id'])) {print(htmlspecialchars($_GET['id'], ENT_QUOTES, 'UTF-8'));} ?>">
+       <input type="text" class="form-control" id="form-PieceId" name="PieceId" placeholder="Piece ID" required value="<?php if(isset($_GET['id'])) {print(h($_GET['id']));} ?>">
         <label for="form-PieceId">Piece ID*</label>
       </div>
     </div>

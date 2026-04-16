@@ -28,8 +28,8 @@ require_once(__DIR__ . "/../../../partials/dash-header.php");
 
 <div class="row">
   <div class="col">
-    <h1>Delete the user "<?php print(htmlspecialchars($user['Username'], ENT_QUOTES, 'UTF-8')); ?>"?</h1>
-    <p>Please confirm you wish to delete the user "<?php print(htmlspecialchars($user['Username'], ENT_QUOTES, 'UTF-8')); ?>." This cannot be undone.</p>
+    <h1>Delete the user "<?php print(h($user['Username'])); ?>"?</h1>
+    <p>Please confirm you wish to delete the user "<?php print(h($user['Username'])); ?>." This cannot be undone.</p>
     <hr />
     <div>
       <form method="POST" action="/api/admin/user/delete.php" style="display:inline;">

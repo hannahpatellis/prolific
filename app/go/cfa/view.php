@@ -45,7 +45,7 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 <?php if(isset($_GET['status']) && $_GET['status'] == '500') { ?>
   <div class="row">
     <div class="col">
-      <div class="alert alert-danger" role="alert">There was an error updating the CFA record<?php if($_GET['detail']) {print(": " . htmlspecialchars($_GET['detail'], ENT_QUOTES, 'UTF-8'));}; ?></div>
+      <div class="alert alert-danger" role="alert">There was an error updating the CFA record<?php if($_GET['detail']) {print(": " . h($_GET['detail']));}; ?></div>
     </div>
   </div>
 <?php } ?>
