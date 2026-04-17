@@ -34,7 +34,7 @@ require_once(__DIR__ . "/../partials/dash-header.php");
 </div>
 
 <div id="dash-counter">
-  <span class="badge text-bg-primary rounded-pill"><?php print($total_pieces); ?> total pieces</span>
+  <span class="badge text-bg-primary rounded-pill"><?php print(h($total_pieces)); ?> total pieces</span>
 </div> 
 
 <?php require_once(__DIR__ . "/../partials/dash-footer.php"); ?>

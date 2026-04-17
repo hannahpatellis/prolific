@@ -13,6 +13,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../resources/orm/config.php';
 
 $query = new Art\PiecesQuery();
+$total_pieces = $query->count();
 $pieces = $query->orderById('desc')->find()->toArray();
 
 $active_page = "gallery";
@@ -24,7 +25,10 @@ require_once(__DIR__ . "/../../partials/dash-header.php");
 
 <div class="row mb-5">
   <div class="col d-flex justify-content-between align-items-center" id="gallery-header">
-    <h1 class="mb-4">Gallery view</h1>
+    <div id="gallery-header-text" class="mb-4 d-flex flex-column justify-content-between">
+      <h1>Gallery view</h1>
+      <p><?php echo h($total_pieces); ?> works from 2019 through 2026</p>
+    </div>
 
     <div id="search-filter-sort-container" class="mb-4">
       <div class="input-group input-group-sm" id="search-group-container">
@@ -53,6 +57,7 @@ const dbTable = db.map((row) => {
     thumbnail: `<?php print($env['img_store_url']); ?>${row.Thumbnail}.jpg`,
     img_title: row.Title,
     title: row.Title,
+    id: row.Id,
     end_date: row.EndDate,
     collection: row.Collection,
     subcollection: row.Subcollection,
@@ -70,8 +75,8 @@ var options = {
   valueNames: [
     { name: 'link', attr: 'href' },
     { name: 'thumbnail', attr: 'src' },
-    { name: 'img_title', attr: 'data-bs-title' },
     'title',
+    'id',
     'end_date',
     'collection',
     'subcollection',
@@ -83,8 +88,8 @@ var options = {
     'notes',
     'location'
   ],
-  item: `<div><a class="link"><img class="thumbnail img_title grid-item" data-bs-toggle="tooltip" data-bs-placement="bottom" /></a>
-  <p class="hidden title"></p>
+  item: `<div class="grid-item"><a class="link"><img class="thumbnail grid-image" /></a>
+  <div class="grid-title-wrap"><p class="title grid-title"></p><p class="id grid-id"></p></div>
   <p class="hidden end_date"></p>
   <p class="hidden collection"></p>
   <p class="hidden subcollection"></p>
@@ -99,16 +104,16 @@ var options = {
 
 let galleryGrid = new List('gallery', options, dbTable);
 
-function initTooltips() {
-  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
-    const existing = bootstrap.Tooltip.getInstance(el);
-    if (existing) existing.dispose();
-    new bootstrap.Tooltip(el);
-  });
-}
+// function initTooltips() {
+//   document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+//     const existing = bootstrap.Tooltip.getInstance(el);
+//     if (existing) existing.dispose();
+//     new bootstrap.Tooltip(el);
+//   });
+// }
 
-document.addEventListener('DOMContentLoaded', initTooltips);
-galleryGrid.on('updated', initTooltips);
+// document.addEventListener('DOMContentLoaded', initTooltips);
+// galleryGrid.on('updated', initTooltips);
 
 let searchInputDOM = document.getElementById('search-input');
 searchInputDOM.addEventListener('keyup', function(e) {

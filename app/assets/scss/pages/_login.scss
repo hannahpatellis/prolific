@@ -18,9 +18,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  border-radius: 20px;
+  background-image: url('/assets/img/AtmosphereDK.jpg');
+  background-size: cover;
+  background-position: center;
 
   div#login-left {
-    background-color: #212121;
+    background-color: #21212190;
+    backdrop-filter: blur(4px);
     padding: 50px 50px 50px 50px;
     border-right: 2px solid $white;
     border-top-left-radius: 20px;
@@ -31,9 +36,6 @@
     align-items: flex-start;
   }
   div#login-right {
-    background-image: url('/assets/img/AtmosphereDK.jpg');
-    background-size: cover;
-    background-position: center;
     padding: 50px 50px 50px 50px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
