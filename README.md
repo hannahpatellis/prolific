@@ -84,12 +84,13 @@ Prolific was developed entirely by hand until April 11, 2026 when I began to use
 
 More screenshots, including historical screenshots, can be found in the `docs` directory
 
-![Login screen](docs/2026/Login.png "Login screen")
-![Dashboard view](docs/2026/Dashboard.png "Dashboard view")
-![Gallery view](docs/2026/Gallery-Grid.png "Gallery view")
-![Details view](docs/2026/Piece-View.png "Details view")
-![Update an existing piece](docs/2026/CFA-List.png "Certified fine art list view")
-![Add a new piece](docs/2026/Piece-New.png "Add a new piece to the database")
+![Login screen](docs/2026/r2/Login.png "Login screen")
+![Dashboard view](docs/2026/r2/Dashboard.png "Dashboard view")
+![Gallery view](docs/2026/r2/Gallery.png "Gallery view")
+![Details view](docs/2026/r2/Details.png "Details view")
+![Stage view](docs/2026/r2/Stage.png "Stage view")
+![Update an existing piece](docs/2026/r2/CFA.png "Certified fine art list view")
+![Add a new piece](docs/2026/r2/New.png "Add a new piece to the database")
 
 ---
 
